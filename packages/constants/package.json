@@ -1,0 +1,16 @@
+{
+  "name": "app-constants",
+  "version": "1.0.0",
+  "description": "core constants for through out the application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "javascript",
+    "constants",
+    "healthifyme"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT"
+}

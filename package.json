@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "global": "^4.3.2",
+    "lerna": "^3.2.1"
+  },
+  "name": "react-production-monorepo"
+}
