@@ -5,7 +5,7 @@ const babelConfig = (api) => {
       '@babel/preset-react',
     ],
     plugins: [
-      ['import', { libraryName: 'antd', libraryDirectory: 'es', style: false }],
+      ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
       '@babel/plugin-syntax-dynamic-import',
       'react-hot-loader/babel',
       '@babel/plugin-proposal-object-rest-spread',
