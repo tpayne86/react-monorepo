@@ -1,0 +1,24 @@
+{
+  "name": "@healthifyme/utilities",
+  "version": "1.0.0",
+  "description": "all utility functions, services that can be shared accross the project should be kept here.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "jest",
+    "utilities",
+    "services",
+    "javascript"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@healthifyme/components": "^1.0.0",
+    "@healthifyme/constants": "^1.0.0",
+    "@healthifyme/elements": "^1.0.0"
+  }
+}

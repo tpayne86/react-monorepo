@@ -1,0 +1,69 @@
+{
+  "name": "@healthifyme/server",
+  "version": "1.0.0",
+  "description": "web server for healthifyme front end applications",
+  "main": "index.js",
+  "repository": "none",
+  "author": "hannad rehman",
+  "license": "MIT",
+  "scripts": {
+    "start": "export NODE_ENV=development&& export NODE_ENV_PORT=3000&& npm run start:lint",
+    "start:cluster": "export NODE_ENV=development&& export NODE_ENV_PORT=3000&& npm run start:lint:cluster",
+    "start:lint": "nodemon ./src/index.js --exec 'npm run lint && node' ",
+    "start:lint:cluster": "nodemon ./src/cluster.js --exec 'npm run lint && node' ",
+    "start:no-lint": "nodemon ./src/index.js",
+    "build": "npm run test && node build.js",
+    "test:watch": "npm run test -- --watchAll",
+    "test": "jest",
+    "lint": "esw ./src/"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-watch": "^4.0.2",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "@healthifyme/components": "^1.0.0",
+    "@healthifyme/constants": "^1.0.0",
+    "@healthifyme/elements": "^1.0.0",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "http-proxy-middleware": "^0.18.0",
+    "morgan": "^1.9.0",
+    "request": "^2.88.0"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ]
+  }
+}

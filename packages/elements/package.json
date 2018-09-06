@@ -1,0 +1,26 @@
+{
+  "name": "@healthifyme/elements",
+  "version": "1.0.0",
+  "description": "wrapper over all antd components. all library components should have a wrapper defined here",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "antd",
+    "react",
+    "jest"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@healthifyme/constants": "^1.0.0"
+  },
+  "peerDependencies": {
+    "antd": "^3.9.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2"
+  }
+}

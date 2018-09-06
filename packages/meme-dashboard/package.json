@@ -1,0 +1,40 @@
+{
+  "name": "@healthifyme/meme-dashboard",
+  "version": "1.0.0",
+  "description": "meme dashboard implements yarn workspaces and lerna project",
+  "main": "index.js",
+  "author": "hannad rehman",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run start:dev",
+    "start:dev": "npm run dev-server --   --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=http://localhost:3000",
+    "start:stage": "npm run dev-server --  --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=https://x123healthifyme.com",
+    "start:dev-min": "npm run start:dev -- --env.MIN_STATS=true",
+    "start:analyze-speed": "npm run start:dev -- --env.addons=speedmeasure",
+    "build": "npm run test && webpack --optimize-minimize --mode production --env.NODE_ENV=production --env.PUBLIC_PATH=/",
+    "build:analyze-bundle": "npm run build -- --env.addons=bundleanalyzer",
+    "build:analyze-buddy": "npm run build -- --env.addons=bundlebuddy",
+    "dev-server": "webpack-dev-server --inline",
+    "test:watch": "npm run test -- --watchAll",
+    "test": "export BABEL_ENV=test&&NODE_ENV=test&& jest",
+    "profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json"
+  },
+  "dependencies": {
+    "@healthifyme/constants": "^1.0.0",
+    "@healthifyme/elements": "^1.0.0",
+    "@healthifyme/components": "^1.0.0",
+    "antd": "^3.9.0",
+    "axios": "^0.18.0",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-asynchronous-component": "^1.0.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.6",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "regenerator-runtime": "^0.12.1"
+  }
+}
