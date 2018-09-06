@@ -1,7 +1,5 @@
 /* eslint-env node */
 const webpack = require('webpack');
-const glob = require('glob');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -53,7 +51,6 @@ module.exports = env => ({
       filename: 'css/[name].css',
       allChunks: true,
     }),
-    new PurifyCSSPlugin({ paths: glob.sync(`${appPaths.srcPath}/**/*.js`, { nodir: true }) }),
   ],
   optimization: {
     splitChunks: {
