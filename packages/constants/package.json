@@ -2,8 +2,10 @@
   "name": "@healthifyme/constants",
   "version": "1.0.0",
   "description": "core constants for through out the application",
-  "main": "src/index.js",
-  "scripts": {},
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "babel src --watch --out-dir dist --source-maps --ignore spec.js"
+  },
   "keywords": [
     "javascript",
     "constants",

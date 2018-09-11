@@ -1,0 +1,9 @@
+{
+  "name": "@healthifyme/styles",
+  "version": "1.0.0",
+  "description": "global style, display, color etc for the components and apps",
+  "main": "src/_index.scss",
+  "style":"src/_index.scss",
+  "license": "MIT",
+  "author": "hannad rehman"
+}

@@ -37,7 +37,7 @@ render() {
       <Header>
         <Link href="/" to="/">
           <p className="logo">
-            React Production
+            React Memes
           </p>
         </Link>
         <Menu
@@ -45,26 +45,9 @@ render() {
           mode="horizontal"
           defaultSelectedKeys={['0']}
           style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1">
-            <Link href="/todo" to="/todo">
-              Todo
-            </Link>
-          </Menu.Item>
-        </Menu>
+        />
       </Header>
       <Content style={{ padding: '0 50px' }}>
-        {/* <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>
-            Home
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            List
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            App
-          </Breadcrumb.Item>
-        </Breadcrumb> */}
         <div className="applayout--content">
           <Routes shouldRender user={user} />
         </div>

@@ -1,15 +1,22 @@
 const babelConfig = (api) => {
   const config = {
     presets: [
-      ['@babel/preset-env', { modules: false, useBuiltIns: 'usage' }],
+      ['@babel/preset-env', {
+        modules: false,
+        useBuiltIns: 'usage',
+        targets: {
+          browsers: ['last 2 versions', 'safari >= 7'],
+        },
+      }],
       '@babel/preset-react',
     ],
     plugins: [
-      ['import', { libraryName: 'antd', libraryDirectory: 'es', style: false }],
+      ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
       '@babel/plugin-syntax-dynamic-import',
       'react-hot-loader/babel',
       '@babel/plugin-proposal-object-rest-spread',
       '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-transform-runtime',
       [
         'module-resolver',
         {
