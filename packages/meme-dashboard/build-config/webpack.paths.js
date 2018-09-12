@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  distPath: path.resolve(__dirname, '../../', 'dist/public'),
+  distPath: path.resolve(__dirname, '../../../', 'dist/public/meme-dashboard'),
   appTitle: 'React Application',
   srcPath: path.resolve(__dirname, '../', 'src'),
   packagesPath: path.resolve(__dirname, '../', 'node_modules/@healthifyme'),

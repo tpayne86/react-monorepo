@@ -18,20 +18,8 @@
     "lint": "esw ./src/"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^5.5.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-watch": "^4.0.2",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0",
-    "nodemon": "^1.18.4"
   },
   "dependencies": {
-    "@healthifyme/components": "^1.0.1",
-    "@healthifyme/constants": "^1.0.1",
-    "@healthifyme/elements": "^1.0.1",
     "compression": "^1.7.3",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
