@@ -1,6 +1,6 @@
 {
   "name": "@healthifyme/elements",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wrapper over all antd components. all library components should have a wrapper defined here",
   "main": "dist/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/constants": "^1.0.0"
+    "@healthifyme/constants": "^1.0.1"
   },
   "peerDependencies": {
     "antd": "^3.9.1",
@@ -26,8 +26,8 @@
     "react": "^16.4.2"
   },
   "devDependencies": {
+    "@babel/cli": "7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/cli":"7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
