@@ -4,5 +4,16 @@
   "packages": [
     "packages/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "feature/*",
+        "feat/*",
+        "bugfix/*",
+        "improvement/*",
+        "improv/*"
+      ]
+    }
+  }
 }
