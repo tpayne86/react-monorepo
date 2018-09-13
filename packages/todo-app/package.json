@@ -1,6 +1,6 @@
 {
   "name": "@healthifyme/todo-app",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "meme dashboard implements yarn workspaces and lerna project",
   "main": "index.js",
   "author": "hannad rehman",
@@ -22,8 +22,8 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "@healthifyme/components": "^1.0.1",
-    "@healthifyme/elements": "^1.0.1",
+    "@healthifyme/components": "^1.1.0",
+    "@healthifyme/elements": "^1.1.0",
     "@healthifyme/styles": "^1.0.1",
     "antd": "^3.9.0",
     "axios": "^0.18.0",
