@@ -2,7 +2,8 @@
 const path = require('path');
 
 module.exports = {
-  distPath: path.resolve(__dirname, '../../', 'dist/public'),
+  publicPath: '/todo-app/',
+  distPath: path.resolve(__dirname, '../../../', 'dist/public/todo-app'),
   appTitle: 'React Application',
   srcPath: path.resolve(__dirname, '../', 'src'),
   packagesPath: path.resolve(__dirname, '../', 'node_modules/@healthifyme'),

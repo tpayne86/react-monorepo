@@ -4,7 +4,7 @@
   "description": "core constants for through out the application",
   "main": "dist/index.js",
   "scripts": {
-    "start": "babel src --watch --out-dir dist --source-maps --ignore spec.js"
+    "watch": "babel src --watch --out-dir dist --source-maps --ignore spec.js"
   },
   "keywords": [
     "javascript",

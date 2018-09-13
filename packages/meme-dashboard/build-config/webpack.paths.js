@@ -2,6 +2,7 @@
 const path = require('path');
 
 module.exports = {
+  publicPath: '/meme-dashboard/',
   distPath: path.resolve(__dirname, '../../../', 'dist/public/meme-dashboard'),
   appTitle: 'React Application',
   srcPath: path.resolve(__dirname, '../', 'src'),

@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "watch": "babel src --watch --out-dir dist --source-maps inline --copy-files --ignore spec.js,spec.jsx"
+  },
   "repository": {
     "type": "git",
     "url": "none"

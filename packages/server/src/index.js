@@ -6,7 +6,7 @@ const path = require('path');
 
 const { NODE_ENV, NODE_ENV_PORT } = require('./config');
 const proxies = require('./proxy');
-const { indexRoute, testRoute, fallbackRoute } = require('./routes');
+const { staticRouter } = require('./routes');
 const { serverListener } = require('./utility/listener');
 const api = require('./api');
 
@@ -17,10 +17,8 @@ const appConfig = (app) => {
   app.use(helmet());
 };
 const appRroutes = (app) => {
-  app.get('/', indexRoute);
-  app.get('/test', testRoute);
   app.use('/apiv2', api);
-  app.get('/*', fallbackRoute);
+  app.use('', staticRouter);
 };
 const appProxy = (app) => {
   // proxy all apis to localhost if node env is dev.

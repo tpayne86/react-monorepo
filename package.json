@@ -4,18 +4,22 @@
     "packages/*"
   ],
   "scripts": {
-    "start" : "lerna run --scope",
+    "execute" : "lerna run",
+    "execute:parallel" : "yarn execute  --parallel",
+    "build":"yarn execute build",
+    "build:single":"yarn build --scope",
+    "build:parllel":"yarn execute:parallel  build",
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
-    "add-package":"lerna add",
-    "outdated-packages": "yarn outdated",
-    "upgrade-outdated-packages": "yarn upgrade",
-    "packages-list":"lerna ls",
+    "add:package":"lerna add",
+    "outdated:packages": "yarn outdated",
+    "upgrade:outdated-packages": "yarn upgrade",
+    "packages:list":"lerna ls",
     "version": "lerna version",
     "changes":"lerna changed",
     "diff": "lerna diff",
-    "exec": "lerna exec"
-
+    "exec": "lerna exec",
+    "watch:common-packages":"yarn execute:parallel  watch --parallel --scope @healthifyme/components --scope @healthifyme/components --scope @healthifyme/constants --scope @healthifyme/utilities"
   },
   "dependencies": {
     "global": "^4.3.2",

@@ -11,7 +11,8 @@
     "plugin:import/warnings"
   ],
   "globals": {
-    "module": true
+    "module": true,
+    "process":true
   },
   "parser": "babel-eslint",
   "rules": {

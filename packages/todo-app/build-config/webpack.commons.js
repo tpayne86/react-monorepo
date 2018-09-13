@@ -9,7 +9,7 @@ module.exports = (env) => {
     output: {
       path: appPaths.distPath,
       filename: isProd ? 'js/[name].js' : 'js/[name].js',
-      publicPath: env.PUBLIC_PATH || '',
+      publicPath: appPaths.publicPath || '',
       pathinfo: false,
     },
     resolve: {

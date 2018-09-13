@@ -79,7 +79,7 @@ to run the built application it needs following environment variables
     "start:dev": "npm run dev-server --   --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=http://localhost:8000",          # starts project in dev with dev env vaiables and dev proxy origin
     "start:stage": "npm run dev-server --  --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=https://locahost:9001",         # starts project in dev and proxies to stage env
     "start:analyze-speed": "npm run start:dev -- --env.addons=speedmeasure",                                                                # starts project in dev with webpack speed analyzer plugin
-    "build": "npm run test && webpack --optimize-minimize --mode production --env.NODE_ENV=production --env.PUBLIC_PATH=/",                 # build project for production
+    "build": "npm run test && webpack --optimize-minimize --mode production --env.NODE_ENV=production",                 # build project for production
     "build:analyze-bundle": "npm run build -- --env.addons=bundleanalyzer",                                                                 # build project with webpack bundle analyzer plugin
     "build:analyze-buddy": "npm run build -- --env.addons=bundlebuddy",                                                                     # builds for production with webpack bundlebuddy plugin
     "dev-server": "webpack-dev-server --inline",                                                                                            # starts webpack dev server to serve the app.

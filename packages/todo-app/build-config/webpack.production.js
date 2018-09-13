@@ -12,7 +12,9 @@ module.exports = env => ({
   module: appModule(env).module,
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env': {
+        NODE_ENV: JSON.stringify(env.NODE_ENV),
+      },
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
@@ -40,7 +42,7 @@ module.exports = env => ({
         minifyCSS: true,
         minifyURLs: true,
       },
-      help: 'please help me',
+      publicPath: appPaths.publicPath,
       inject: true,
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),

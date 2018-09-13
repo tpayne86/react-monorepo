@@ -4,7 +4,7 @@
   "description": "wrapper over all antd components. all library components should have a wrapper defined here",
   "main": "dist/index.js",
   "scripts": {
-    "start": "babel src --watch --out-dir dist --source-maps inline --copy-files --ignore spec.js,spec.jsx"
+    "watch": "babel src --watch --out-dir dist --source-maps inline --copy-files --ignore spec.js,spec.jsx"
   },
   "repository": {
     "type": "git",

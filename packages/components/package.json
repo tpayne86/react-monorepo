@@ -6,7 +6,7 @@
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {
-    "start": "babel src --watch --out-dir dist --source-maps inline --copy-files --ignore spec.js,spec.jsx"
+    "watch": "babel src --watch --out-dir dist --source-maps inline --copy-files --ignore spec.js,spec.jsx"
   },
   "dependencies": {
     "@healthifyme/constants": "^1.0.1",
