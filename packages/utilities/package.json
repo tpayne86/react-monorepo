@@ -22,5 +22,11 @@
     "@healthifyme/components": "^1.0.1",
     "@healthifyme/constants": "^1.0.1",
     "@healthifyme/elements": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0",
+    "eslint": "^5.5.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0"
   }
 }

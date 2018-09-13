@@ -18,6 +18,10 @@
     "lint": "esw ./src/"
   },
   "devDependencies": {
+    "eslint": "^5.5.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0",
+    "nodemon":"*"
   },
   "dependencies": {
     "compression": "^1.7.3",

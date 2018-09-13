@@ -6,6 +6,12 @@
   "scripts": {
     "watch": "babel src --watch --out-dir dist --source-maps --ignore spec.js"
   },
+  "devDependencies": {
+    "@babel/cli": "7.0.0",
+    "eslint": "^5.5.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0"
+  },
   "keywords": [
     "javascript",
     "constants",
