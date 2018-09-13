@@ -13,7 +13,7 @@
     "packages:add-node_module":"lerna add",
     "packages:outdated": "yarn outdated",
     "packages:upgrade-outdated-packages": "yarn upgrade",
-    "packages:version-upgrade": "lerna version",
+    "packages:push-branch": "lerna version",
     "packages:changes":"lerna changed",
     "packages:diff": "lerna diff",
     "packages:watch-commons":"yarn execute:parallel  watch --parallel --scope @healthifyme/components --scope @healthifyme/components --scope @healthifyme/constants --scope @healthifyme/utilities",

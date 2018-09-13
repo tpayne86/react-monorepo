@@ -24,7 +24,6 @@ class MemePage extends React.Component {
   }
 
   componentDidMount() {
-    // comment here to check
     this.initData();
   }
 
