@@ -1,13 +1,13 @@
 {
   "name": "@healthifyme/utilities",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",
   "main": "index.js",
   "scripts": {
     "watch": "yarn clean && yarn transpile --source-maps inline --watch",
-    "build":"yarn clean && yarn env:prod && yarn transpile",
-    "clean":"rm -rf ./dist",
-    "transpile":"babel src --out-dir dist --copy-files --ignore spec.js,spec.jsx",
+    "build": "yarn clean && yarn env:prod && yarn transpile",
+    "clean": "rm -rf ./dist",
+    "transpile": "babel src --out-dir dist --copy-files --ignore spec.js,spec.jsx",
     "env:prod": "export NODE_ENV=production"
   },
   "repository": {
@@ -23,9 +23,9 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/components": "^1.1.0",
-    "@healthifyme/constants": "^1.1.0",
-    "@healthifyme/elements": "^1.1.0"
+    "@healthifyme/components": "^1.1.1",
+    "@healthifyme/constants": "^1.1.1",
+    "@healthifyme/elements": "^1.1.1"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0",
