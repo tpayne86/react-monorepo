@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from '@healthifyme/elements';
+import Alert from '@healthifyme/elements/dist/Alert/Alert.component';
 
 const AlertFallback = ({
   hasAlert, children, type, alertTitle, alertDescription, closable, onClose,

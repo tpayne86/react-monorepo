@@ -19,15 +19,18 @@ const jestConfig = {
   ],
   moduleDirectories: [
     'node_modules',
+    '<rootDir>/node_modules/',
   ],
   transformIgnorePatterns: [
-    '/node_modules/',
+    '/node_modules/(?!antd|rc-*|css-*)',
+    '<rootDir>/node_modules/',
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules/',
   ],
   modulePathIgnorePatterns: [
-    '/node_modules/',
+    '/node_modules/(?!antd)',
+    '<rootDir>/node_modules/',
   ],
   collectCoverage: true,
   coverageReporters: [

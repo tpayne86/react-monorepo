@@ -21,13 +21,10 @@ const jestConfig = {
     'node_modules',
   ],
   transformIgnorePatterns: [
-    '/node_modules/',
-    '/node_modules/(?!@healthifyme)',
+    '/node_modules/(?!antd)',
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules/',
-    '<rootDir>/src/App/Elements/',
-    '<rootDir>/node_modules/@healthifyme/',
   ],
   modulePathIgnorePatterns: [
     '/node_modules/',

@@ -11,7 +11,7 @@
     "@babel/plugin-transform-modules-commonjs",
     [
       "import",
-      { "libraryName": "antd", "libraryDirectory": "es", "style": true }
+      { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
     ]
   ],
   "env": {
@@ -39,7 +39,7 @@
         "@babel/plugin-transform-modules-commonjs",
         [
           "import",
-          { "libraryName": "antd", "libraryDirectory": "es", "style": true }
+          { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
         ]
       ]
     }

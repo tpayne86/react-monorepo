@@ -52,6 +52,7 @@ module.exports = env => ({
       filename: 'css/[name].css',
       allChunks: true,
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   optimization: {
     splitChunks: {
@@ -60,7 +61,7 @@ module.exports = env => ({
       cacheGroups: {
         vendor: {
           chunks: 'initial',
-          test: appPaths.nodeModules,
+          test: /node_modules/,
           name: 'vendors',
           enforce: true,
         },

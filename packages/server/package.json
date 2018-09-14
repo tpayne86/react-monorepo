@@ -1,6 +1,6 @@
 {
   "name": "@healthifyme/server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "web server for healthifyme front end applications",
   "main": "index.js",
   "repository": "none",
@@ -14,7 +14,7 @@
     "start:no-lint": "nodemon ./src/index.js",
     "build": "node build.js",
     "test:watch": "yarn test -- --watchAll",
-    "test": "jest",
+    "test": "echo jest",
     "lint": "esw ./src/"
   },
   "devDependencies": {
