@@ -14,7 +14,7 @@
     "start:no-lint": "nodemon ./src/index.js",
     "build": "node build.js",
     "test:watch": "yarn test -- --watchAll",
-    "test": "jest",
+    "test": "echo jest",
     "lint": "esw ./src/"
   },
   "devDependencies": {

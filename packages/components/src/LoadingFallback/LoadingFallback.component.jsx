@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Spinner } from '@healthifyme/elements';
+import Spinner from '@healthifyme/elements/dist/Spinner/Spinner.component';
 
 const LoadingFallback = ({ loading, children, size }) => (
   <React.Fragment>

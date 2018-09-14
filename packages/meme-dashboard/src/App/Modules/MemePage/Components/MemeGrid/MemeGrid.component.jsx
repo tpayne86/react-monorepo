@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CardWithImage } from '@healthifyme/elements';
+import CardWithImage from '@healthifyme/elements/dist/Card/CardWithImage/CardWithImage.component';
 
 import './MemeGrid.styles.scss';
 
