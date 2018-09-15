@@ -1,4 +1,6 @@
 /* eslint-env node */
+const fs = require('fs');
+
 const webpackMerge = require('webpack-merge'); // eslint-disable-line
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin'); // eslint-disable-line
 const commonConfig = require('./build-config/webpack.commons');
@@ -8,12 +10,14 @@ const devConfig = require('./build-config/webpack.development');
 const bundleanalyzer = require('./build-config/addons/webpack.bundleanalyzer');
 const bundleBuddy = require('./build-config/addons/webpack.bundlebuddy');
 
+const packageJSON = fs.readFileSync('./package.json', 'utf8');
+const devServerConfig = JSON.parse(packageJSON)['dev-server'];
 
 module.exports = (env) => {
   console.log(JSON.stringify(env,null,4)); // eslint-disable-line
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
-  const envConfig = isProd ? prodConfig : devConfig;
-  const baseConfig = webpackMerge(commonConfig(env), commongPlugins, envConfig(env));
+  const envConfig = isProd ? prodConfig(env) : devConfig(env, devServerConfig);
+  const baseConfig = webpackMerge(commonConfig(env), commongPlugins, envConfig);
 
   let webpackConfig = null;
   switch (env.addons) {

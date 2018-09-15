@@ -10,7 +10,7 @@
     "app:bootstrap": "lerna bootstrap",
     "app:clean": "lerna clean",
     "app:list": "lerna ls",
-    "app:add-node_module": "lerna add",
+    "app:add-node_module": "lerna add --scope=",
     "app:outdated": "yarn outdated",
     "app:upgrade-outdated-packages": "yarn upgrade",
     "app:push-branch": "lerna version",
