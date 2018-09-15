@@ -1,6 +1,6 @@
 {
   "name": "@healthifyme/components",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "a repository for react common components. may or may not be dependent on elements",
   "main": "dist/index.js",
   "author": "hannad rehman",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@healthifyme/constants": "^1.1.1",
-    "@healthifyme/elements": "^1.1.1"
+    "@healthifyme/elements": "^1.1.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
