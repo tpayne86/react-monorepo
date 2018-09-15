@@ -4,10 +4,7 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    [
-      "import",
-      { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
-    ],
+    ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style": true } ],
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-syntax-dynamic-import",
@@ -31,10 +28,7 @@
         "@babel/preset-react"
       ],
       "plugins": [
-        [
-          "import",
-          { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
-        ],
+        ["import",{ "libraryName": "antd", "libraryDirectory": "lib", "style": true }],
         "react-hot-loader/babel",
         "@babel/plugin-proposal-object-rest-spread",
         "@babel/plugin-proposal-class-properties",
