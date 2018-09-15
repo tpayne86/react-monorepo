@@ -1,6 +1,6 @@
 {
   "name": "@healthifyme/server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "web server for healthifyme front end applications",
   "main": "index.js",
   "repository": "none",
@@ -27,7 +27,7 @@
     "compression": "^1.7.3",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
-    "http-proxy-middleware": "^0.18.0",
+    "http-proxy-middleware": "^0.19.0",
     "morgan": "^1.9.0",
     "request": "^2.88.0"
   },
