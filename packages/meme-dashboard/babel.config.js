@@ -44,4 +44,4 @@ const babelConfig = (api) => {
   return config;
 };
 
-module.exports = babelConfig; //eslint-disable-line
+module.exports = babelConfig;

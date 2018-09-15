@@ -4,25 +4,22 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style": true } ],
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-transform-runtime",
-    "@babel/plugin-transform-modules-commonjs",
-    [
-      "import",
-      { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
-    ]
+    "@babel/plugin-transform-modules-commonjs"
   ],
   "env": {
     "test": {
       "presets": [["@babel/preset-env"], "@babel/preset-react"],
       "plugins": [
+        ["import", { "libraryName": "antd", "libraryDirectory": "lib" }],
         "@babel/plugin-transform-modules-commonjs",
         "@babel/plugin-proposal-object-rest-spread",
         "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-syntax-dynamic-import",
-        ["import", { "libraryName": "antd", "libraryDirectory": "lib" }]
+        "@babel/plugin-syntax-dynamic-import"
       ]
     },
     "development": {
@@ -31,16 +28,13 @@
         "@babel/preset-react"
       ],
       "plugins": [
+        ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style": true } ],
         "react-hot-loader/babel",
         "@babel/plugin-proposal-object-rest-spread",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-syntax-dynamic-import",
         "@babel/plugin-transform-runtime",
-        "@babel/plugin-transform-modules-commonjs",
-        [
-          "import",
-          { "libraryName": "antd", "libraryDirectory": "lib", "style": true }
-        ]
+        "@babel/plugin-transform-modules-commonjs"
       ]
     }
   }
