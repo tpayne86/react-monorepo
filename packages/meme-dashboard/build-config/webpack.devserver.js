@@ -1,29 +1,17 @@
 /* eslint-env node */
-module.exports = (dist, proxy, stats) => ({
+module.exports = (dist, config, env) => ({
   contentBase: dist,
   compress: true,
-  port: 9000,
+  port: config.port,
   historyApiFallback: true,
   hot: true,
-  stats: stats ? 'errors-only' : true,
   overlay: true,
   proxy: {
     changeOrigin: true,
-    '/api/**': {
-      target: proxy,
+    '/(api|apiv2|static)/**': {
+      target: env.PROXY_ORIGIN.trim() === 'development' ? config.proxy.development : config.proxy.staging,
       secure: false,
       changeOrigin: true,
-    },
-    '/apiv2/**': {
-      target: proxy,
-      secure: false,
-      changeOrigin: true,
-    },
-    '/static/**': {
-      target: proxy,
-      secure: false,
-      changeOrigin: true,
-      open: true,
     },
   },
 });

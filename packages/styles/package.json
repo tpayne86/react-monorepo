@@ -5,5 +5,7 @@
   "main": "src/_index.scss",
   "style": "src/_index.scss",
   "license": "MIT",
-  "author": "hannad rehman"
+  "author": "hannad rehman",
+  "dependencies": {
+  }
 }

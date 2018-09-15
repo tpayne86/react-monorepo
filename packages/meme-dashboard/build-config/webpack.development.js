@@ -8,7 +8,7 @@ const devServer = require('./webpack.devserver');
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 
-module.exports = env => ({
+module.exports = (env, devServerConfig) => ({
   module: appModule(env).module,
   plugins: [
     new webpack.DefinePlugin({
@@ -39,5 +39,5 @@ module.exports = env => ({
     }),
     new ErrorOverlayPlugin(),
   ],
-  devServer: devServer(appPaths.distPath, env.PROXY_ORIGIN, env.MIN_STATS),
+  devServer: devServer(appPaths.distPath, devServerConfig, env),
 });

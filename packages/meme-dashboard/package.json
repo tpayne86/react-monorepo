@@ -7,9 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn start:dev",
-    "start:dev": "yarn dev-server   --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=http://localhost:3000",
-    "start:stage": "yarn dev-server  --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=https://x123healthifyme.com",
-    "start:dev-min": "yarn start:dev --env.MIN_STATS=true",
+    "start:dev": "yarn dev-server --env.ENV_PORT=9000  --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=development",
+    "start:stage": "yarn dev-server --env.ENV_PORT=9000  --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=staging",
     "start:analyze-speed": "yarn start:dev --env.addons=speedmeasure",
     "build": "yarn test && webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
     "build:analyze-bundle": "yarn build  --env.addons=bundleanalyzer",
@@ -26,6 +25,8 @@
     "@healthifyme/styles": "^1.0.1",
     "antd": "^3.9.0",
     "axios": "^0.18.0",
+    "connected-react-router": "^4.4.1",
+    "history": "^4.7.2",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -46,5 +47,12 @@
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
+  },
+  "dev-server":{
+    "port":9001,
+    "proxy":{
+      "development":"http://localhost:3000",
+      "staging":"http://x123healthifyme.com"
+    }
   }
 }
