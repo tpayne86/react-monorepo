@@ -4,24 +4,34 @@
     "packages/*"
   ],
   "scripts": {
-    "app:create": "node ./app-template/index.js",
     "app:bootstrap": "lerna bootstrap",
     "app:clean": "lerna clean",
     "app:list": "lerna ls",
     "app:changes": "lerna changed",
     "app:diff": "lerna diff",
     "app:test": "yarn execute:parallel test",
+    "app:build":"yarn build:server && yarn build:rest",
     "app:watch-commons": "yarn execute:parallel  watch --parallel --scope @healthifyme/components --scope @healthifyme/elements --scope @healthifyme/constants --scope @healthifyme/utilities",
+
     "node:add-module": "lerna add --scope=",
     "node:outdated": "yarn outdated",
     "node:update-packages": "yarn upgrade",
+
     "git:push-branch": "lerna version",
-    "exec": "lerna exec",
-    "execute": "lerna run",
-    "execute:parallel": "yarn execute  --parallel",
+
     "build": "yarn execute build",
     "build:package": "yarn build --scope",
-    "build:all-packages": "yarn execute:parallel  build"
+    "build:all-packages": "yarn execute:parallel build",
+    "build:server": "yarn build:package @healthifyme/server",
+    "build:rest":"yarn build:all-packages --ignore @healthifyme/server",
+
+    "test": "yarn execute test",
+    "test:package": "yarn test --scope",
+    "test:all-packages": "yarn execute:parallel test",
+
+    "exec": "lerna exec",
+    "execute": "lerna run",
+    "execute:parallel": "yarn execute  --parallel"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",

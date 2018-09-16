@@ -6,7 +6,7 @@ const path = require('path');
 
 const { NODE_ENV, NODE_ENV_PORT } = require('./config');
 const proxies = require('./proxy');
-const { staticRouter } = require('./routes');
+const staticRouter = require('./routes');
 const { serverListener } = require('./utility/listener');
 const api = require('./api');
 
