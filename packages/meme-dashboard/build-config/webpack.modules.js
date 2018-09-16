@@ -11,6 +11,16 @@ module.exports = (env) => {
     module: {
       rules: [
         {
+          test: /\.jsx$/,
+          use: ['source-map-loader'],
+          enforce: 'pre',
+        },
+        {
+          test: /\.js$/,
+          use: ['source-map-loader'],
+          enforce: 'pre',
+        },
+        {
           enforce: 'pre',
           test: /\.jsx$/,
           include: appPaths.srcPath,
