@@ -17,7 +17,7 @@
     "node:outdated": "yarn outdated",
     "node:update-packages": "yarn upgrade",
 
-    "git:push-branch": "lerna version",
+    "git:push": "lerna version",
 
     "build": "yarn execute build",
     "build:package": "yarn build --scope",
