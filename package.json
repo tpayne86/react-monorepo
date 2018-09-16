@@ -4,27 +4,44 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn execute build",
-    "build:package": "yarn build --scope",
-    "build:all-packages": "yarn execute:parallel  build",
+    "app:create": "node ./app-template/index.js",
     "app:bootstrap": "lerna bootstrap",
     "app:clean": "lerna clean",
     "app:list": "lerna ls",
-    "app:add-node_module": "lerna add --scope=",
-    "app:outdated": "yarn outdated",
-    "app:upgrade-outdated-packages": "yarn upgrade",
-    "app:push-branch": "lerna version",
     "app:changes": "lerna changed",
     "app:diff": "lerna diff",
-    "app:test-all": "yarn execute:parallel test",
+    "app:test": "yarn execute:parallel test",
     "app:watch-commons": "yarn execute:parallel  watch --parallel --scope @healthifyme/components --scope @healthifyme/elements --scope @healthifyme/constants --scope @healthifyme/utilities",
+    "node:add-module": "lerna add --scope=",
+    "node:outdated": "yarn outdated",
+    "node:update-packages": "yarn upgrade",
+    "git:push-branch": "lerna version",
     "exec": "lerna exec",
     "execute": "lerna run",
-    "execute:parallel": "yarn execute  --parallel"
+    "execute:parallel": "yarn execute  --parallel",
+    "build": "yarn execute build",
+    "build:package": "yarn build --scope",
+    "build:all-packages": "yarn execute:parallel  build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "global": "^4.3.2",
-    "lerna": "^3.2.1"
+    "lerna": "^3.2.1",
+    "antd": "^3.9.0",
+    "axios": "^0.18.0",
+    "connected-react-router": "^4.4.1",
+    "history": "^4.7.2",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-asynchronous-component": "^1.0.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.6",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -32,6 +49,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "antd-scss-theme-plugin": "^1.0.7",
@@ -75,7 +93,8 @@
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-bundle-tracker": "^0.3.0",
     "webpack-manifest-plugin": "^2.0.3",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "source-map-loader": "^0.2.4"
   },
   "name": "react-production-monorepo"
 }

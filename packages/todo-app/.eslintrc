@@ -16,7 +16,9 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "react/forbid-prop-types": [false, { "forbid": ["array","object"]}]
+    "react/forbid-prop-types": [false, { "forbid": ["array","object"]}],
+    "import/no-extraneous-dependencies": 0
+
   },
   "settings": {
     "import/resolver": {
