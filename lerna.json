@@ -14,7 +14,8 @@
         "hotfix/*",
         "improvement/*",
         "improv/*"
-      ]
+      ],
+      "message": "Publish %s"
     }
   }
 }
