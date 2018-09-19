@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/utilities",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",
   "main": "index.js",
   "scripts": {
@@ -24,10 +24,10 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/components": "^2.0.1",
-    "@healthifyme/constants": "^2.0.0",
-    "@healthifyme/elements": "^2.0.0",
-    "@healthifyme/test": "^2.0.1"
+    "@healthifyme/components": "^2.0.2",
+    "@healthifyme/constants": "^2.0.1",
+    "@healthifyme/elements": "^2.0.1",
+    "@healthifyme/test": "^2.0.2"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0",

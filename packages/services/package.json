@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/services",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this package will hold are service/helper functions that can be re-used accross the application",
   "main": "/dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "env:prod": "export NODE_ENV=production"
   },
   "dependencies": {
-    "@healthifyme/constants": "^2.0.0"
+    "@healthifyme/constants": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0"
