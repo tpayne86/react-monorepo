@@ -115,8 +115,8 @@
     "webpack-bundle-tracker": "^0.3.0",
     "webpack-manifest-plugin": "^2.0.3",
     "webpack-merge": "^4.1.4",
-    "webpack": "*",
-    "webpack-cli":"*",
+    "webpack": "4.19.1",
+    "webpack-cli":"3.1.0",
     "webpack-dev-server" : "3.1.8"
   }
 }

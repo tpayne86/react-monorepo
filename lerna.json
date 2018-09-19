@@ -14,8 +14,7 @@
         "hotfix/*",
         "improvement/*",
         "improv/*"
-      ],
-      "message": "chore(release): publish %s"
+      ]
     }
   }
 }
