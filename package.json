@@ -1,36 +1,56 @@
 {
+  "name": "react-production-monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "app:create": "node ./app-template/index.js",
     "app:bootstrap": "lerna bootstrap",
     "app:clean": "lerna clean",
     "app:list": "lerna ls",
     "app:changes": "lerna changed",
     "app:diff": "lerna diff",
     "app:test": "yarn execute:parallel test",
+    "app:build": "yarn build:server && yarn build:rest",
     "app:watch-commons": "yarn execute:parallel  watch --parallel --scope @healthifyme/components --scope @healthifyme/elements --scope @healthifyme/constants --scope @healthifyme/utilities",
     "node:add-module": "lerna add --scope=",
     "node:outdated": "yarn outdated",
     "node:update-packages": "yarn upgrade",
-    "git:push-branch": "lerna version",
+    "git:push": "lerna version",
+    "build": "yarn execute build",
+    "build:package": "yarn build --scope",
+    "build:all-packages": "yarn execute build",
+    "build:server": "yarn build:package @healthifyme/server",
+    "build:rest": "yarn build:all-packages --ignore @healthifyme/server",
+    "test": "yarn execute test",
+    "test:package": "yarn test --scope",
+    "test:all-packages": "yarn execute:parallel test",
     "exec": "lerna exec",
     "execute": "lerna run",
     "execute:parallel": "yarn execute  --parallel",
-    "build": "yarn execute build",
-    "build:package": "yarn build --scope",
-    "build:all-packages": "yarn execute:parallel  build"
+    "wp:start": "yarn wp:dev",
+    "wp:dev": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=development",
+    "wp:stage": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=staging",
+    "wp:analyze-speed": "yarn wp:dev --env.addons=speedmeasure",
+    "wp:build": "webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
+    "wp:build:analyze-bundle": "yarn wp:build  --env.addons=bundleanalyzer",
+    "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
+    "dev-server": "webpack-dev-server --inline --open",
+    "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
+    "webpack-defaults": "webpack-defaults"
+  },
+  "proxy": {
+    "development": "http://localhost:3000",
+    "staging": "http://x123healthifyme.com"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "global": "^4.3.2",
-    "lerna": "^3.2.1",
     "antd": "^3.9.0",
     "axios": "^0.18.0",
     "connected-react-router": "^4.4.1",
+    "global": "^4.3.2",
     "history": "^4.7.2",
+    "lerna": "^3.2.1",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -86,6 +106,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
     "speed-measure-webpack-plugin": "^1.2.2",
     "style-loader": "^0.23.0",
     "system-bell-webpack-plugin": "*",
@@ -93,8 +114,6 @@
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-bundle-tracker": "^0.3.0",
     "webpack-manifest-plugin": "^2.0.3",
-    "webpack-merge": "^4.1.4",
-    "source-map-loader": "^0.2.4"
-  },
-  "name": "react-production-monorepo"
+    "webpack-merge": "^4.1.4"
+  }
 }

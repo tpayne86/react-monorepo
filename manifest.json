@@ -1,0 +1,27 @@
+{
+  "name":"healthifyme-web-frontend",
+  "author":"hannad rehman",
+  "applications":{
+    "@healthifyme/test":{
+      "publicPath":"/test/",
+      "appHTMLTitle":"test web application",
+      "folderName":"test",
+      "folderSrc":"packages/test",
+      "name": "@healthifyme/test"
+    },
+    "@healthifyme/memes":{
+      "publicPath":"/memes/",
+      "appHTMLTitle":"Meme dashboard monorepo",
+      "folderName":"memes",
+      "folderSrc":"packages/memes",
+      "name": "@healthifyme/memes"
+    },
+    "@healthifyme/todo":{
+      "publicPath":"/todo/",
+      "appHTMLTitle":"todo dashboard monorepo",
+      "folderName":"todo",
+      "folderSrc":"packages/todo",
+      "name": "@healthifyme/todo"
+    }
+  }
+}

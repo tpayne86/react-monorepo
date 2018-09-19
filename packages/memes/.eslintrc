@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": false,
+    "jest": true
+  },
+  "plugins": [ "import"],
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "globals": {
+    "module": true,
+    "process":true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/forbid-prop-types": [0, { "forbid": ["array","object"]}],
+    "import/no-extraneous-dependencies": 0
+  }
+}
