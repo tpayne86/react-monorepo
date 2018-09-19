@@ -8,16 +8,16 @@ import { ROUTE_ERROR } from '../../Constants/app/app.constants';
 
 import './styles.scss';
 
-const AsyncHome = props => (<Async componentProps={props} load={import('Modules/Home/Home.component' /* webpackChunkName: "home" */)} />);
+const AsyncHome = props => (<Async componentProps={props} load={import('../Modules/Home/Home.component' /* webpackChunkName: "home" */)} />);
 const AsyncErrorPage = props => (
   <Async
     componentProps={props}
-    load={import('Modules/ErrorPage/ErrorPage.component' /* webpackChunkName: "errorpage" */)}
+    load={import('../Modules/ErrorPage/ErrorPage.component' /* webpackChunkName: "errorpage" */)}
   />
 );
 const AsyncMemePage = () => (
   <Async
-    load={import('Modules/MemePage/MemePage.component'/* webpackChunkName: "memepage" */)}
+    load={import('../Modules/MemePage/MemePage.component'/* webpackChunkName: "memepage" */)}
   />
 );
 

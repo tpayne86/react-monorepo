@@ -1,14 +1,13 @@
 /* eslint-env node */
-const webpack = require('webpack'); // eslint-disable-line
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin'); // eslint-disable-line
-const appPaths = require('./webpack.paths');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const appModule = require('./webpack.modules');
 const devServer = require('./webpack.devserver');
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 
-module.exports = (env, devServerConfig) => ({
+module.exports = env => ({
   module: appModule(env).module,
   plugins: [
     new webpack.DefinePlugin({
@@ -23,10 +22,10 @@ module.exports = (env, devServerConfig) => ({
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      title: appPaths.appTitle,
+      title: env.appConfig.appHTMLTitle,
       filename: 'index.html',
-      template: './src/index.ejs',
-      publicPath: appPaths.publicPath,
+      template: `./${env.appConfig.folderSrc}/src/index.ejs`,
+      publicPath: env.appConfig.publicPath,
       inject: true,
     }),
     new webpack.LoaderOptionsPlugin({
@@ -39,5 +38,5 @@ module.exports = (env, devServerConfig) => ({
     }),
     new ErrorOverlayPlugin(),
   ],
-  devServer: devServer(appPaths.distPath, devServerConfig, env),
+  devServer: devServer(env),
 });

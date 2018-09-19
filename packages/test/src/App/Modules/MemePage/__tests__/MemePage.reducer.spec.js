@@ -1,4 +1,4 @@
-import * as objectUtils from '@healthifyme/utilities/dist/objects';
+import * as functionUtils from '@healthifyme/utilities/dist/functions';
 import memePageReducer from '../MemePage.reducer';
 
 
@@ -30,7 +30,7 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(objectUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: true,
@@ -49,14 +49,14 @@ describe('unit test cases for MemePageReducer.js', () => {
           error: null,
         },
       });
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalled();
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledWith(
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalled();
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledWith(
         defaultState,
         'pupularMemes',
         { loading: true },
       );
-      objectUtils.simpleApiStoreStates.mockRestore();
+      functionUtils.simpleApiStoreStates.mockRestore();
     });
   });
   describe('unit test cases for memePageReducer FETCH_MEMES_SUCCESS action', () => {
@@ -70,7 +70,7 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(objectUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,
@@ -90,14 +90,14 @@ describe('unit test cases for MemePageReducer.js', () => {
           error: null,
         },
       });
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalled();
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledWith(
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalled();
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledWith(
         defaultState,
         'pupularMemes',
         { loading: false, data: [1, 2, 3], error: null },
       );
-      objectUtils.simpleApiStoreStates.mockRestore();
+      functionUtils.simpleApiStoreStates.mockRestore();
     });
   });
   describe('unit test cases for memePageReducer FETCH_MEMES_FAILURE action', () => {
@@ -111,7 +111,7 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(objectUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,
@@ -131,14 +131,14 @@ describe('unit test cases for MemePageReducer.js', () => {
           error: 'err',
         },
       });
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalled();
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledWith(
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalled();
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledWith(
         defaultState,
         'pupularMemes',
         { loading: false, data: [], error: 'err' },
       );
-      objectUtils.simpleApiStoreStates.mockRestore();
+      functionUtils.simpleApiStoreStates.mockRestore();
     });
   });
   describe('unit test cases for memePageReducer FETCH_MEMES_CLEAR action', () => {
@@ -152,7 +152,7 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(objectUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,
@@ -172,14 +172,14 @@ describe('unit test cases for MemePageReducer.js', () => {
           error: null,
         },
       });
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalled();
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
-      expect(objectUtils.simpleApiStoreStates).toHaveBeenCalledWith(
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalled();
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledTimes(1);
+      expect(functionUtils.simpleApiStoreStates).toHaveBeenCalledWith(
         defaultState,
         'pupularMemes',
         { loading: false, data: [], error: null },
       );
-      objectUtils.simpleApiStoreStates.mockRestore();
+      functionUtils.simpleApiStoreStates.mockRestore();
     });
   });
 });

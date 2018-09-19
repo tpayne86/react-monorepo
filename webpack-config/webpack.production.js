@@ -1,12 +1,12 @@
 /* eslint-env node */
-const webpack = require('webpack'); // eslint-disable-line
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line
-const CleanWebpackPlugin = require('clean-webpack-plugin'); // eslint-disable-line
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // eslint-disable-line
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin'); // eslint-disable-line
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // eslint-disable-line
-const appPaths = require('./webpack.paths');
-const appModule = require('./webpack.modules'); // eslint-disable-line
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
+const appModule = require('./webpack.modules');
 
 module.exports = env => ({
   module: appModule(env).module,
@@ -27,9 +27,9 @@ module.exports = env => ({
       },
     }),
     new HtmlWebpackPlugin({
-      title: appPaths.appTitle,
+      title: env.appConfig.appHTMLTitle,
       filename: 'index.html',
-      template: './src/index.ejs',
+      template: `./${env.appConfig.folderSrc}/src/index.ejs`,
       minify: {
         removeComments: true,
         collapseWhitespace: false,
@@ -42,12 +42,17 @@ module.exports = env => ({
         minifyCSS: true,
         minifyURLs: true,
       },
-      publicPath: appPaths.publicPath,
+      publicPath: env.appConfig.publicPath,
       inject: true,
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HashedModuleIdsPlugin(),
-    new CleanWebpackPlugin(appPaths.distPath, appPaths.cleanOptions),
+    new CleanWebpackPlugin(`../dist/public/${env.appConfig.folderName}`, {
+      root: path.resolve(__dirname, '../'),
+      exclude: [],
+      verbose: true,
+      dry: false,
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
       allChunks: true,

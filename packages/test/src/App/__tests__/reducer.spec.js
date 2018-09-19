@@ -1,4 +1,4 @@
-import * as objectUtils from '@healthifyme/utilities/dist/objects';
+import * as functionUtils from '@healthifyme/utilities/dist/functions';
 import { userReducer, appReducer } from '../reducer';
 
 describe('Unit Test cases for App/reducer.js', () => {
@@ -24,7 +24,7 @@ describe('Unit Test cases for App/reducer.js', () => {
         simpleAction = {
           type: 'SOMEACTION',
         };
-        spySimpleApiStore = jest.spyOn(objectUtils, 'simpleApiStoreStates');
+        spySimpleApiStore = jest.spyOn(functionUtils, 'simpleApiStoreStates');
       });
       afterAll(() => {
         spySimpleApiStore.destroy();
@@ -123,7 +123,7 @@ describe('Unit Test cases for App/reducer.js', () => {
         simpleAction = {
           type: 'SOMEACTION',
         };
-        spySimpleApiStore = jest.spyOn(objectUtils, 'simpleApiStoreStates');
+        spySimpleApiStore = jest.spyOn(functionUtils, 'simpleApiStoreStates');
       });
       afterAll(() => {
         spySimpleApiStore.destroy();
@@ -223,7 +223,7 @@ describe('Unit Test cases for App/reducer.js', () => {
       simpleAction = {
         type: 'SOMEACTION',
       };
-      spySimpleApiStore = jest.spyOn(objectUtils, 'simpleApiStoreStates');
+      spySimpleApiStore = jest.spyOn(functionUtils, 'simpleApiStoreStates');
     });
     afterAll(() => {
       spySimpleApiStore.destroy();

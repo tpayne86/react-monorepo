@@ -10,7 +10,7 @@
     "start:dev": "yarn dev-server  --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=development",
     "start:stage": "yarn dev-server  --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=staging",
     "start:analyze-speed": "yarn start:dev --env.addons=speedmeasure",
-    "build": "yarn test && webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
+    "build": "webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
     "build:analyze-bundle": "yarn build  --env.addons=bundleanalyzer",
     "build:analyze-buddy": "yarn build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline",

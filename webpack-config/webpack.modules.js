@@ -1,31 +1,32 @@
 /* eslint-env node */
+const path = require('path');
 const AntdScssThemePlugin = require('antd-scss-theme-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const cssnano = require('cssnano');
-const appPaths = require('./webpack.paths');
 
 module.exports = (env) => {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
+  const include = path.resolve(__dirname, '../', `${env.appConfig.folderSrc}/src/`);
   return {
     module: {
       rules: [
         {
-          test: /\.(jsx|js)$/,
+          test: /\.js(x?)$/,
           use: ['source-map-loader'],
           enforce: 'pre',
         },
         {
           enforce: 'pre',
-          test: /\.(jsx|js)$/,
-          include: appPaths.srcPath,
+          test: /\.js(x?)$/,
+          include,
           exclude: /node_modules/,
           loader: 'eslint-loader',
         },
         {
-          test: /\.(jsx|js)$/,
+          test: /\.js(x?)$/,
           exclude: /node_modules/,
-          include: appPaths.srcPath,
+          include,
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
@@ -38,7 +39,7 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                include: appPaths.srcPath,
+                include,
                 sourceMap: false,
               },
             },
@@ -46,7 +47,7 @@ module.exports = (env) => {
               loader: 'postcss-loader',
               options: {
                 sourceMap: false,
-                include: appPaths.srcPath,
+                include,
                 plugins() {
                   return [autoprefixer('last 2 versions', 'ie 10'), cssnano()];
                 },
@@ -62,14 +63,14 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 sourceMap: false,
-                include: appPaths.srcPath,
+                include,
               },
             },
             {
               loader: 'postcss-loader',
               options: {
                 sourceMap: false,
-                include: appPaths.srcPath,
+                include,
                 plugins() {
                   return [autoprefixer('last 2 versions', 'ie 10'), cssnano()];
                 },
@@ -80,8 +81,10 @@ module.exports = (env) => {
               options: {
                 processCssUrls: false,
                 sourceMap: false,
-                include: appPaths.srcPath,
-                data: '@import "~Styles/themes/core";@import "~Styles/themes/anttheme";',
+                include,
+                includePaths: [include],
+                // data: '@import "@healthifyme/test/src/Styles/themes/core";@import "@healthifyme/test/src/Styles/themes/anttheme";',
+                data: '@import "Styles/themes/anttheme.scss";@import "Styles/themes/anttheme.scss";',
               },
             }),
           ],
@@ -95,14 +98,14 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 sourceMap: false,
-                include: appPaths.srcPath,
+                include,
               },
             },
             {
               loader: 'postcss-loader',
               options: {
                 sourceMap: false,
-                include: appPaths.srcPath,
+                include,
                 plugins() {
                   return [autoprefixer('last 2 versions', 'ie 10'), cssnano()];
                 },
@@ -111,7 +114,7 @@ module.exports = (env) => {
             AntdScssThemePlugin.themify({
               loader: 'less-loader',
               options: {
-                include: appPaths.srcPath,
+                include,
                 sourceMap: false,
               },
             }),

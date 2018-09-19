@@ -1,6 +1,13 @@
 {
-  "meme-dashboard": {
-    "html-title": "meme-dashboard",
-    "public-path": "/meme-dashboard"
+  "name":"healthifyme-web-frontend",
+  "author":"hannad rehman",
+  "applications":{
+    "@healthifyme/test":{
+      "publicPath":"/test/",
+      "appHTMLTitle":"test web application",
+      "folderName":"test",
+      "folderSrc":"packages/test",
+      "name": "@healthifyme/test"
+    }
   }
 }

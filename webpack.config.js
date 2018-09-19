@@ -1,23 +1,18 @@
 /* eslint-env node */
-const fs = require('fs');
+const webpackMerge = require('webpack-merge');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const commonConfig = require('./webpack-config/webpack.commons');
+const commongPlugins = require('./webpack-config/webpack.commonPlugins');
+const prodConfig = require('./webpack-config/webpack.production');
+const devConfig = require('./webpack-config/webpack.development');
+const bundleanalyzer = require('./webpack-config/addons/webpack.bundleanalyzer');
+const bundleBuddy = require('./webpack-config/addons/webpack.bundlebuddy');
+const fileReader = require('./webpack-config/readFiles');
 
-const webpackMerge = require('webpack-merge'); // eslint-disable-line
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin'); // eslint-disable-line
-const commonConfig = require('./webopack-config/webpack.commons');
-const commongPlugins = require('./webopack-config/webpack.commonPlugins');
-const prodConfig = require('./webopack-config/webpack.production');
-const devConfig = require('./webopack-config/webpack.development');
-const bundleanalyzer = require('./webopack-config/addons/webpack.bundleanalyzer');
-const bundleBuddy = require('./webopack-config/addons/webpack.bundlebuddy');
-
-const packageJSON = fs.readFileSync('./package.json', 'utf8');
-const appServerConfig = JSON.parse(packageJSON)['app-config'];
-
-module.exports = (env) => {
-  console.log(JSON.stringify(env,null,4)); // eslint-disable-line
+function getWebpackConfig(env) {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
-  const envConfig = isProd ? prodConfig(env) : devConfig(env, appServerConfig);
-  const baseConfig = webpackMerge(commonConfig(env), commongPlugins, envConfig);
+  const envConfig = isProd ? prodConfig(env) : devConfig(env);
+  const baseConfig = webpackMerge(commonConfig(env), commongPlugins(env), envConfig);
 
   let webpackConfig = null;
   switch (env.addons) {
@@ -27,14 +22,36 @@ module.exports = (env) => {
     case 'bundlebuddy':
       webpackConfig = webpackMerge(baseConfig, bundleBuddy);
       break;
-    case 'speedmeasure': {
-      const smp = new SpeedMeasurePlugin();
-      webpackConfig = webpackMerge(baseConfig);
-      webpackConfig = smp.wrap(webpackConfig);
-    }
+    case 'speedmeasure':
+      {
+        const smp = new SpeedMeasurePlugin();
+        webpackConfig = webpackMerge(baseConfig);
+        webpackConfig = smp.wrap(webpackConfig);
+      }
       break;
     default:
       webpackConfig = baseConfig;
   }
   return webpackConfig;
+}
+module.exports = (env) => {
+  console.log(JSON.stringify(env, null, 4));
+  const appManifest = fileReader('manifest.json');
+  const { proxy } = fileReader('package.json');
+  env.appProxy = proxy; //eslint-disable-line
+  env.port = 9010; //eslint-disable-line
+  if (!env.app) {
+    throw new Error('app name is required');
+  }
+  if (env.app !== '*') {
+    const app = appManifest.applications[env.app];
+    if (!app) {
+      throw new Error(`${env.app} is not a valid app`);
+    } else {
+      env.appConfig = app; //eslint-disable-line
+      console.log(`./${env.appConfig.folderSrc}/src/Styles/themes/anttheme.scss`);
+      return getWebpackConfig(env);
+    }
+  }
+  return getWebpackConfig(env);
 };
