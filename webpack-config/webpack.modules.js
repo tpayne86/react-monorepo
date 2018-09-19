@@ -83,7 +83,6 @@ module.exports = (env) => {
                 sourceMap: false,
                 include,
                 includePaths: [include],
-                // data: '@import "@healthifyme/test/src/Styles/themes/core";@import "@healthifyme/test/src/Styles/themes/anttheme";',
                 data: '@import "Styles/themes/anttheme.scss";@import "Styles/themes/anttheme.scss";',
               },
             }),

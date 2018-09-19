@@ -35,11 +35,10 @@ function getWebpackConfig(env) {
   return webpackConfig;
 }
 module.exports = (env) => {
-  console.log(JSON.stringify(env, null, 4));
   const appManifest = fileReader('manifest.json');
   const { proxy } = fileReader('package.json');
   env.appProxy = proxy; //eslint-disable-line
-  env.port = 9010; //eslint-disable-line
+  env.port = 9000; //eslint-disable-line
   if (!env.app) {
     throw new Error('app name is required');
   }
@@ -49,9 +48,14 @@ module.exports = (env) => {
       throw new Error(`${env.app} is not a valid app`);
     } else {
       env.appConfig = app; //eslint-disable-line
-      console.log(`./${env.appConfig.folderSrc}/src/Styles/themes/anttheme.scss`);
+      console.log(`
+             ${JSON.stringify(env, null, 4)}
+      `);
       return getWebpackConfig(env);
     }
   }
-  return getWebpackConfig(env);
+  return Object.keys(appManifest.applications).map((app) => {
+    env.appConfig = appManifest.applications[app]; //eslint-disable-line
+    return getWebpackConfig(env);
+  });
 };

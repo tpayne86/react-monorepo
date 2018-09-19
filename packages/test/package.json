@@ -6,14 +6,6 @@
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {
-    "start": "yarn start:dev",
-    "start:dev": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=development",
-    "start:stage": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=staging",
-    "start:analyze-speed": "yarn start:dev --env.addons=speedmeasure",
-    "build": "webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
-    "build:analyze-bundle": "yarn build  --env.addons=bundleanalyzer",
-    "build:analyze-buddy": "yarn build --env.addons=bundlebuddy",
-    "dev-server": "webpack-dev-server --inline --open",
     "test:watch": "yarn test --watchAll",
     "test": "export BABEL_ENV=test&&NODE_ENV=test&& jest",
     "profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json"
@@ -33,14 +25,5 @@
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
-  },
-  "app-config": {
-    "port": 9000,
-    "proxy": {
-      "development": "http://localhost:3000",
-      "staging": "http://x123healthifyme.com"
-    },
-    "public-path":"/app-test/",
-    "app-title":"React application"
   }
 }

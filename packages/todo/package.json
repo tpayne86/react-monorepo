@@ -1,0 +1,24 @@
+{
+  "name": "@healthifyme/todo",
+  "version": "1.2.0",
+  "description": "todo dashboard implements yarn workspaces and lerna project",
+  "main": "index.js",
+  "author": "hannad rehman",
+  "license": "MIT",
+  "scripts": {
+    "test:watch": "yarn test --watchAll",
+    "test": "export BABEL_ENV=test&&NODE_ENV=test&& jest",
+    "profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json"
+  },
+  "dependencies": {
+    "@healthifyme/components": "^1.1.3",
+    "@healthifyme/elements": "^1.1.3",
+    "@healthifyme/utilities": "*",
+    "@healthifyme/styles": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0"
+  }
+}
