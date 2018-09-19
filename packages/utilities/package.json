@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@healthifyme/utilities",
   "version": "1.1.3",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",

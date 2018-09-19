@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@healthifyme/components",
   "version": "1.1.3",
   "description": "a repository for react common components. may or may not be dependent on elements",
