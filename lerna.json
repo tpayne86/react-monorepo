@@ -11,6 +11,7 @@
         "feature/*",
         "feat/*",
         "bugfix/*",
+        "hotfix/*",
         "improvement/*",
         "improv/*"
       ]

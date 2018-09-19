@@ -14,14 +14,10 @@
     "start:lint:cluster": "nodemon ./src/cluster.js --exec 'yarn lint && node' ",
     "start:no-lint": "nodemon ./src/index.js",
     "build": "node build.js",
-    "test:watch": "yarn test -- --watchAll",
-    "test": "echo jest",
     "lint": "esw ./src/"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0",
     "nodemon": "*"
   },
   "dependencies": {
@@ -31,32 +27,5 @@
     "http-proxy-middleware": "^0.19.0",
     "morgan": "^1.9.0",
     "request": "^2.88.0"
-  },
-  "jest": {
-    "verbose": true,
-    "transform": {
-      "^.+\\.js?$": "babel-jest"
-    },
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "modulePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text"
-    ]
   }
 }

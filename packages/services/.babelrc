@@ -1,0 +1,33 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "modules": false, "useBuiltIns": "usage" }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-modules-commonjs"
+  ],
+  "env": {
+    "test": {
+      "presets": [["@babel/preset-env"]],
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties"
+      ]
+    },
+    "development": {
+      "presets": [
+        ["@babel/preset-env", { "modules": false, "useBuiltIns": "usage" }]
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-transform-modules-commonjs"
+      ]
+    }
+  }
+}

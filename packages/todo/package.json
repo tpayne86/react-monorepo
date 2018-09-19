@@ -7,15 +7,13 @@
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {
-    "test:watch": "yarn test --watchAll",
-    "test": "export BABEL_ENV=test&&NODE_ENV=test&& jest",
-    "profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json"
   },
   "dependencies": {
     "@healthifyme/components": "^2.0.1",
     "@healthifyme/elements": "^2.0.0",
     "@healthifyme/styles": "^2.0.0",
-    "@healthifyme/utilities": "^2.0.1"
+    "@healthifyme/utilities": "^2.0.1",
+    "@healthifyme/services": "*"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
