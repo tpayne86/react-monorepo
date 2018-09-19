@@ -1,25 +1,17 @@
 {
   "private": true,
   "name": "@healthifyme/memes",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "meme dashboard implements yarn workspaces and lerna project",
   "main": "index.js",
   "author": "hannad rehman",
   "license": "MIT",
-  "scripts": {
-    "test:watch": "yarn test --watchAll",
-    "test": "export BABEL_ENV=test&&NODE_ENV=test&& jest"
-  },
+  "scripts": {},
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "@healthifyme/components": "^2.0.1",
-    "@healthifyme/elements": "^2.0.0",
+    "@healthifyme/components": "^2.0.2",
+    "@healthifyme/elements": "^2.0.1",
+    "@healthifyme/services": "^1.0.1",
     "@healthifyme/styles": "^2.0.0",
-    "@healthifyme/utilities": "^2.0.1"
-  },
-  "devDependencies": {
-    "eslint": "^5.5.0",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0"
+    "@healthifyme/utilities": "^2.0.2"
   }
 }

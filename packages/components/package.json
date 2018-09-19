@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/components",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "a repository for react common components. may or may not be dependent on elements",
   "main": "dist/index.js",
   "author": "hannad rehman",
@@ -14,8 +14,8 @@
     "env:prod": "export NODE_ENV=production"
   },
   "dependencies": {
-    "@healthifyme/constants": "^2.0.0",
-    "@healthifyme/elements": "^2.0.0"
+    "@healthifyme/constants": "^2.0.1",
+    "@healthifyme/elements": "^2.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
@@ -23,9 +23,6 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "eslint": "^5.5.0",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0"
+    "@babel/cli": "7.0.0"
   }
 }

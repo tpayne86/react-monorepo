@@ -29,11 +29,12 @@ const jestConfig = {
     '<rootDir>/node_modules/',
   ],
   coveragePathIgnorePatterns: [
-    '<rootDir>/node_modules/',
+    '<rootDir>/node_modules/(?!(antd))',
   ],
   modulePathIgnorePatterns: [
     '/node_modules/(?!antd)',
     '<rootDir>/node_modules/',
+    '<rootDir>/packages/elements',
   ],
   collectCoverage: true,
   coverageReporters: [

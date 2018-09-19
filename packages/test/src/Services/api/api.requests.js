@@ -1,4 +1,4 @@
-import { httpGet, httpPost } from './api.requestmaker';
+import { httpGet, httpPost } from '@healthifyme/services/dist/api/api.requestmaker';
 import {
   AUTOCOMPLETE_USERS,
   USER_PROFILE,

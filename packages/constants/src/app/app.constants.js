@@ -1,8 +1,5 @@
 /* global process:true */
 const { API_KEY, PROXY_USER, PROXY_USER_META } = process.env;
-export const DEV_ORIGIN = 'http://localhost:9000';
-export const DEV_NAVI_HEALTH_ORIGIN = 'http://localhost:8000';
-export const STAGE_ORIGIN = 'https://x123healthifyme.com';
 export const STAGE_ACCESS = window.atob(API_KEY || '');
 export const USER_ONE_NAME = window.atob(PROXY_USER || '');
 export const USER_ONE_PAS = window.atob(PROXY_USER_META || '');
@@ -41,4 +38,11 @@ export const USER_ROLES = {
   USER: 'user',
   ADMIN: 'admin',
   EXPERT: 'expert',
+};
+export const ALERT_TYPES = {
+  DANGER: 'DANGER',
+  WARNING: 'WARNING',
+  INFO: 'INFO',
+  SUCCESS: 'SUCCESS',
+  DISABLE: 'DISABLE',
 };
