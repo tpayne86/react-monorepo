@@ -8,13 +8,57 @@ const devConfig = require('./webpack-config/webpack.development');
 const bundleanalyzer = require('./webpack-config/addons/webpack.bundleanalyzer');
 const bundleBuddy = require('./webpack-config/addons/webpack.bundlebuddy');
 const fileReader = require('./webpack-config/readFiles');
+/**
+ * get app manifest to read all the registered apps.
+ * get proxy server urls for staging and dev servers.
+ * set portal port.
+ */
+const appManifest = fileReader('manifest.json');
+const { proxy } = fileReader('package.json');
+const portalPort = 9000;
+
+const configureWebpack = (env) => {
+  env.appProxy = proxy; //eslint-disable-line
+  env.port = portalPort; //eslint-disable-line
+  if (!env.app) {
+    throw new Error('app name is required');
+  }
+  if (env.app !== '*') {
+    // search for app name in manifest.
+    const app = appManifest.applications[env.app];
+    if (!app) {
+      throw new Error(`${env.app} is not a valid app`);
+    } else {
+      env.appConfig = app; //eslint-disable-line
+      // eslint-disable-next-line
+      console.log(`
+             ${JSON.stringify(env, null, 4)}
+      `);
+      return getWebpackConfig(env); //eslint-disable-line
+    }
+  }
+  /**
+   * if runnig for all apps. use webpack config array syntax.
+   * which starts each build in a new thread
+   */
+  return Object.keys(appManifest.applications).map((app) => {
+    env.appConfig = appManifest.applications[app]; //eslint-disable-line
+    return getWebpackConfig(env); //eslint-disable-line
+  });
+};
 
 function getWebpackConfig(env) {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
   const envConfig = isProd ? prodConfig(env) : devConfig(env);
-  const baseConfig = webpackMerge(commonConfig(env), commongPlugins(env), envConfig);
+  const baseConfig = webpackMerge(
+    commonConfig(env),
+    commongPlugins(env),
+    envConfig,
+  );
 
   let webpackConfig = null;
+  // confug based on addonds. these addons can add. each time
+  // a new swtich case should be added.
   switch (env.addons) {
     case 'bundleanalyzer':
       webpackConfig = webpackMerge(baseConfig, bundleanalyzer);
@@ -34,28 +78,4 @@ function getWebpackConfig(env) {
   }
   return webpackConfig;
 }
-module.exports = (env) => {
-  const appManifest = fileReader('manifest.json');
-  const { proxy } = fileReader('package.json');
-  env.appProxy = proxy; //eslint-disable-line
-  env.port = 9000; //eslint-disable-line
-  if (!env.app) {
-    throw new Error('app name is required');
-  }
-  if (env.app !== '*') {
-    const app = appManifest.applications[env.app];
-    if (!app) {
-      throw new Error(`${env.app} is not a valid app`);
-    } else {
-      env.appConfig = app; //eslint-disable-line
-      console.log(`
-             ${JSON.stringify(env, null, 4)}
-      `);
-      return getWebpackConfig(env);
-    }
-  }
-  return Object.keys(appManifest.applications).map((app) => {
-    env.appConfig = appManifest.applications[app]; //eslint-disable-line
-    return getWebpackConfig(env);
-  });
-};
+module.exports = configureWebpack;

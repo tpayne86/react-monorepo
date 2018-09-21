@@ -5,12 +5,12 @@
     "packages/*"
   ],
   "scripts": {
+    "app:init":"yarn config set workspaces-experimental true",
     "app:bootstrap": "lerna bootstrap",
     "app:clean": "lerna clean",
     "app:list": "lerna ls",
     "app:changes": "lerna changed",
     "app:diff": "lerna diff",
-    "app:test": "yarn execute:parallel test",
     "app:build": "yarn build:server && yarn build:commons && yarn wp:build --env.app=*",
     "node:add-module": "lerna add --scope=",
     "node:outdated": "yarn outdated",
@@ -35,9 +35,9 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline --open",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "jest":"jest",
+    "jest": "jest",
     "jest:test": "yarn jest",
-    "jest:test-watch":"yarn test --watchAll"
+    "jest:test-watch": "yarn test --watchAll"
   },
   "proxy": {
     "development": "http://localhost:3000",
@@ -111,12 +111,12 @@
     "style-loader": "^0.23.0",
     "system-bell-webpack-plugin": "*",
     "uglifyjs-webpack-plugin": "^2.0.0",
+    "webpack": "4.19.1",
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-bundle-tracker": "^0.3.0",
+    "webpack-cli": "3.1.0",
+    "webpack-dev-server": "3.1.8",
     "webpack-manifest-plugin": "^2.0.3",
-    "webpack-merge": "^4.1.4",
-    "webpack": "4.19.1",
-    "webpack-cli":"3.1.0",
-    "webpack-dev-server" : "3.1.8"
+    "webpack-merge": "^4.1.4"
   }
 }
