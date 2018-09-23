@@ -6,7 +6,7 @@ console.log(`
   PORTAL_PORT: ${NODE_ENV_PORT}
 `);
 
-module.exports = {
+export {
   NODE_ENV,
   NODE_ENV_PORT,
 };

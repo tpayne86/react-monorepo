@@ -8,13 +8,19 @@
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {
-    "start": "export NODE_ENV=development&& export NODE_ENV_PORT=3000&& yarn start:lint",
-    "start:cluster": "export NODE_ENV=development&& export NODE_ENV_PORT=3000&& yarn start:lint:cluster",
-    "start:lint": "nodemon ./src/index.js --exec 'yarn lint && node' ",
+    "start": "yarn env:dev && yarn env:port && yarn start:lint",
+    "start:cluster": "yarn env:dev&& yarn env:port&& yarn start:lint:cluster",
+    "start:lint": "nodemon --exec 'babel-node ./src/index.js && yarn lint && node' ",
     "start:lint:cluster": "nodemon ./src/cluster.js --exec 'yarn lint && node' ",
-    "start:no-lint": "nodemon ./src/index.js",
-    "build": "node build.js",
-    "lint": "esw ./src/"
+    "start:no-lint": "nodemon --exec babel-node ./src/index.js",
+    "build": "yarn clean && yarn env:prod && yarn transpile && node ./build",
+    "lint": "esw ./src/",
+    "env:port":"3000",
+    "env:dev":"export NODE_ENV=development",
+    "env:prod":"export NODE_ENV=production",
+    "clean":"rm -rf ../../dist",
+    "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
+
   },
   "devDependencies": {
     "eslint": "^5.5.0",
