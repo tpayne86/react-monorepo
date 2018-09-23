@@ -60,3 +60,4 @@ Thumbs.db
 .vscode
 *.sublime-project
 *.sublime-workspaceg
+coverage/

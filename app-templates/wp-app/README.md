@@ -12,7 +12,7 @@ a complete react project with :
 6. react hot module replacement
 7. code spliting
 8. code organisation based on "Feature first approach"
-9. webpack 4.
+9. webpack.
 
 **this project requires**
 
@@ -22,20 +22,18 @@ a complete react project with :
 
 ## How to set up? Install
 
+if running the project for the first time . got to project root and
+`yarn app:clean`
+`yarn app:bootstrap`
+
 this app is where all front end code will live. in most of the cases it will be a single page application
 build with react,redux,sagas, and build by webpack.
 
-- install node modules and run client applicarion
-- hit `npm install`
-- use `vs code` for best developer experience.
-- download `EditorConfig for VS Code`
-- download `EsLint` for vs code
-- download `Prettier - code formatter` for vs code.
-- you try other code editors also. as long as they support the above mentioned pluguns.
 
 ### start
 
-after installing all modules hit `npm start`
+after bootstraping the project in the root 
+`yarn wp:start --env.app=@healthifyme/appname`
 this will run the applications in `watch` mode. meaning any file change will be reacted and updated`
 in the browser. (Hot module replacement)
 
@@ -43,10 +41,11 @@ in the browser. (Hot module replacement)
 
 to build for deployment/production.
 
-- hit `npm run build`
+- hit `yarn wp:build --env.app=@healthifyme/appname`
 
-doing this will copy build diles to dist folder in root `dist/public` folder in the application root which will contain a full stack build
-`nodejs` application redy to deploy with its own `package.json` install node modules and run the app.
+doing this will initate webpack build, and transpile the file to dist folder in root `dist/public/appname` folder in the application root which will contain a full stack build
+`nodejs` application ready to deploy with its own `package.json`.
+ install node modules and run the app.
 
 ### Unit Testing
 
@@ -62,32 +61,17 @@ tests can be run in 2 modes.
 
 **npm scripts**
 
-- `npm run test:watch` runs the tests in watch mode. it provides some cli options which you can play with
-- `npm run test` runs tests without watch mode. these are simplte run to completion tests.
+in the root of the project.
+- `yarn test packages/foldername --watchAll` runs the tests in watch mode. it provides some cli options which you can play with
+- `yarn test packages/foldername` runs tests without watch mode. these are simplte run to completion tests.
 
 **important**
 to run the built application it needs following environment variables
 
 1. `NODE_ENV`='production'
-2. `NODE_ENV_PORT`='3000' or any available port
 
 ## npm scripts.
 
-```
-"scripts": {
-    "start": "npm run start:dev",                                                                                                           # starts project  in dev mode
-    "start:dev": "npm run dev-server --   --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=http://localhost:8000",          # starts project in dev with dev env vaiables and dev proxy origin
-    "start:stage": "npm run dev-server --  --mode development --env.NODE_ENV=development --env.PROXY_ORIGIN=https://locahost:9001",         # starts project in dev and proxies to stage env
-    "start:analyze-speed": "npm run start:dev -- --env.addons=speedmeasure",                                                                # starts project in dev with webpack speed analyzer plugin
-    "build": "npm run test && webpack --optimize-minimize --mode production --env.NODE_ENV=production",                 # build project for production
-    "build:analyze-bundle": "npm run build -- --env.addons=bundleanalyzer",                                                                 # build project with webpack bundle analyzer plugin
-    "build:analyze-buddy": "npm run build -- --env.addons=bundlebuddy",                                                                     # builds for production with webpack bundlebuddy plugin
-    "dev-server": "webpack-dev-server --inline",                                                                                            # starts webpack dev server to serve the app.
-    "test:watch": "npm run test -- --watchAll",                                                                                             # runs jest test runner in watch mode.
-    "test": "export NODE_ENV=test&& jest",                                                                                                  # starts jest test runner
-    "profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json"                                             # generates webpack build profile
-  },
-```
 
 ## under the hood
 
@@ -96,9 +80,7 @@ to run the built application it needs following environment variables
 - [Redux](https://github.com/reactjs/redux)
 - [Sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
 - [React Router v4](https://github.com/reactjs/react-router)
-- [Axios](https://github.com/axios/axios)
 - [AntD with scss](https://ant.design/)
-- [Webpack 4](https://github.com/webpack/webpack) with code splitting
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [Jest](https://jestjs.io/)
 - [Enzyme](https://airbnb.io/enzyme/)
@@ -118,9 +100,6 @@ its best to use vs code with the following plugins installed.
 
 ```
 .
-├── /mocks/                    # This folder contains some mocks for jest like api,css modules etc
-├── /build-config/             # webpack config divided into types of env is placed here
-├── /coverage/                 # contains a small application wich shows coverage generated by jest
 ├── /node_module/              # contains all dependencies modules
 ├── /src/                      # contains the actual source code
 ├── /.babelrc                  # babel configuration and env specific plugins are kept here
@@ -130,11 +109,9 @@ its best to use vs code with the following plugins installed.
 ├── /.gitignore                # ignore files to git
 ├── /.package.json             # dependencies for client app
 ├── /.package-lock.json        # dependencies lock
-├── /.webpack.config.js        # root config for webpack which will import all other configurations.
 ├── /README.md                 # instructions and help
 ├── /LICENSE                   # license details
 ├── /CHANGELOG.md              # all changes mentioned
-├── /jsconfig.js               # contains paths for vs code import resolve
 ```
 
 **src folder**

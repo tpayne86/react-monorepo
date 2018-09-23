@@ -21,7 +21,6 @@ module.exports = (env) => {
       ],
     },
     target: 'web',
-
   };
   if (!isProd) {
     config.entry.unshift('react-hot-loader/patch');

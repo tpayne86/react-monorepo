@@ -23,7 +23,7 @@ class Home extends React.Component {
           <h1>Do you want to see a very bad grid of original Memes ?</h1>
           <img src="https://i.kym-cdn.com/photos/images/original/000/210/119/9b3.png" alt="meme" />
           <h1>
-            <Link href="meme" to="meme">click Meme hannad rehman</Link>
+            <Link href="meme" to="meme">click Meme rehman</Link>
           </h1>
         </section>
       </div>
