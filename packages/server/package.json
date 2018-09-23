@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/server",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "web server for healthifyme front end applications",
   "main": "index.js",
   "repository": "none",
@@ -15,12 +15,11 @@
     "start:no-lint": "nodemon --exec babel-node ./src/index.js",
     "build": "yarn clean && yarn env:prod && yarn transpile && node ./build",
     "lint": "esw ./src/",
-    "env:port":"3000",
-    "env:dev":"export NODE_ENV=development",
-    "env:prod":"export NODE_ENV=production",
-    "clean":"rm -rf ../../dist",
+    "env:port": "3000",
+    "env:dev": "export NODE_ENV=development",
+    "env:prod": "export NODE_ENV=production",
+    "clean": "rm -rf ../../dist",
     "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
-
   },
   "devDependencies": {
     "eslint": "^5.5.0",
