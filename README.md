@@ -1,4 +1,4 @@
-# NodeJS monorepo
+# ReactJs monorepo
 
 # objective
 Splitting up large codebases into separate independently versioned packages is extremely useful for code sharing. However, making changes across many repositories is messy and difficult to track, and testing across repositories gets complicated really fast.
@@ -20,6 +20,13 @@ To solve these (and many other) problems, some projects will organize their code
 - Can't npm install modules directly from GitHub
 - ???
 
+# plugins and tools 
+
+- use `vs code` for best developer experience.
+- download `EditorConfig for VS Code`
+- download `EsLint` for vs code
+- download `Prettier - code formatter` for vs code.
+- you try other code editors also. as long as they support the above mentioned pluguns.
 
 # under the hood.
 

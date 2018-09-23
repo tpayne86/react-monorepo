@@ -1,14 +1,14 @@
-const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
-const helmet = require('helmet');
-const path = require('path');
+import express from 'express';
+import morgan from 'morgan';
+import compression from 'compression';
+import helmet from 'helmet';
+import path from 'path';
 
-const { NODE_ENV, NODE_ENV_PORT } = require('./config');
-const proxies = require('./proxy');
-const staticRouter = require('./routes');
-const { serverListener } = require('./utility/listener');
-const api = require('./api');
+import { NODE_ENV, NODE_ENV_PORT } from './config';
+import { apiProxy, staticProxy } from './proxy';
+import staticRouter from './routes';
+import { serverListener } from './utility/listener';
+import api from './api';
 
 const appConfig = (app) => {
   app.use('/', express.static(path.resolve(__dirname, './public')));
@@ -23,8 +23,8 @@ const appRroutes = (app) => {
 const appProxy = (app) => {
   // proxy all apis to localhost if node env is dev.
   if (NODE_ENV === 'development') {
-    app.use('/api', proxies.apiProxy);
-    app.use('/static', proxies.staticProxy);
+    app.use('/api', apiProxy);
+    app.use('/static', staticProxy);
   }
 };
 const bootstrapExpressApp = () => {

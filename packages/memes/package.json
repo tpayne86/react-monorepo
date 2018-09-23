@@ -1,16 +1,16 @@
 {
   "private": true,
   "name": "@healthifyme/memes",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "meme dashboard implements yarn workspaces and lerna project",
   "main": "index.js",
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@healthifyme/components": "^2.0.2",
-    "@healthifyme/elements": "^2.0.1",
-    "@healthifyme/styles": "^2.0.0",
-    "@healthifyme/utilities": "^2.0.4"
+    "@healthifyme/components": "^2.0.3",
+    "@healthifyme/elements": "^2.0.2",
+    "@healthifyme/styles": "^2.0.1",
+    "@healthifyme/utilities": "^2.0.5"
   }
 }

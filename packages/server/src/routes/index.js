@@ -1,13 +1,13 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const rootRouter = require('./root');
-const memeDashboard = require('./meme-dashboard');
-const todoApp = require('./todo-app');
+import rootRouter from './root';
+import memeDashboard from './memes';
+import todoApp from './todo';
 
 const router = Router();
 
 router.use('/', rootRouter);
-router.use('/meme-dashboard', memeDashboard);
-router.use('/todo-app', todoApp);
+router.use('/memes', memeDashboard);
+router.use('/todo', todoApp);
 
-module.exports = router;
+export default router;

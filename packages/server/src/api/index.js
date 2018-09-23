@@ -1,8 +1,9 @@
-const { Router } = require('express');
-const memeRouter = require('./meme');
+import { Router } from 'express';
+
+import memeRouter from './meme';
 
 const router = Router();
 
 router.use('/', memeRouter);
 
-module.exports = router;
+export default router;

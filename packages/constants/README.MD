@@ -1,0 +1,3 @@
+# Constantss
+
+GLobal constants

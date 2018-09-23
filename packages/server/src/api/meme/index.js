@@ -1,6 +1,6 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const request = require('request');
+import request from 'request';
 
 const router = Router();
 
@@ -8,4 +8,4 @@ router.get('/memes', (req, res) => {
   request('https://api.imgflip.com/get_memes').pipe(res);
 });
 
-module.exports = router;
+export default router;

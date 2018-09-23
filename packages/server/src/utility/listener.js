@@ -1,4 +1,4 @@
-const { NODE_ENV_PORT } = require('../config');
+import { NODE_ENV_PORT } from '../config';
 
 const serverListener = (err) => {
   if (err) {
@@ -8,6 +8,6 @@ const serverListener = (err) => {
   }
 };
 
-module.exports = {
-  serverListener,
+export {
+  serverListener, // eslint-disable-line
 };
