@@ -254,7 +254,7 @@ read documentation [here](https://webpack.js.org/)
 
 `yarn wp:build --env.app=appname`
 
-## build all applications at once for prodiction
+## build all applications at once for production
 
 `yarn app:build`
 
