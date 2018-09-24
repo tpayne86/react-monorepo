@@ -179,13 +179,13 @@ these may also change as per project requirments.
 
 # Tools
 
-## 1.lerna 
+## 1. lerna 
 Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.
 Lerna can also reduce the time and space requirements for numerous copies of packages in development and build environments - normally a downside of dividing a project into many separate NPM package. See the hoist documentation for details.
 
 read documentation [here](https://github.com/lerna/lerna)
 
-## 2.babel
+## 2. babel
 
 Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Here are the main things Babel can do for you:
 Transform syntax
@@ -272,4 +272,4 @@ read documentation [here](https://webpack.js.org/)
 
 ## test and watch package
 
-`yarn test:watcg packages/foldername`
+`yarn test:watch packages/foldername`
