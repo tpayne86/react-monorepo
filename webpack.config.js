@@ -1,4 +1,6 @@
 /* eslint-env node */
+require('dotenv').config()
+
 const webpackMerge = require('webpack-merge');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const commonConfig = require('./webpack-config/webpack.commons');
@@ -8,6 +10,9 @@ const devConfig = require('./webpack-config/webpack.development');
 const bundleanalyzer = require('./webpack-config/addons/webpack.bundleanalyzer');
 const bundleBuddy = require('./webpack-config/addons/webpack.bundlebuddy');
 const fileReader = require('./webpack-config/readFiles');
+
+console.log(process.env);
+
 /**
  * get app manifest to read all the registered apps.
  * get proxy server urls for staging and dev servers.
@@ -18,8 +23,8 @@ const { proxy } = fileReader('package.json');
 const portalPort = 9000;
 
 const configureWebpack = (env) => {
-  env.appProxy = proxy; //eslint-disable-line
-  env.port = portalPort; //eslint-disable-line
+  env.appProxy = proxy;
+  env.port = portalPort;
   if (!env.app) {
     throw new Error('app name is required');
   }
@@ -29,12 +34,12 @@ const configureWebpack = (env) => {
     if (!app) {
       throw new Error(`${env.app} is not a valid app`);
     } else {
-      env.appConfig = app; //eslint-disable-line
+      env.appConfig = app;
       // eslint-disable-next-line
       console.log(`
              ${JSON.stringify(env, null, 4)}
       `);
-      return getWebpackConfig(env); //eslint-disable-line
+      return getWebpackConfig(env);
     }
   }
   /**
@@ -42,8 +47,8 @@ const configureWebpack = (env) => {
    * which starts each build in a new thread
    */
   return Object.keys(appManifest.applications).map((app) => {
-    env.appConfig = appManifest.applications[app]; //eslint-disable-line
-    return getWebpackConfig(env); //eslint-disable-line
+    env.appConfig = appManifest.applications[app];
+    return getWebpackConfig(env);
   });
 };
 
