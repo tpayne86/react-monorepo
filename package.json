@@ -26,7 +26,7 @@
     "test:watch": "yarn test --watchAll",
     "exec": "lerna exec",
     "execute": "lerna run",
-    "execute:parallel": "yarn execute  --parallel",
+    "execute:parallel": "yarn execute  --pallel",
     "wp:start": "yarn wp:dev",
     "wp:dev": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=development",
     "wp:stage": "yarn dev-server --mode=development --env.NODE_ENV=development --env.PROXY_ORIGIN=staging",

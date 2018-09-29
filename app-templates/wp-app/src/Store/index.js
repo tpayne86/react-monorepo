@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createHashHistory } from 'history';
+import { isDev } from '@healthifyme/constants';
 import reducer from './combinedReducer';
 import logger from './logger';
 import rootSaga from '../App/sagas';
@@ -11,7 +12,7 @@ const history = createHashHistory();
 const rootReducer = connectRouter(history)(reducer);
 const middleWares = [sagaMiddleWare, routerMiddleware(history)];
 
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
   middleWares.push(logger);
 }
 
@@ -23,7 +24,7 @@ export default function configureStore() {
   sagaMiddleWare.run(rootSaga);
   /* global module:true */
   /* global process:true */
-  if (process.env.NODE_ENV === 'developmemnt') {
+  if (isDev) {
     if (module.hot) {
       module.hot.accept('./combinedReducer', () => {
               const nextReducer = require('./combinedReducer').default; // eslint-disable-line
