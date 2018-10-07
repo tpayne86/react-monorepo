@@ -47,10 +47,11 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
 1. install [Node.js](https://nodejs.org/en/). 
 2. install [yarn](https://yarnpkg.com/en/) `npm install --global yarn`
 3. install [python 2.7](https://www.python.org/downloads/) which is used by sass compiler. (this may change in future)
-4. install [lerna](https://lernajs.io/) `npm install --global lerna`
+4. install [lerna](https://lernajs.io/) `yarn global add lerna`
 5. go to root of the project and hit `yarn project:init`
-6. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
-7. build all common local packages by `yarn build:all-packages`
+6. install `nodemon` for using nodejs server in development `yarn global add nodemon`
+7. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
+8. build all common local packages by `yarn build:all-packages`
 
 # Scripts
   - **app:bootstrap** - initializes the repo, installs all node modules and links all local dependencies.  
