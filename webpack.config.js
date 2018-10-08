@@ -1,5 +1,4 @@
 /* eslint-env node */
-require('dotenv').config()
 
 const webpackMerge = require('webpack-merge');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
