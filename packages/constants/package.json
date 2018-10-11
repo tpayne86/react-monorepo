@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/constants",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "core constants for through out the application",
   "main": "dist/index.js",
   "scripts": {

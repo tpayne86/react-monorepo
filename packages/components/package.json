@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/components",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "a repository for react common components. may or may not be dependent on elements",
   "main": "dist/index.js",
   "author": "hannad rehman",
@@ -14,8 +14,8 @@
     "env:prod": "export NODE_ENV=production"
   },
   "dependencies": {
-    "@healthifyme/constants": "^2.0.2",
-    "@healthifyme/elements": "^2.0.2"
+    "@healthifyme/constants": "^3.0.0",
+    "@healthifyme/elements": "^3.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
