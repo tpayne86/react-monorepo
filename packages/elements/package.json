@@ -32,6 +32,6 @@
     "react": "^16.4.2"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0"
+    "@babel/cli": "7.1.2"
   }
 }

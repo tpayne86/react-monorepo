@@ -12,7 +12,7 @@
     "env:prod": "export NODE_ENV=production"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0"
+    "@babel/cli": "7.1.2"
   },
   "keywords": [
     "javascript",
