@@ -36,14 +36,15 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline --open",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true"
+    "project:init": "yarn config set workspaces-experimental true",
+    "webpack-defaults": "webpack-defaults"
   },
   "proxy": {
     "development": "http://localhost:3000",
     "staging": "http://x123healthifyme.com"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
     "antd": "^3.9.0",
     "axios": "^0.18.0",
     "connected-react-router": "^4.4.1",
@@ -75,7 +76,7 @@
     "antd-scss-theme-plugin": "^1.0.7",
     "autoprefixer": "^9.1.5",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.8.0",
@@ -111,11 +112,11 @@
     "style-loader": "^0.23.0",
     "system-bell-webpack-plugin": "*",
     "uglifyjs-webpack-plugin": "^2.0.0",
-    "webpack": "4.19.1",
+    "webpack": "^4.19.1",
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-bundle-tracker": "^0.3.0",
-    "webpack-cli": "3.1.0",
-    "webpack-dev-server": "3.1.8",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
     "webpack-manifest-plugin": "^2.0.3",
     "webpack-merge": "^4.1.4"
   }

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/utilities",
-  "version": "2.0.5",
+  "version": "3.0.1",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",
   "main": "index.js",
   "scripts": {
@@ -24,16 +24,14 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/components": "^2.0.3",
-    "@healthifyme/constants": "^2.0.2",
-    "@healthifyme/elements": "^2.0.2",
-    "@healthifyme/test": "^2.0.5"
+    "@healthifyme/components": "^3.0.0",
+    "@healthifyme/constants": "^3.0.0",
+    "@healthifyme/elements": "^3.0.0",
+    "@healthifyme/test": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "eslint": "^5.5.0",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0"
+    "@babel/cli": "7.1.2",
+    "eslint": "^5.5.0"
   },
   "peerDependencies": {
     "axios": "^0.18.0"

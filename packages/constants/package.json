@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/constants",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "core constants for through out the application",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "env:prod": "export NODE_ENV=production"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0"
+    "@babel/cli": "7.1.2"
   },
   "keywords": [
     "javascript",

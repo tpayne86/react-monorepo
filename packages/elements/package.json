@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/elements",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "wrapper over all antd components. all library components should have a wrapper defined here",
   "main": "dist/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/constants": "^2.0.2",
+    "@healthifyme/constants": "^3.0.0",
     "react-asynchronous-component": "^1.0.2"
   },
   "peerDependencies": {
@@ -32,6 +32,6 @@
     "react": "^16.4.2"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0"
+    "@babel/cli": "7.1.2"
   }
 }
