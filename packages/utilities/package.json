@@ -30,10 +30,8 @@
     "@healthifyme/test": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "eslint": "^5.5.0",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0"
+    "@babel/cli": "7.1.2",
+    "eslint": "^5.5.0"
   },
   "peerDependencies": {
     "axios": "^0.18.0"

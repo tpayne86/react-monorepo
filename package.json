@@ -36,7 +36,8 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline --open",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true"
+    "project:init": "yarn config set workspaces-experimental true",
+    "webpack-defaults": "webpack-defaults"
   },
   "proxy": {
     "development": "http://localhost:3000",
@@ -75,7 +76,7 @@
     "antd-scss-theme-plugin": "^1.0.7",
     "autoprefixer": "^9.1.5",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.8.0",
