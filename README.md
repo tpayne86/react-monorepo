@@ -64,8 +64,8 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
   - **app:diff** - shows diff
   - **app:build** - builds all the applications for production in sequence 
       server >> local packages >> webpack apps.
-  - **app:start-commons** - starts common in watch mode.    
-  - **app:start-server** - starts server in watch mode.    
+  - **app:start-commons** - starts common packages in watch mode.    
+  - **app:start-server** - starts nodejs server in watch mode.    
   - **node:add-module** - need to provide app name after this command ex yarn node:add_module @pkg/app.
       this will add a new node module to the packages. and update its package.json with dep name.
   - **node:outdated** - lists down all the outdated node modules.
@@ -73,7 +73,7 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
       **read changelog of modules before doing this** 
   - **git:push** - will do `git push origin branchname` and also increase your app versions. 
       do it always to push the branch. dont do manual push, as it increases the app version.
-  - **build** - execures build command in each package.json
+  - **build** - executes build command in each package.json
   - **build:package** - build a package. need to provide package name ex `yarn build:package @pkg/name`
   - **build:all-packages** - builds all packages by runing build command in each package.json
   - **build:server** - build only server application

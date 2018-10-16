@@ -17,11 +17,11 @@
     "node:outdated": "yarn outdated",
     "node:update-packages": "yarn upgrade",
     "git:push": "lerna version",
-    "build": "yarn execute build",
     "build:package": "yarn build --scope",
     "build:all-packages": "yarn execute build",
     "build:server": "yarn build:package @healthifyme/server",
     "build:commons": "yarn build:all-packages --ignore @healthifyme/server",
+    "build": "yarn execute build",
     "test": "jest",
     "test:watch": "yarn test --watchAll",
     "exec": "lerna exec",
@@ -36,8 +36,7 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline --open",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true",
-    "webpack-defaults": "webpack-defaults"
+    "project:init": "yarn config set workspaces-experimental true"
   },
   "proxy": {
     "development": "http://localhost:3000",
