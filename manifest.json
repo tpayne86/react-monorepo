@@ -24,7 +24,7 @@
       "name": "@healthifyme/todo"
     },
     "@healthifyme/hannad": {
-      "publicPath": "/my-test-app",
+      "publicPath": "/my-test-app/",
       "appHTMLTitle:" :"awesome",
       "folderName": "hannad",
       "folderSrc": "packages/hannad",
