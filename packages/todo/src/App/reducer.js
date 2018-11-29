@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import { simpleApiStoreStates } from '@healthifyme/utilities/dist/functions';
+import { simpleApiStoreStates } from '@healthifyme/utilities/lib/generics';
+import { connectRouter } from 'connected-react-router';
 import globalActionNames from './actionNames';
 import modulesReducer from './Modules/Modules.reducer';
 
@@ -41,10 +42,12 @@ const appReducer = (state = defState, actions) => {
       return state;
   }
 };
-const reducer = combineReducers({
+const reducer = history => combineReducers({
   user: userReducer,
   modules: modulesReducer,
   app: appReducer,
+  router: connectRouter(history),
+
 });
 export { userReducer, appReducer };
 export default reducer;

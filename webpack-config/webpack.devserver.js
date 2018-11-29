@@ -7,6 +7,7 @@ module.exports = env => ({
   historyApiFallback: true,
   hot: true,
   overlay: true,
+  openPage: env.publicPath,
   proxy: {
     changeOrigin: true,
     '/(api|apiv2|static)/**': {

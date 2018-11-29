@@ -1,12 +1,13 @@
 /* global process:true */
 const {
-  API_KEY, PROXY_USER, PROXY_USER_META, NODE_ENV,
+  API_KEY, PROXY_USER, PROXY_USER_META, NODE_ENV, PROXY_ORIGIN,
 } = process.env;
 export const STAGE_ACCESS = window.atob(API_KEY || '');
 export const USER_ONE_NAME = window.atob(PROXY_USER || '');
 export const USER_ONE_PAS = window.atob(PROXY_USER_META || '');
 export const isDev = NODE_ENV.trim() === 'development';
 export const isProd = NODE_ENV.trim() === 'production';
+export const PROXY_TO = PROXY_ORIGIN;
 
 export const ROUTE_ERROR = {
   INVALID_ROUTE: 'INVALID_ROUTE',
