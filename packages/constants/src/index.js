@@ -1,9 +1,12 @@
 import * as api from './api/api.endpoints';
 import * as app from './app/app.constants';
-import * as elements from './elements/element.constants';
+import * as components from './components/components.constants';
 
 export {
   api,
   app,
-  elements,
+  components,
 };
+
+// dont import or export anything here. this file will be dicared in future
+// all exports should be done from the folders only

@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@healthifyme/components": "^3.0.0",
-    "@healthifyme/elements": "^3.0.0",
+    "@healthifyme/ui-components": "^3.0.0",
     "@healthifyme/styles": "^3.0.0",
     "@healthifyme/utilities": "^3.0.1"
   }

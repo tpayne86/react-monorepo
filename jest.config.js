@@ -34,7 +34,7 @@ const jestConfig = {
   modulePathIgnorePatterns: [
     '/node_modules/(?!antd)',
     '<rootDir>/node_modules/',
-    '<rootDir>/packages/elements',
+    '<rootDir>/packages/ui-components/src/elements',
   ],
   collectCoverage: true,
   coverageReporters: [

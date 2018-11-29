@@ -2,13 +2,6 @@
   "name": "healthifyme-webpack-manifest-for-web-apps",
   "author": "hannad rehman",
   "applications": {
-    "@healthifyme/test": {
-      "publicPath": "/test/",
-      "appHTMLTitle": "test web application",
-      "folderName": "test",
-      "folderSrc": "packages/test",
-      "name": "@healthifyme/test"
-    },
     "@healthifyme/memes": {
       "publicPath": "/memes/",
       "appHTMLTitle": "Meme dashboard monorepo",
@@ -22,13 +15,6 @@
       "folderName": "todo",
       "folderSrc": "packages/todo",
       "name": "@healthifyme/todo"
-    },
-    "@healthifyme/hannad": {
-      "publicPath": "/my-test-app/",
-      "appHTMLTitle:" :"awesome",
-      "folderName": "hannad",
-      "folderSrc": "packages/hannad",
-      "name": "@healthifyme/hannad"
     }
   }
 }

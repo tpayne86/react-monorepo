@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Header.styles.scss';
 
-import { TextBoxWithButon } from '@healthifyme/elements';
+import TextBoxWithButon from '@healthifyme/ui-components/lib/elements/TextBox/TextBoxWithButton';
 
 const Header = ({ addTodo }) => (
   <div className="theader theader__wrapper padding--lg">

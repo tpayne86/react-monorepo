@@ -15,7 +15,7 @@
     "app:start-commons": "yarn execute:parallel  watch --ignore @healthifyme/server",
     "node:add-module": "lerna add --scope=",
     "node:outdated": "yarn outdated",
-    "node:update-packages": "yarn upgrade",
+    "node:update": "yarn upgrade",
     "git:push": "lerna version",
     "build:package": "yarn build --scope",
     "build:all-packages": "yarn execute build",
@@ -34,10 +34,9 @@
     "wp:build": "webpack --optimize-minimize --mode=production --env.NODE_ENV=production",
     "wp:build:analyze-bundle": "yarn wp:build  --env.addons=bundleanalyzer",
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
-    "dev-server": "webpack-dev-server --inline --open",
+    "dev-server": "webpack-dev-server --inline",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true",
-    "webpack-defaults": "webpack-defaults"
+    "project:init": "yarn config set workspaces-experimental true"
   },
   "proxy": {
     "development": "http://localhost:3000",
@@ -60,8 +59,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
-    "redux-saga": "^0.16.0",
-    "regenerator-runtime": "^0.12.1"
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -82,7 +80,7 @@
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "bundle-buddy-webpack-plugin": "^0.3.0",
-    "clean-webpack-plugin": "^0.1.19",
+    "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.0",
     "enzyme": "^3.6.0",
@@ -115,7 +113,7 @@
     "uglifyjs-webpack-plugin": "^2.0.0",
     "webpack": "^4.19.1",
     "webpack-bundle-analyzer": "^3.0.2",
-    "webpack-bundle-tracker": "^0.3.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8",
     "webpack-manifest-plugin": "^2.0.3",

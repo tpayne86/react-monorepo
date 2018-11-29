@@ -19,6 +19,9 @@ module.exports = (env) => {
         'node_modules',
         `./${env.appConfig.folderSrc}`,
       ],
+      alias: {
+        ROOT: path.resolve(__dirname, '../'),
+      },
     },
     target: 'web',
   };
