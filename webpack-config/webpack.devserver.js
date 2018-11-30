@@ -3,7 +3,7 @@
 module.exports = env => ({
   contentBase: `../dist/public/${env.appConfig.folderName}`,
   compress: true,
-  port: env.port,
+  port: env.DEVSERVER_PORT,
   historyApiFallback: true,
   hot: true,
   overlay: true,
@@ -11,7 +11,7 @@ module.exports = env => ({
   proxy: {
     changeOrigin: true,
     '/(api|apiv2|static)/**': {
-      target: env.PROXY_ORIGIN.trim() === 'development' ? env.appProxy.development : env.appProxy.staging,
+      target: env.PROXY_URL,
       secure: false,
       changeOrigin: true,
     },

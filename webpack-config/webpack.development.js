@@ -14,9 +14,9 @@ module.exports = env => ({
       'process.env': {
         NODE_ENV: JSON.stringify(env.NODE_ENV),
         PROXY_ORIGIN: JSON.stringify(env.PROXY_ORIGIN),
-        API_KEY: JSON.stringify('dXNlcm5hbWU9cm9zaGluaUBoZWFsdGhpZnltZS5jb20mYXBpX2tleT02MTM0YmQyYTUyM2I4OWJjMDA0ODJmODZhYWIxZmQzZjFkZjMyMjM5'),
-        PROXY_USER: JSON.stringify('cm9zaGluaUBoZWFsdGhpZnltZS5jb20'),
-        PROXY_USER_META: JSON.stringify('cGFzc3dvcmQ'),
+        API_KEY: JSON.stringify(env.API_KEY_AUTH),
+        PROXY_USER: JSON.stringify(env.LOGIN_USER_NAME),
+        PROXY_USER_META: JSON.stringify(env.LOGIN_USER_PASSWORD),
       },
     }),
     new webpack.HotModuleReplacementPlugin(),

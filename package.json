@@ -36,11 +36,8 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --inline",
     "wp:profile": "webpack --env.NODE_ENV=production --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true"
-  },
-  "proxy": {
-    "development": "http://localhost:3000",
-    "staging": "http://x123healthifyme.com"
+    "project:init": "yarn config set workspaces-experimental true",
+    "webpack-defaults": "webpack-defaults"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
@@ -83,6 +80,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.0",
+    "dotenv": "^6.1.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.4.0",
     "error-overlay-webpack-plugin": "^0.1.5",
