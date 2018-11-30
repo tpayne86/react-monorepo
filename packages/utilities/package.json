@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/utilities",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "all utility functions, services that can be shared accross the project should be kept here.",
   "main": "lib/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
   "dependencies": {
-    "@healthifyme/constants": "^4.0.0"
+    "@healthifyme/constants": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "7.1.5",
