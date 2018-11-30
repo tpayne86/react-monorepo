@@ -30,7 +30,6 @@
     "execute:parallel": "yarn execute  --parallel",
     "wp:start": "yarn wp:dev",
     "wp:dev": "yarn dev-server --mode=development",
-    "wp:stage": "yarn dev-server --mode=development",
     "wp:analyze-speed": "yarn wp:dev --env.addons=speedmeasure",
     "wp:build": "webpack --optimize-minimize --mode=production",
     "wp:build:analyze-bundle": "yarn wp:build  --env.addons=bundleanalyzer",
