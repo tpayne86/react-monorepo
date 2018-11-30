@@ -1,10 +1,10 @@
-import { NODE_ENV_PORT } from '../config';
+import { PORT } from '../config';
 
 const serverListener = (err) => {
   if (err) {
     throw new Error('express bootstrap failed');
   } else {
-    console.log("application listening at ", NODE_ENV_PORT); //eslint-disable-line
+    console.log("application listening at ", PORT); //eslint-disable-line
   }
 };
 

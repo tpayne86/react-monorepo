@@ -1,21 +1,20 @@
 {
   "private": true,
   "name": "@healthifyme/server",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "web server for healthifyme front end applications",
   "main": "index.js",
   "repository": "none",
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {
-    "start": "export NODE_ENV=development&& export NODE_ENV_PORT=3000 && yarn start:lint",
-    "start:cluster": "export NODE_ENV=development&& export NODE_ENV_PORT=3000&& yarn start:lint:cluster",
+    "start": "yarn start:lint",
+    "start:cluster": "yarn start:lint:cluster",
     "start:lint": "nodemon --exec 'babel-node ./src/index.js && yarn lint && node' ",
     "start:lint:cluster": "nodemon ./src/cluster.js --exec 'yarn lint && node' ",
     "start:no-lint": "nodemon --exec babel-node ./src/index.js",
-    "build": "yarn clean && export NODE_ENV=production && yarn transpile && node ./build",
+    "build": "yarn clean && yarn transpile && node ./build",
     "lint": "esw ./src/",
-    "env:prod": "",
     "clean": "rm -rf ../../dist",
     "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
   },
@@ -25,6 +24,7 @@
   },
   "dependencies": {
     "compression": "^1.7.3",
+    "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
     "http-proxy-middleware": "^0.19.0",
