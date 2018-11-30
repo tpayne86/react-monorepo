@@ -1,12 +1,17 @@
-const { env: { NODE_ENV, NODE_ENV_PORT } } = process;
+
+import DotEnv from 'dotenv';
+
+DotEnv.config();
+
+const { env: { NODE_ENV, PORT } } = process;
 
 // eslint-disable-next-line
 console.log(`
   NODE_ENV: ${NODE_ENV}
-  PORTAL_PORT: ${NODE_ENV_PORT}
+  PORTAL_PORT: ${PORT}
 `);
 
 export {
   NODE_ENV,
-  NODE_ENV_PORT,
+  PORT,
 };

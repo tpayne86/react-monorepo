@@ -3,7 +3,7 @@
   "name": "@healthifyme/memes",
   "version": "4.0.0",
   "description": "meme dashboard implements yarn workspaces and lerna project",
-  "main": "index.js",
+  "main": "src/index.jsx",
   "author": "hannad rehman",
   "license": "MIT",
   "scripts": {},

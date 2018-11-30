@@ -4,11 +4,13 @@ import compression from 'compression';
 import helmet from 'helmet';
 import path from 'path';
 
-import { NODE_ENV, NODE_ENV_PORT } from './config';
+import { NODE_ENV, PORT } from './config';
 import { apiProxy, staticProxy } from './proxy';
 import staticRouter from './routes';
 import { serverListener } from './utility/listener';
+
 import api from './api';
+
 
 const appConfig = (app) => {
   app.use('/', express.static(path.resolve(__dirname, './public')));
@@ -28,12 +30,15 @@ const appProxy = (app) => {
   }
 };
 const bootstrapExpressApp = () => {
+  if (!NODE_ENV) {
+    throw new Error('NODE_ENV is not set in environment variables');
+  }
   const expressApplication = express();
   appConfig(expressApplication);
   appProxy(expressApplication);
   appRroutes(expressApplication);
-  if (NODE_ENV_PORT) {
-    expressApplication.listen(NODE_ENV_PORT, serverListener);
+  if (PORT) {
+    expressApplication.listen(PORT, serverListener);
   } else {
     throw new Error('Portal port invalid');
   }
