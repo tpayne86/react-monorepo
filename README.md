@@ -53,6 +53,16 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
 7. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
 8. build all common local packages by `yarn build:all-packages`
 
+# Environment variables
+  we use dotenv to manage our environment variables. 
+  there are 2 .env files in the entire project
+  1. in the root folder which manages all env variables for webpack based projects. 
+  2. in packages/server which manages all env variables for the node server. 
+  in real world scenerio .env file shoild not be commited. it should be given to the developer seperately
+  and all environments should have their own .env files.
+  some important env variables are NODE_ENV, PORT, etc. 
+  if you need to build the app for production make sure you change the .env with production env variables
+
 # Scripts
   - **app:bootstrap** - initializes the repo, installs all node modules and links all local dependencies.  
       must be called everytime a new packe is added to the project
