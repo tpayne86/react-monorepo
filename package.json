@@ -34,7 +34,7 @@
     "wp:build": "webpack --optimize-minimize --mode=production",
     "wp:build:analyze-bundle": "yarn wp:build  --env.addons=bundleanalyzer",
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
-    "dev-server": "webpack-dev-server --inline",
+    "dev-server": "webpack-dev-server",
     "wp:profile": "webpack --progress -c --profile --json  > stats.json",
     "project:init": "yarn config set workspaces-experimental true",
     "webpack-defaults": "webpack-defaults"
