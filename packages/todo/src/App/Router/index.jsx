@@ -3,7 +3,7 @@ import {
   Switch, withRouter, Redirect, Route,
 } from 'react-router-dom';
 import Async from 'react-asynchronous-component';
-import { ErrorHandler } from '@healthifyme/ui-components/lib/compounds/ErrorHandler';
+import ErrorHandler from '@healthifyme/ui-components/lib/compounds/ErrorHandler';
 import { ROUTE_ERROR } from '../../Constants/app/app.constants';
 
 import './styles.scss';

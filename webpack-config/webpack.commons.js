@@ -8,7 +8,7 @@ module.exports = (env) => {
     entry: [`./${env.appConfig.folderSrc}/src/index.jsx`],
     output: {
       path: path.resolve(__dirname, '../', `dist/public/${env.appConfig.folderName}`),
-      filename: isProd ? 'js/[name].js' : 'js/[name].js',
+      filename: isProd ? 'js/[name].[chunkHash].js' : 'js/[name].js',
       publicPath: env.appConfig.publicPath || '',
       pathinfo: false,
     },
