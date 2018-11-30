@@ -54,7 +54,7 @@ module.exports = env => ({
       dry: false,
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/[name].[chunkHash].css',
       allChunks: true,
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),

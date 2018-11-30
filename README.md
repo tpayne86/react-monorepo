@@ -53,6 +53,16 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
 7. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
 8. build all common local packages by `yarn build:all-packages`
 
+# Environment variables
+  we use dotenv to manage our environment variables. 
+  there are 2 .env files in the entire project
+  1. in the root folder which manages all env variables for webpack based projects. 
+  2. in packages/server which manages all env variables for the node server. 
+  in real world scenerio .env file shoild not be commited. it should be given to the developer seperately
+  and all environments should have their own .env files.
+  some important env variables are NODE_ENV, PORT, etc. 
+  if you need to build the app for production make sure you change the .env with production env variables
+
 # Scripts
   - **app:bootstrap** - initializes the repo, installs all node modules and links all local dependencies.  
       must be called everytime a new packe is added to the project
@@ -64,12 +74,13 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
   - **app:diff** - shows diff
   - **app:build** - builds all the applications for production in sequence 
       server >> local packages >> webpack apps.
+  - **app:test** - starts jest tests for entire repository.
   - **app:start-commons** - starts common packages in watch mode.    
   - **app:start-server** - starts nodejs server in watch mode.    
   - **node:add-module** - need to provide app name after this command ex yarn node:add_module @pkg/app.
       this will add a new node module to the packages. and update its package.json with dep name.
   - **node:outdated** - lists down all the outdated node modules.
-  - **node:update-packages** - will run `yarn upgrade` and updates all node modules.  
+  - **node:update** - will run `yarn upgrade` and updates all node modules.  
       **read changelog of modules before doing this** 
   - **git:push** - will do `git push origin branchname` and also increase your app versions. 
       do it always to push the branch. dont do manual push, as it increases the app version.
@@ -86,7 +97,6 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
   - **execute:parallel** - executes npm command in parllel
   - **wp:start** - starts a webpack project . need to specify app name also ex `yarn wp:start --env.app=appname`
   - **wp:dev** - starts dev proxy webpack build in watch mode
-  - **wp:stage** - starts stage prox webpack build in watch node
   - **wp:build** - builds webpack project in prod mode. need to specify app name ex `yarn wp:build --env.app=appname`
   - **wp:analyze-speed** - adds a webpack plugin to dev build to find speed of webpack execution
   - **wp:build:analyze-bundle** - adds a webpack plugin to prod build bundle analyzer
