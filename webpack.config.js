@@ -19,7 +19,7 @@ const appManifest = fileReader("manifest.json");
 const { env:ENV } = process;
 
 /**
- * why env variables are passed extracted into a seperage object is because
+ * why env variables are extracted into a seperage object is because
  * we will be passing this env in all webpack configs.
  * i find it easy to not to reference process.env everytime when ever i need
  * to access env variables. its better for my usecase to create a env object
@@ -44,12 +44,10 @@ const envObjectForWebpack = {
   API_KEY_AUTH: ENV.API_KEY_AUTH,
   DEV_PROXY_URL: ENV.DEV_PROXY_URL,
   STAGE_PROXY_URL: ENV.STAGE_PROXY_URL,
-  STAGE_PROXY_URL: ENV.STAGE_PROXY_URL,
   LOGIN_USER_NAME: ENV.LOGIN_USER_NAME,
-  LOGIN_USER_PASSWORD: ENV.STAGE_PROXY_URL,
+  LOGIN_USER_PASSWORD: ENV.LOGIN_USER_PASSWORD,
   FIREBASE_TOKEN: ENV.FIREBASE_TOKEN,
   FIREBASE_LOGIN: ENV.FIREBASE_LOGIN,
-  port: ENV.DEVSERVER_PORT,
   DEVSERVER_PORT:ENV.DEVSERVER_PORT
 };
 
@@ -71,7 +69,6 @@ const configureWebpack = env => {
   if (!env.app) {
     throw new Error("app name is required");
   }
-  console.log(env);
   if (env.app !== "*") {
     // search for app name in manifest.
     const app = appManifest.applications[env.app];
@@ -79,9 +76,11 @@ const configureWebpack = env => {
       throw new Error(`${env.app} is not a valid app`);
     } else {
       env.appConfig = app;
-      return getWebpackConfig(env);
+      console.log(env);
+      return build(env);
     }
   }
+  console.log(env);
   /**
    * if runnig for all apps. use webpack config array syntax.
    * which starts each build in a new thread
