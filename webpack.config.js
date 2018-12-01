@@ -12,7 +12,7 @@ const devConfig = require("./webpack-config/webpack.development");
 const bundleanalyzer = require("./webpack-config/addons/webpack.bundleanalyzer");
 const bundleBuddy = require("./webpack-config/addons/webpack.bundlebuddy");
 const fileReader = require("./webpack-config/readFiles");
-const envObjectForWebpack = require('./webpack-config/webpack.env');
+const { envObjectForWebpack } = require("./webpack-config/webpack.env");
 
 /**
  * get app manifest to read all the registered apps.
@@ -58,7 +58,6 @@ const configureWebpack = env => {
     return build(env);
   });
 };
-
 
 /**
  * @description build is function which will merge all different webpack configurations

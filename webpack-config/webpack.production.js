@@ -7,15 +7,12 @@ const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const appModule = require('./webpack.modules');
+const { webpackProdEnvironmentVariableForBrowser } = require('./webpack.env');
 
 module.exports = env => ({
   module: appModule(env).module,
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(env.NODE_ENV),
-      },
-    }),
+    webpackProdEnvironmentVariableForBrowser(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.LoaderOptionsPlugin({
