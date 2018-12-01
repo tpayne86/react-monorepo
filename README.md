@@ -138,9 +138,8 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
 ```
 .
 ├── /assets/                   # contains all common static assets, like logos, images, libraries etc.
-├── /components/               # contains all shareble commomn components
+├── /ui-components/               # contains all shareble commomn components
 ├── /constants/                # contains all common app constants
-├── /elements/                 # contains element components , wrapper over ui library components
 ├── /server/                   # nodejs express server app 
 ├── /styles/                   # contains global styles. which can be shared accross apps
 ├── /utilities/                # contains utility service/functions etc
@@ -246,7 +245,7 @@ read documentation [here](https://webpack.js.org/)
 
 ## run common packages in development
 
-`yarn app:start-server`
+`yarn app:start-commons`
 
 ## run webpack apps
 

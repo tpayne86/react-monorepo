@@ -36,8 +36,7 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server",
     "wp:profile": "webpack --progress -c --profile --json  > stats.json",
-    "project:init": "yarn config set workspaces-experimental true",
-    "webpack-defaults": "webpack-defaults"
+    "project:init": "yarn config set workspaces-experimental true"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
