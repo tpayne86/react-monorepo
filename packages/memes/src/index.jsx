@@ -3,5 +3,8 @@ import ReactDOM from 'react-dom';
 import { configureStore, history } from './Store';
 import App from './App.hot';
 
+import 'antd/dist/antd.min.css'; // dev
+// import 'antd/dist/antd.min.less'; // prod
+
 const reduxStore = configureStore();
 ReactDOM.render(<App store={reduxStore} history={history} />, document.getElementById('root'));
