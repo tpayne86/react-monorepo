@@ -1,11 +1,11 @@
 /* eslint-env node */
 const webpack = require('webpack');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const appModule = require('./webpack.modules');
 const devServer = require('./webpack.devserver');
 const { webpackDevEnvironmentVariableForBrowser } = require('./webpack.env');
-// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 // only dev config
 module.exports = env => ({
@@ -30,6 +30,7 @@ module.exports = env => ({
       },
     }),
     new ErrorOverlayPlugin(),
+    // new HardSourceWebpackPlugin(),
   ],
   devServer: devServer(env),
 });

@@ -11,7 +11,7 @@ const babelConfig = (api) => {
       '@babel/preset-react',
     ],
     plugins: [
-      ['import', { libraryName: 'antd', libraryDirectory: 'lib', style: true }],
+      ['import', { libraryName: 'antd', libraryDirectory: 'lib', style: false }],
       '@babel/plugin-syntax-dynamic-import',
       'react-hot-loader/babel',
       '@babel/plugin-proposal-object-rest-spread',
@@ -21,7 +21,7 @@ const babelConfig = (api) => {
   };
   if (api.env('test')) {
     config.presets.splice(0, 1, ['@babel/preset-env']);
-    config.plugins.splice(0, 1, ['import', { libraryName: 'antd', style: true }]);
+    config.plugins.splice(0, 1, ['import', { libraryName: 'antd', style: false }]);
     config.plugins.push('@babel/plugin-transform-modules-commonjs');
   }
   return config;
