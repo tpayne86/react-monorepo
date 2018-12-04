@@ -4,7 +4,7 @@ import compression from 'compression';
 import helmet from 'helmet';
 import path from 'path';
 
-import { NODE_ENV, PORT } from './config';
+import { NODE_ENV, PORTAL_PORT } from './config';
 import { apiProxy, staticProxy } from './proxy';
 import staticRouter from './routes';
 import { serverListener } from './utility/listener';
@@ -37,8 +37,8 @@ const bootstrapExpressApp = () => {
   appConfig(expressApplication);
   appProxy(expressApplication);
   appRroutes(expressApplication);
-  if (PORT) {
-    expressApplication.listen(PORT, serverListener);
+  if (PORTAL_PORT) {
+    expressApplication.listen(PORTAL_PORT, serverListener);
   } else {
     throw new Error('Portal port invalid');
   }

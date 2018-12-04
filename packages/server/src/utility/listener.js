@@ -1,10 +1,10 @@
-import { PORT } from '../config';
+import { PORTAL_PORT } from '../config';
 
 const serverListener = (err) => {
   if (err) {
     throw new Error('express bootstrap failed');
   } else {
-    console.log("application listening at ", PORT); //eslint-disable-line
+    console.log("application listening at ", PORTAL_PORT); //eslint-disable-line
   }
 };
 
