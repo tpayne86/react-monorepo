@@ -43,6 +43,9 @@ const configureWebpack = env => {
     if (!app) {
       throw new Error(`${env.app} is not a valid app`);
     } else {
+      // every package has a ant-theme.json file which defines all less variables in there.
+      const antThemeVars = fileReader('ant-theme.json',app.folderSrc, true, false);
+      env.antThemeVars = antThemeVars;
       env.appConfig = app;
       console.log(env);
       return build(env);

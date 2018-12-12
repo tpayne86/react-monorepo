@@ -1,13 +1,16 @@
 /* eslint-env node */
 const path = require('path');
-const AntdScssThemePlugin = require('antd-scss-theme-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const cssnano = require('cssnano');
 
 module.exports = (env) => {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
-  const include = path.resolve(__dirname, '../', `${env.appConfig.folderSrc}/src/`);
+  const include = path.resolve(
+    __dirname,
+    '../',
+    `${env.appConfig.folderSrc}/src/`,
+  );
   return {
     module: {
       rules: [
@@ -38,10 +41,6 @@ module.exports = (env) => {
             !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: {
-                include,
-                sourceMap: false,
-              },
             },
             {
               loader: 'postcss-loader',
@@ -61,10 +60,6 @@ module.exports = (env) => {
             !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: {
-                sourceMap: false,
-                include,
-              },
             },
             {
               loader: 'postcss-loader',
@@ -76,16 +71,16 @@ module.exports = (env) => {
                 },
               },
             },
-            AntdScssThemePlugin.themify({
-              loader: (isProd) ? 'sass-loader' : 'fast-sass-loader',
+            {
+              loader: isProd ? 'sass-loader' : 'fast-sass-loader',
               options: {
                 processCssUrls: false,
                 sourceMap: false,
                 include,
                 includePaths: [include],
-                data: '@import "Styles/themes/anttheme.scss";@import "Styles/themes/anttheme.scss";',
+                data: '@import "Styles/themes/anttheme.scss";',
               },
-            }),
+            },
           ],
         },
         // extra loader only because of antd designs
@@ -95,10 +90,6 @@ module.exports = (env) => {
             !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: {
-                sourceMap: false,
-                include,
-              },
             },
             {
               loader: 'postcss-loader',
@@ -110,13 +101,14 @@ module.exports = (env) => {
                 },
               },
             },
-            AntdScssThemePlugin.themify({
+            {
               loader: 'less-loader',
               options: {
                 include,
                 sourceMap: false,
+                modifyVars: env.antThemeVars,
               },
-            }),
+            },
           ],
         },
         {
