@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import Button from '@healthifyme/ui-components/lib/elements/Button';
 import './Home.styles.scss';
 
 class Home extends React.Component {
@@ -25,6 +26,11 @@ class Home extends React.Component {
           <h1>
             <Link href="meme" to="meme">click Meme</Link>
           </h1>
+          <Button
+            onClick={() => {}}
+            label="_ref.label"
+            meta="_ref.meta"
+          />
         </section>
       </div>
     );
