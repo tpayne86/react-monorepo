@@ -3,7 +3,7 @@ const webpack = require('webpack');
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const appModule = require('./webpack.modules');
+const appModule = require('./webpack.loaders');
 const devServer = require('./webpack.devserver');
 const { webpackDevEnvironmentVariableForBrowser } = require('./webpack.env');
 

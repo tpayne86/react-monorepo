@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
-const appModule = require('./webpack.modules');
+const appModule = require('./webpack.loaders');
 const { webpackProdEnvironmentVariableForBrowser } = require('./webpack.env');
 
 module.exports = env => ({
