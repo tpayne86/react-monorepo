@@ -19,12 +19,12 @@
     "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
   },
   "devDependencies": {
-    "eslint": "^5.5.0",
-    "nodemon": "*"
+    "eslint": "^5.10.0",
+    "nodemon": "1.18.8"
   },
   "dependencies": {
     "compression": "^1.7.3",
-    "dotenv": "^6.1.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
     "http-proxy-middleware": "^0.19.0",
