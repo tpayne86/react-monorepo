@@ -9,10 +9,10 @@ module.exports = env => ({
   overlay: true,
   inline: true,
   open: true,
-  openPage: env.appConfig.publicPath.slice('1'),
+  publicPath: '/',
   proxy: {
     changeOrigin: true,
-    '/(api|apiv2|static)/**': {
+    '/(api|apiv2)/**': {
       target: env.PROXY_URL,
       secure: false,
       changeOrigin: true,
