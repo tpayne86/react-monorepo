@@ -6,11 +6,8 @@ const cssnano = require('cssnano');
 
 module.exports = (env) => {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
-  const include = path.resolve(
-    __dirname,
-    '../',
-    `${env.appConfig.folderSrc}/src/`,
-  );
+  const include = path.resolve(__dirname, '../', `${env.appConfig.folderSrc}/src/`);
+
   return {
     module: {
       rules: [
@@ -28,7 +25,8 @@ module.exports = (env) => {
         },
         {
           test: /\.js(x?)$/,
-          exclude: /node_modules/,
+          // exclude: /node_modules/,
+          // exclude: /node_modules\/(?!(@healthifyme)\/)/,
           include,
           loader: 'babel-loader',
           options: {
