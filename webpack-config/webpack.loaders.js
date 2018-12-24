@@ -25,8 +25,7 @@ module.exports = (env) => {
         },
         {
           test: /\.js(x?)$/,
-          // exclude: /node_modules/,
-          // exclude: /node_modules\/(?!(@healthifyme)\/)/,
+          exclude: /node_modules/,
           include,
           loader: 'babel-loader',
           options: {
