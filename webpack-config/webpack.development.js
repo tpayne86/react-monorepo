@@ -18,7 +18,7 @@ module.exports = env => ({
       title: env.appConfig.appHTMLTitle,
       filename: 'index.html',
       template: `./${env.appConfig.folderSrc}/src/index.ejs`,
-      publicPath: env.appConfig.publicPath,
+      appBase: '/',
       inject: true,
     }),
     new webpack.LoaderOptionsPlugin({

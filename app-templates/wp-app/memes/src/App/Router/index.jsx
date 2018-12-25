@@ -9,7 +9,6 @@ import { ROUTE_ERROR } from '../../Constants/app/app.constants';
 import './styles.scss';
 
 const AsyncHome = props => (<Async componentProps={props} load={import('../Modules/Home/Home.component' /* webpackChunkName: "home" */)} />);
-const AHome = () => (React.lazy(import('../Modules/Home/Home.component')));
 const AsyncErrorPage = props => (
   <Async
     componentProps={props}
@@ -27,7 +26,6 @@ const Routes = () => (
     <ErrorHandler>
       <Switch>
         <Route exact path="/" component={AsyncHome} />
-        <Route exact path="/xx" component={AHome} />
         <Route exact path="/error/:type" component={AsyncErrorPage} />
         <Route
           exact

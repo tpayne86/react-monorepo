@@ -3,16 +3,11 @@
   "author": "hannad rehman",
   "applications": {
     "@healthifyme/memes": {
-      "publicPath": "/memes/",
+      "appBase": "/memes/",
+      "publicPath": "/static/memes/",
       "appHTMLTitle": "Meme dashboard monorepo",
       "folderName": "memes",
       "folderSrc": "packages/memes"
-    },
-    "@healthifyme/todo": {
-      "publicPath": "/todo/",
-      "appHTMLTitle": "todo dashboard monorepo",
-      "folderName": "todo",
-      "folderSrc": "packages/todo"
     }
   }
 }

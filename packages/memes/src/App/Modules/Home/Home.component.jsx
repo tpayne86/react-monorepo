@@ -20,15 +20,21 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home home__wrapper">
+        <Button
+          onClick={() => {}}
+          label="button for this text"
+          meta="this is a text button"
+        />
         <section className="home__mains margin margin--auto margin-top--xxlg flex flex--col flex--center">
           <h1>Do you want to see a very bad grid of original Memes ?</h1>
           <img src="https://i.kym-cdn.com/photos/images/original/000/210/119/9b3.png" alt="meme" />
           <h1>
             <Link href="meme" to="meme">click Meme</Link>
           </h1>
+
           <Button
             onClick={() => {}}
-            label="_ref.label"
+            label="hannad rehman"
             meta="_ref.meta"
           />
         </section>

@@ -19,8 +19,8 @@
     "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
   },
   "devDependencies": {
-    "eslint": "^5.10.0",
-    "nodemon": "1.18.8"
+    "eslint": "^5.11.0",
+    "nodemon": "1.18.9"
   },
   "dependencies": {
     "compression": "^1.7.3",

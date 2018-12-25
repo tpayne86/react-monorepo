@@ -9,7 +9,7 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, '../', `dist/public/${env.appConfig.folderName}`),
       filename: isProd ? 'js/[name].[chunkHash].js' : 'js/[name].js',
-      publicPath: env.appConfig.publicPath || '',
+      publicPath: isProd ? env.appConfig.publicPath : '',
       pathinfo: false,
     },
     resolve: {

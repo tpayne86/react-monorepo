@@ -39,7 +39,7 @@ module.exports = env => ({
         minifyCSS: true,
         minifyURLs: true,
       },
-      publicPath: env.appConfig.publicPath,
+      appBase: env.appConfig.appBase,
       inject: true,
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),

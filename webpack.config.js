@@ -44,8 +44,7 @@ const configureWebpack = env => {
       throw new Error(`${env.app} is not a valid app`);
     } else {
       // every package has a ant-theme.json file which defines all less variables in there.
-      const antThemeVars = fileReader('ant-theme.json',app.folderSrc, true, false);
-      env.antThemeVars = antThemeVars;
+      env.antThemeVars = fileReader('ant-theme.json',app.folderSrc, true, false);;
       env.appConfig = app;
       console.log(env);
       return build(env);
@@ -57,8 +56,17 @@ const configureWebpack = env => {
    * which starts each build in a new thread
    */
   return Object.keys(appManifest.applications).map(app => {
-    env.appConfig = appManifest.applications[app];
-    return build(env);
+    // deep copy env for each itration.
+    const copyEnv = {
+      ...env,
+      appConfig: {
+        ...env.appConfig,
+      }
+    }
+    copyEnv.appConfig = appManifest.applications[app];
+    copyEnv.antThemeVars = fileReader('ant-theme.json',appManifest.applications[app].folderSrc, true, false);
+    console.log(copyEnv);
+    return build(copyEnv);
   });
 };
 
