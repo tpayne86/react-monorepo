@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Provider, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ConnectedRouter } from 'connected-react-router';
+import { history } from '../Store';
 import Layout from './Layout';
 import { globalFetchUserProfile, globalFetchUserProfileExtras } from './actions';
+
 import '../Styles/global.scss';
 import '@healthifyme/styles';
 
+
 class App extends React.Component {
   static propTypes = {
-    store: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired,
     globalFetchUserProfileAction: PropTypes.func.isRequired,
     globalFetchUserProfileExtrasAction: PropTypes.func.isRequired,
 
   };
+
 
   componentDidMount() {
     const {
@@ -28,15 +30,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { store, profile, history } = this.props;
+    const { profile } = this.props;
     return (
-      <main className="app-wrapper">
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-            <Layout user={profile} />
-          </ConnectedRouter>
-        </Provider>
-      </main>
+      <ConnectedRouter history={history}>
+        <Layout user={profile} />
+      </ConnectedRouter>
     );
   }
 }
