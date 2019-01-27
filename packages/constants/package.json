@@ -19,5 +19,7 @@
     "healthifyme"
   ],
   "author": "hannad <hannad63@yahoo.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }
