@@ -5,10 +5,8 @@ const router = Router();
 const publicPath = getStaticPath('/');
 
 router.get('/', (req, res) => {
+  console.log('root');
   res.sendFile(`${publicPath}/index.html`);
 });
 
-router.get('/*', (req, res) => {
-  res.sendFile(`${publicPath}/index.html`);
-});
 export default router;

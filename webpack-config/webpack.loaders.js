@@ -15,6 +15,7 @@ module.exports = (env) => {
           test: /\.js(x?)$/,
           use: ['source-map-loader'],
           enforce: 'pre',
+          exclude: [/node_modules\/mutationobserver-shim/g],
         },
         {
           enforce: 'pre',
