@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { history } from '../Store';
+import { history } from '@healthifyme/utilities/lib/redux';
+import { ThemeProvider } from 'styled-components';
 import Layout from './Layout';
 import { globalFetchUserProfile, globalFetchUserProfileExtras } from './actions';
-
-import '../Styles/global.scss';
-import '@healthifyme/styles';
-
+import theme from '../app.theme';
 
 class App extends React.Component {
   static propTypes = {
@@ -33,7 +31,9 @@ class App extends React.Component {
     const { profile } = this.props;
     return (
       <ConnectedRouter history={history}>
-        <Layout user={profile} />
+        <ThemeProvider theme={theme}>
+          <Layout user={profile} />
+        </ThemeProvider>
       </ConnectedRouter>
     );
   }

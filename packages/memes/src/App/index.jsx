@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { history } from '@healthifyme/utilities/lib/redux';
+import { history } from '@healthifyme/utilities/lib/redux/';
 import { ThemeProvider } from 'styled-components';
 import Layout from './Layout';
 import { globalFetchUserProfile, globalFetchUserProfileExtras } from './actions';

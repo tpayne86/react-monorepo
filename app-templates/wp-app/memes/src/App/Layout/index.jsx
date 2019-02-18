@@ -6,7 +6,8 @@ import {
 import { Link } from 'react-router-dom';
 import Routes from '../Router';
 
-import './styles.scss';
+import { Content as AppContent, Logo } from './styles';
+
 
 const { Header, Content, Footer } = Layout;
 
@@ -33,12 +34,12 @@ toggle = () => {
 render() {
   const { user } = this.props;
   return (
-    <Layout className="applayout layout">
+    <Layout>
       <Header>
         <Link href="/" to="/">
-          <p className="logo">
+          <Logo className="logo">
             React Memes
-          </p>
+          </Logo>
         </Link>
         <Menu
           theme="dark"
@@ -47,10 +48,10 @@ render() {
           style={{ lineHeight: '64px' }}
         />
       </Header>
-      <Content style={{ padding: '0 50px' }}>
-        <div className="applayout--content">
+      <Content>
+        <AppContent>
           <Routes shouldRender user={user} />
-        </div>
+        </AppContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
           Hannad Rehman ©2019

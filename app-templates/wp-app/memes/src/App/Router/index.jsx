@@ -5,8 +5,7 @@ import {
 import Async from 'react-asynchronous-component';
 import ErrorHandler from '@healthifyme/ui-components/lib/compounds/ErrorHandler/';
 import { ROUTE_ERROR } from '../../Constants/app/app.constants';
-
-import './styles.scss';
+import { Wrapper } from './styles';
 
 const AsyncHome = props => (<Async componentProps={props} load={import('../Modules/Home/Home.component' /* webpackChunkName: "home" */)} />);
 const AsyncErrorPage = props => (
@@ -22,7 +21,7 @@ const AsyncMemePage = () => (
 );
 
 const Routes = () => (
-  <div className="routes-wrapper">
+  <Wrapper>
     <ErrorHandler>
       <Switch>
         <Route exact path="/" component={AsyncHome} />
@@ -35,6 +34,6 @@ const Routes = () => (
         <Redirect to={`/error/${ROUTE_ERROR.NOT_FOUND}`} />
       </Switch>
     </ErrorHandler>
-  </div>
+  </Wrapper>
 );
 export default withRouter(Routes);
