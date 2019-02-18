@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { configureStore } from './Store';
-
+import { initStore } from '@healthifyme/utilities/lib/redux';
 import App from './App.hot';
+import rootReducer from './App/reducer';
+import rootSaga from './App/sagas';
 
 import 'antd/dist/antd.min.css'; // dev
 // import 'antd/dist/antd.less'; // prod
 
-const reduxStore = configureStore();
-// ReactDOM.render(<App store={reduxStore} history={history} />, document.getElementById('root'));
+const reduxStore = initStore(rootReducer, rootSaga);
 ReactDOM.render(
   <Provider store={reduxStore}>
     <App />

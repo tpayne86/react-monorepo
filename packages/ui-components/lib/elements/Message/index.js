@@ -14,8 +14,7 @@ require("antd/lib/message/style");
 var _message2 = _interopRequireDefault(require("antd/lib/message"));
 
 (function () {
-  var enterModule = require('react-hot-loader').enterModule;
-
+  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
   enterModule && enterModule(module);
 })();
 
@@ -29,9 +28,7 @@ exports.default = _default2;
 ;
 
 (function () {
-  var reactHotLoader = require('react-hot-loader').default;
-
-  var leaveModule = require('react-hot-loader').leaveModule;
+  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
 
   if (!reactHotLoader) {
     return;
@@ -39,7 +36,12 @@ exports.default = _default2;
 
   reactHotLoader.register(AppMessage, "AppMessage", "/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Message/index.jsx");
   reactHotLoader.register(_default, "default", "/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Message/index.jsx");
-  leaveModule(module);
 })();
 
 ;
+
+(function () {
+  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
+  leaveModule && leaveModule(module);
+})();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9lbGVtZW50cy9NZXNzYWdlL2luZGV4LmpzeCJdLCJuYW1lcyI6WyJBcHBNZXNzYWdlIiwidHlwZSIsIm1lc3NhZ2VUZXh0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVBLElBQU1BLFVBQVUsR0FBRyxTQUFiQSxVQUFhLENBQUNDLElBQUQsRUFBT0MsV0FBUDtBQUFBLFNBQ2pCLGtCQUFRRCxJQUFSLEVBQWNDLFdBQWQsQ0FEaUI7QUFBQSxDQUFuQjs7ZUFHZUYsVTs7Ozs7Ozs7Ozs7OzBCQUhUQSxVIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgbWVzc2FnZSB9IGZyb20gJ2FudGQnO1xuXG5jb25zdCBBcHBNZXNzYWdlID0gKHR5cGUsIG1lc3NhZ2VUZXh0KSA9PiAoXG4gIG1lc3NhZ2VbdHlwZV0obWVzc2FnZVRleHQpXG4pO1xuZXhwb3J0IGRlZmF1bHQgQXBwTWVzc2FnZTtcbiJdfQ==

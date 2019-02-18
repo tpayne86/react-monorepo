@@ -104,7 +104,8 @@ module.exports = (env) => {
               options: {
                 include,
                 sourceMap: false,
-                modifyVars: env.antThemeVars,
+                // modifyVars: env.antThemeVars,
+                modifyVars: require(`../${env.appConfig.folderSrc}/src/app.theme`), // eslint-disable-line
                 javascriptEnabled: true,
               },
             },

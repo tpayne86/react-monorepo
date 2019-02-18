@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "node": false,
+    "jest": true
+  },
+  "plugins": [ "import"],
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "globals": {
+    "module": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-extraneous-dependencies":false
+  }
+}

@@ -2,11 +2,22 @@
   "private": true,
   "name": "@healthifyme/styles",
   "version": "3.0.1",
-  "description": "global style, display, color etc for the components and apps",
-  "main": "src/_index.scss",
-  "style": "src/_index.scss",
-  "license": "MIT",
-  "author": "hannad rehman",
-  "dependencies": {
-  }
+  "description": "core styled components and global styles",
+  "main": "lib/",
+  "scripts": {
+    "watch": "yarn clean && yarn transpile --source-maps inline --watch",
+    "build": "yarn clean && yarn transpile",
+    "clean": "rm -rf ./lib",
+    "transpile": "babel src --out-dir lib --copy-files --ignore spec.js,spec.jsx"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3"
+  },
+  "keywords": [
+    "javascript",
+    "styled components",
+    "healthifyme"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT"
 }

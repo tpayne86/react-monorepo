@@ -3,31 +3,33 @@ import PropTypes from 'prop-types';
 
 import CardWithImage from '@healthifyme/ui-components/lib/elements/Card/CardWithImage/';
 
-import './MemeGrid.styles.scss';
+import {
+  Wrapper, Flex, FlexCol, Item,
+} from './MemeGrid.styles';
 
 const MemeGrid = ({ memes, onClick }) => (
-  <div className="memegrid memegrid__wrapper flex flex--justify-between flex--wrap ">
-    <div className="flex">
+  <Wrapper>
+    <Flex>
       {
       memes.map((row, i) => (
-        <div key={i} className="flex flex--col memegrid__row"> {/* eslint-disable-line */}
+        <FlexCol key={i}> {/* eslint-disable-line */}
           {
             row.map(meme => (
-              <div key={meme.id} className="memegrid__image-tile margin margin--md">
+              <Item key={meme.id}>
                 <CardWithImage
                   title={meme.name}
                   imgUrl={meme.url}
                   onClick={onClick}
                   identifier={meme.id}
                 />
-              </div>
+              </Item>
             ))
           }
-        </div>
+        </FlexCol>
       ))
     }
-    </div>
-  </div>
+    </Flex>
+  </Wrapper>
 );
 
 MemeGrid.propTypes = {
