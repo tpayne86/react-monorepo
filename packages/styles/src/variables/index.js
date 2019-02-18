@@ -1,0 +1,9 @@
+export const XXSMALL = '4px';
+export const XSMALL = '8px';
+export const SMALL = '12px';
+export const MEDIUM = '14px';
+export const LARGE = '16px';
+export const XLARGE = '20px';
+export const XXLARGE = '24px';
+export const XXXLARGE = '28px';
+export const XXXXLARGE = '32px';

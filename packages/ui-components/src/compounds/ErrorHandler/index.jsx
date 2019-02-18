@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DEV_ORIGIN } from '@healthifyme/constants';
-import './style.scss';
+import {
+  Wrapper, Image, StackTrace, ErrorTrace, Paragraph, Pre,
+} from './style';
 
 class ErrorHandler extends React.Component {
   static propTypes = {
@@ -31,9 +33,8 @@ class ErrorHandler extends React.Component {
     if (hasError) {
       // You can render any custom fallback UI
       return (
-        <section className="errorhandler errorhandler__wrapper">
-          <img
-            className="errorhandler__image"
+        <Wrapper>
+          <Image
             alt="err"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Error.svg/497px-Error.svg.png"
           />
@@ -41,27 +42,27 @@ class ErrorHandler extends React.Component {
               Some Error Occured
           </h1>
           {origin === DEV_ORIGIN && (
-            <div className="errorhandler__stacktrace">
-              <section className="errorhandler__errortrace">
+            <StackTrace>
+              <ErrorTrace>
                 <p>
                   Exception Trace
                 </p>
                 <pre>
                   {error.stack}
                 </pre>
-              </section>
+              </ErrorTrace>
               <br />
-              <section className="errorhandler__infotrace">
-                <p>
+              <ErrorTrace>
+                <Paragraph>
                   Exception Details
-                </p>
-                <pre>
+                </Paragraph>
+                <Pre>
                   {info.componentStack}
-                </pre>
-              </section>
-            </div>
+                </Pre>
+              </ErrorTrace>
+            </StackTrace>
           )}
-        </section>
+        </Wrapper>
       );
     }
     return (

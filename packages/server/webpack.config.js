@@ -27,6 +27,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js)$/,
+        use: 'babel-loader',
+      },
+      {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude:/node_modules\/@healthifyme/
@@ -72,6 +76,29 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.eot(\?v=\d+.\d+.\d+)?$/,
+        loader: 'file-loader?name=/assests/fonts/[name].[ext]',
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader:
+          'file-loader?mimetype=application/font-woff&name=assests/fonts/[name].[ext]',
+      },
+      {
+        test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
+        loader:
+          'file-loader?mimetype=application/octet-stream&name=assests/fonts/[name].[ext]',
+      },
+      {
+        test: /\.svg(\?v=\d+.\d+.\d+)?$/,
+        loader:
+          'file-loader?mimetype=image/svg+xml&name=assests/fonts/[name].[ext]',
+      },
+      {
+        test: /\.(jpe?g|png|gif|ico)$/i,
+        loader: 'file-loader?name=assests/images/[name].[ext]',
       },
       // extra loader only because of antd designs
       // {

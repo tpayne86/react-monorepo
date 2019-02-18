@@ -1,3 +1,4 @@
-# Styles
+# Style
 
-constains global css and sass variables that can be used by packages
+basic style
+uses styled component
