@@ -1,3 +1,3 @@
-import { httpGet, httpPost } from './lib/http.requestmaker';
+import { httpGet, httpPost } from './http.requestmaker';
 
 export { httpGet, httpPost };

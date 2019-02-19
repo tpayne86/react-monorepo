@@ -10,7 +10,7 @@
   "scripts": {
     "start": "yarn start:lint",
     "start:cluster": "yarn start:lint:cluster",
-    "start:lint": "nodemon --exec 'babel-node ./src/index.js && yarn lint && node' ",
+    "start:lint": "nodemon --exec 'babel-node ./src/index.js && yarn lint && node'",
     "start:lint:cluster": "nodemon --exec 'babel-node' ./src/cluster.js && 'yarn lint && node' ",
     "start:no-lint": "nodemon --exec babel-node ./src/index.js",
     "build": "yarn clean && yarn transpile && node ./build",

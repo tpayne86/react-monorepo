@@ -49,9 +49,10 @@ this project uses `lerna` and `yarn workspaces` to implement `monorepo` and `loc
 3. install [python 2.7](https://www.python.org/downloads/) which is used by sass compiler. (this may change in future)
 4. install [lerna](https://lernajs.io/) `yarn global add lerna`
 5. go to root of the project and hit `yarn project:init`
-6. install `nodemon` for using nodejs server in development `yarn global add nodemon`
-7. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
-8. build all common local packages by `yarn build:all-packages`
+6. go to root. create a *.env* file and add env variables mentioned at the end of the file. *IMPORTANT*
+7. install `nodemon` for using nodejs server in development `yarn global add nodemon`
+8. bootstrap application which will install all dependencies and linking local packages by `yarn app:bootstrap`  
+9. build all common local packages by `yarn build:all-packages`
 
 # Environment variables
   we use dotenv to manage our environment variables. 
@@ -283,3 +284,20 @@ read documentation [here](https://webpack.js.org/)
 ## test and watch package
 
 `yarn test:watch packages/foldername`
+
+
+### .env file 
+
+add following variables
+
+NODE_ENV=development|production
+DEVSERVER_PORT=9000|any
+PROXY_ORIGIN=development|staging|dev|etc
+PROXY_URL=http://localhost:8000 || port where server is running
+API_KEY_AUTH=optional
+LOGIN_USER_NAME=optional
+LOGIN_USER_PASSWORD=optional
+AWS_ACCESS_KEY_ID=aws key. used for cloudfront cdn
+AWS_SECRET_ACCESS_KEY=aws acces key.  used for cloudfront cdn
+CLOUD_FRONT_BASE=cloudfront base url
+S3_UPLOAD=0|1

@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
-    "eslint": "^5.11.0"
+    "eslint": "^5.14.1"
   },
   "peerDependencies": {
     "axios": "^0.18.0"
