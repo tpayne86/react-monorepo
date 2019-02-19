@@ -48,3 +48,4 @@ __snapshots__
 
 # cacheloader
 .cache-loader/
+*.env

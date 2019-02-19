@@ -49,7 +49,6 @@ const configureWebpack = env => {
       return build(env);
     }
   }
-  console.log(env);
   /**
    * if runnig for all apps. use webpack config array syntax.
    * which starts each build in a new thread

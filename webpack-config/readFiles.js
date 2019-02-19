@@ -9,7 +9,12 @@ const fs = require('fs');
  * @param {bool} ignoreFileDoesNotExist
  * @returns {object} json
  */
-function getJSONFile(fileName, filePath = null, parse = true, ignoreFileDoesNotExist = true) {
+function getJSONFile(
+  fileName,
+  filePath = null,
+  parse = true,
+  ignoreFileDoesNotExist = true,
+) {
   try {
     const path = !filePath ? `./${fileName}` : `${filePath}/${fileName}`;
     const file = fs.readFileSync(path, 'utf8');

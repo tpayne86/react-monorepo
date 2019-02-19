@@ -6,7 +6,11 @@ const cssnano = require('cssnano');
 
 module.exports = (env) => {
   const isProd = env.NODE_ENV.trim().toLowerCase() === 'production';
-  const include = path.resolve(__dirname, '../', `${env.appConfig.folderSrc}/src/`);
+  const include = path.resolve(
+    __dirname,
+    '../',
+    `${env.appConfig.folderSrc}/src/`,
+  );
 
   return {
     module: {

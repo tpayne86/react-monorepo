@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-module.exports = env => ({
+module.exports = (env) => ({
   contentBase: `../dist/public/${env.appConfig.folderName}`,
   compress: true,
   port: env.DEVSERVER_PORT,
