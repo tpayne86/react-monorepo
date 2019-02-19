@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "@healthifyme/react-hooks",
+  "version": "1.0.0",
+  "description": "global hooks for react application",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "yarn clean && yarn transpile --source-maps inline --watch",
+    "build": "yarn clean && yarn env:prod && yarn transpile",
+    "clean": "rm -rf ./lib",
+    "transpile": "babel src --out-dir lib --copy-files --ignore spec.js,spec.jsx",
+    "env:prod": "export NODE_ENV=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "jest",
+    "utilities",
+    "services",
+    "javascript"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "eslint": "^5.14.1"
+  },
+  "peerDependencies": {}
+}
