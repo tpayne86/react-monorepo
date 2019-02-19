@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "@healthifyme/package-generator",
+  "version": "1.0.0",
+  "description": "automatic file generator and packages",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "keywords": [
+    "javascript",
+    "healthifyme",
+    "package generator"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "chalk-pipe": "^2.0.0",
+    "inquirer": "^6.2.2",
+    "ncp": "^2.0.0"
+  }
+}

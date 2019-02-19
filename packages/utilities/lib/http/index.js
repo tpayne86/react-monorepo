@@ -18,4 +18,4 @@ Object.defineProperty(exports, "httpPost", {
   }
 });
 
-var _http = require("./lib/http.requestmaker");
+var _http = require("./http.requestmaker");

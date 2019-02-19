@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "@healthifyme/utilities",
-  "version": "4.0.3",
-  "description": "all utility functions, services that can be shared accross the project should be kept here.",
+  "name": "@healthifyme/react-hooks",
+  "version": "1.0.0",
+  "description": "global hooks for react application",
   "main": "lib/index.js",
   "scripts": {
     "watch": "yarn clean && yarn transpile --source-maps inline --watch",
@@ -23,14 +23,10 @@
   ],
   "author": "hannad <hannad63@yahoo.com>",
   "license": "MIT",
-  "dependencies": {
-    "@healthifyme/constants": "^4.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "eslint": "^5.14.1"
   },
-  "peerDependencies": {
-    "axios": "^0.18.0"
-  }
+  "peerDependencies": {}
 }

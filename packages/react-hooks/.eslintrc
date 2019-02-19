@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "node": false,
+    "jest": true
+  },
+"plugins": [ "import", "prettier"],
+  "extends": [
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier"
+  ],
+  "globals": {
+    "module": true,
+    "process":true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/forbid-prop-types": [0, { "forbid": ["array","object"]}],
+    "import/no-extraneous-dependencies": 0,
+    "prettier/prettier": ["error"],
+    "import/namespace": 0,
+    "react/jsx-one-expression-per-line":0
+  }
+}

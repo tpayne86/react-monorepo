@@ -11,6 +11,7 @@ const appModule = require('./webpack.loaders');
 const { webpackProdEnvironmentVariableForBrowser } = require('./webpack.env');
 
 module.exports = (env) => {
+  console.log('i am production');
   const prodConfig = {
     module: appModule(env).module,
     plugins: [

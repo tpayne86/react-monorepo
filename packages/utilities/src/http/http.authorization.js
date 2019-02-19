@@ -1,11 +1,12 @@
-/* global process:true */
 import axios from 'axios';
 import {
   USER_ONE_NAME,
   USER_ONE_PAS,
   STAGE_ACCESS,
   PROXY_TO,
+  isDev,
 } from '@healthifyme/constants/lib/app/app.constants';
+
 import { APP_LOGIN } from '@healthifyme/constants/lib/api/api.endpoints';
 
 /**
@@ -42,16 +43,23 @@ export const getNewApiUrl = (url) => {
   }
   return newUrl;
 };
-/**
- * @returns {object}
- * @description return api headers required for the apis,
- * ex csrf token
- */
-export const getApiHeaders = () => ({
-  'X-CSRFToken': getCsrfToken(),
-});
+
+export const interceptedConfig = (config) => {
+  try {
+    const copyConfig = { ...config };
+    copyConfig.url = getNewApiUrl(copyConfig.url);
+    copyConfig.headers.common = {
+      ...copyConfig.headers.common,
+      'X-CSRFToken': getCsrfToken(),
+    };
+    return copyConfig;
+  } catch (e) {
+    return config;
+  }
+};
+
 // will allow login only when we are proxying to stage and is on Dev url
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
   window.attemptLogin = () =>
     axios
       .post(APP_LOGIN, {

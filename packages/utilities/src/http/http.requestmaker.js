@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getApiHeaders, getNewApiUrl } from './http.authorization';
+import { interceptedConfig } from './http.authorization';
 
 /**
  * @param {String} url
@@ -11,9 +11,8 @@ import { getApiHeaders, getNewApiUrl } from './http.authorization';
 export const httpGet = (url) =>
   new Promise((resolve, reject) => {
     axios({
-      url: getNewApiUrl(url),
+      url,
       method: 'GET',
-      headers: getApiHeaders(),
     })
       .then((res) => {
         resolve(res.data);
@@ -47,9 +46,8 @@ export const httpGet = (url) =>
 export const httpPost = (url, data) =>
   new Promise((resolve, reject) => {
     axios({
-      url: getNewApiUrl(url),
+      url,
       method: 'POST',
-      headers: getApiHeaders(),
       data,
     })
       .then((res) => {
@@ -73,3 +71,15 @@ export const httpPost = (url, data) =>
         }
       });
   });
+
+const interceptor = axios.interceptors.request.use(
+  (config) => {
+    console.log(config);
+    return interceptedConfig(config);
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
+
+export default interceptor;
