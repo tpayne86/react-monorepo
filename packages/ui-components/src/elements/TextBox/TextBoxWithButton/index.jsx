@@ -8,11 +8,11 @@ class TextBoxWithButton extends React.Component {
     placeholder: PropTypes.string.isRequired,
     onAction: PropTypes.func.isRequired,
     buttonText: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
     buttonText: '',
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -27,13 +27,13 @@ class TextBoxWithButton extends React.Component {
       value: '',
     });
     onAction(value);
-  }
+  };
 
   handleChange = (ev) => {
     this.setState({
       value: ev.target.value,
     });
-  }
+  };
 
   render() {
     const { placeholder, buttonText } = this.props;
@@ -48,7 +48,6 @@ class TextBoxWithButton extends React.Component {
           onChange={this.handleChange}
         />
       </React.Fragment>
-
     );
   }
 }

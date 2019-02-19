@@ -1,47 +1,60 @@
-"use strict";
+const _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+require('core-js/modules/es6.object.define-property');
 
-require("core-js/modules/es6.object.define-property");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.default = void 0;
 
-require("antd/lib/button/style");
+require('antd/lib/button/style');
 
-var _button = _interopRequireDefault(require("antd/lib/button"));
+const _button = _interopRequireDefault(require('antd/lib/button'));
 
-var _react = _interopRequireDefault(require("react"));
+const _react = _interopRequireDefault(require('react'));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+const _propTypes = _interopRequireDefault(require('prop-types'));
 
-(function () {
-  var enterModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).enterModule;
+(function() {
+  const enterModule = (typeof reactHotLoaderGlobal !== 'undefined'
+    ? reactHotLoaderGlobal
+    : require('react-hot-loader')
+  ).enterModule;
   enterModule && enterModule(module);
 })();
 
-var AppButton = function AppButton(_ref) {
-  var disabled = _ref.disabled,
-      url = _ref.url,
-      icon = _ref.icon,
-      shape = _ref.shape,
-      loading = _ref.loading,
-      type = _ref.type,
-      onClick = _ref.onClick,
-      label = _ref.label,
-      meta = _ref.meta;
-  return _react.default.createElement(_button.default, {
-    disabled: disabled,
-    url: url,
-    icon: icon,
-    loading: loading,
-    shape: shape,
-    type: type,
-    onClick: onClick,
-    "data-meta": meta
-  }, label);
+const AppButton = function AppButton(_ref) {
+  const disabled = _ref.disabled;
+
+  const url = _ref.url;
+
+  const icon = _ref.icon;
+
+  const shape = _ref.shape;
+
+  const loading = _ref.loading;
+
+  const type = _ref.type;
+
+  const onClick = _ref.onClick;
+
+  const label = _ref.label;
+
+  const meta = _ref.meta;
+  return _react.default.createElement(
+    _button.default,
+    {
+      disabled,
+      url,
+      icon,
+      loading,
+      shape,
+      type,
+      onClick,
+      'data-meta': meta,
+    },
+    label,
+  );
 };
 
 AppButton.defaultProps = {
@@ -51,7 +64,7 @@ AppButton.defaultProps = {
   loading: false,
   shape: null,
   type: 'primary',
-  meta: null
+  meta: null,
 };
 AppButton.propTypes = {
   disabled: _propTypes.default.bool,
@@ -62,28 +75,41 @@ AppButton.propTypes = {
   shape: _propTypes.default.string,
   onClick: _propTypes.default.func.isRequired,
   label: _propTypes.default.string.isRequired,
-  meta: _propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string])
+  meta: _propTypes.default.oneOfType([
+    _propTypes.default.number,
+    _propTypes.default.string,
+  ]),
 };
-var _default = AppButton;
-var _default2 = _default;
+const _default = AppButton;
+const _default2 = _default;
 exports.default = _default2;
-;
-
-(function () {
-  var reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).default;
+(function() {
+  const reactHotLoader = (typeof reactHotLoaderGlobal !== 'undefined'
+    ? reactHotLoaderGlobal
+    : require('react-hot-loader')
+  ).default;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(AppButton, "AppButton", "/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Button/index.jsx");
-  reactHotLoader.register(_default, "default", "/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Button/index.jsx");
+  reactHotLoader.register(
+    AppButton,
+    'AppButton',
+    '/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Button/index.jsx',
+  );
+  reactHotLoader.register(
+    _default,
+    'default',
+    '/Users/hannadrehman/workspace/open source/projects/react-monorepo/packages/ui-components/src/elements/Button/index.jsx',
+  );
 })();
 
-;
-
-(function () {
-  var leaveModule = (typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal : require('react-hot-loader')).leaveModule;
+(function() {
+  const leaveModule = (typeof reactHotLoaderGlobal !== 'undefined'
+    ? reactHotLoaderGlobal
+    : require('react-hot-loader')
+  ).leaveModule;
   leaveModule && leaveModule(module);
 })();
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9lbGVtZW50cy9CdXR0b24vaW5kZXguanN4Il0sIm5hbWVzIjpbIkFwcEJ1dHRvbiIsImRpc2FibGVkIiwidXJsIiwiaWNvbiIsInNoYXBlIiwibG9hZGluZyIsInR5cGUiLCJvbkNsaWNrIiwibGFiZWwiLCJtZXRhIiwiZGVmYXVsdFByb3BzIiwicHJvcFR5cGVzIiwiUHJvcFR5cGVzIiwiYm9vbCIsInN0cmluZyIsImZ1bmMiLCJpc1JlcXVpcmVkIiwib25lT2ZUeXBlIiwibnVtYmVyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7Ozs7OztBQUdBLElBQU1BLFNBQVMsR0FBRyxTQUFaQSxTQUFZO0FBQUEsTUFDaEJDLFFBRGdCLFFBQ2hCQSxRQURnQjtBQUFBLE1BQ05DLEdBRE0sUUFDTkEsR0FETTtBQUFBLE1BRWhCQyxJQUZnQixRQUVoQkEsSUFGZ0I7QUFBQSxNQUVWQyxLQUZVLFFBRVZBLEtBRlU7QUFBQSxNQUdoQkMsT0FIZ0IsUUFHaEJBLE9BSGdCO0FBQUEsTUFHUEMsSUFITyxRQUdQQSxJQUhPO0FBQUEsTUFJaEJDLE9BSmdCLFFBSWhCQSxPQUpnQjtBQUFBLE1BSVBDLEtBSk8sUUFJUEEsS0FKTztBQUFBLE1BS2hCQyxJQUxnQixRQUtoQkEsSUFMZ0I7QUFBQSxTQU9oQjtBQUNFLElBQUEsUUFBUSxFQUFFUixRQURaO0FBRUUsSUFBQSxHQUFHLEVBQUVDLEdBRlA7QUFHRSxJQUFBLElBQUksRUFBRUMsSUFIUjtBQUlFLElBQUEsT0FBTyxFQUFFRSxPQUpYO0FBS0UsSUFBQSxLQUFLLEVBQUVELEtBTFQ7QUFNRSxJQUFBLElBQUksRUFBRUUsSUFOUjtBQU9FLElBQUEsT0FBTyxFQUFFQyxPQVBYO0FBUUUsaUJBQVdFO0FBUmIsS0FVR0QsS0FWSCxDQVBnQjtBQUFBLENBQWxCOztBQXFCQVIsU0FBUyxDQUFDVSxZQUFWLEdBQXlCO0FBQ3ZCVCxFQUFBQSxRQUFRLEVBQUUsS0FEYTtBQUV2QkMsRUFBQUEsR0FBRyxFQUFFLElBRmtCO0FBR3ZCQyxFQUFBQSxJQUFJLEVBQUUsSUFIaUI7QUFJdkJFLEVBQUFBLE9BQU8sRUFBRSxLQUpjO0FBS3ZCRCxFQUFBQSxLQUFLLEVBQUUsSUFMZ0I7QUFNdkJFLEVBQUFBLElBQUksRUFBRSxTQU5pQjtBQU92QkcsRUFBQUEsSUFBSSxFQUFFO0FBUGlCLENBQXpCO0FBU0FULFNBQVMsQ0FBQ1csU0FBVixHQUFzQjtBQUNwQlYsRUFBQUEsUUFBUSxFQUFFVyxtQkFBVUMsSUFEQTtBQUVwQlgsRUFBQUEsR0FBRyxFQUFFVSxtQkFBVUUsTUFGSztBQUdwQlgsRUFBQUEsSUFBSSxFQUFFUyxtQkFBVUUsTUFISTtBQUlwQlIsRUFBQUEsSUFBSSxFQUFFTSxtQkFBVUUsTUFKSTtBQUtwQlQsRUFBQUEsT0FBTyxFQUFFTyxtQkFBVUMsSUFMQztBQU1wQlQsRUFBQUEsS0FBSyxFQUFFUSxtQkFBVUUsTUFORztBQU9wQlAsRUFBQUEsT0FBTyxFQUFFSyxtQkFBVUcsSUFBVixDQUFlQyxVQVBKO0FBUXBCUixFQUFBQSxLQUFLLEVBQUVJLG1CQUFVRSxNQUFWLENBQWlCRSxVQVJKO0FBU3BCUCxFQUFBQSxJQUFJLEVBQUVHLG1CQUFVSyxTQUFWLENBQW9CLENBQUNMLG1CQUFVTSxNQUFYLEVBQW1CTixtQkFBVUUsTUFBN0IsQ0FBcEI7QUFUYyxDQUF0QjtlQVllZCxTOzs7Ozs7Ozs7Ozs7MEJBMUNUQSxTIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgeyBCdXR0b24gfSBmcm9tICdhbnRkJztcblxuY29uc3QgQXBwQnV0dG9uID0gKHtcbiAgZGlzYWJsZWQsIHVybCxcbiAgaWNvbiwgc2hhcGUsXG4gIGxvYWRpbmcsIHR5cGUsXG4gIG9uQ2xpY2ssIGxhYmVsLFxuICBtZXRhLFxufSkgPT4gKFxuICA8QnV0dG9uXG4gICAgZGlzYWJsZWQ9e2Rpc2FibGVkfVxuICAgIHVybD17dXJsfVxuICAgIGljb249e2ljb259XG4gICAgbG9hZGluZz17bG9hZGluZ31cbiAgICBzaGFwZT17c2hhcGV9XG4gICAgdHlwZT17dHlwZX1cbiAgICBvbkNsaWNrPXtvbkNsaWNrfVxuICAgIGRhdGEtbWV0YT17bWV0YX1cbiAgPlxuICAgIHtsYWJlbH1cblxuICA8L0J1dHRvbj5cbik7XG5BcHBCdXR0b24uZGVmYXVsdFByb3BzID0ge1xuICBkaXNhYmxlZDogZmFsc2UsXG4gIHVybDogbnVsbCxcbiAgaWNvbjogbnVsbCxcbiAgbG9hZGluZzogZmFsc2UsXG4gIHNoYXBlOiBudWxsLFxuICB0eXBlOiAncHJpbWFyeScsXG4gIG1ldGE6IG51bGwsXG59O1xuQXBwQnV0dG9uLnByb3BUeXBlcyA9IHtcbiAgZGlzYWJsZWQ6IFByb3BUeXBlcy5ib29sLFxuICB1cmw6IFByb3BUeXBlcy5zdHJpbmcsXG4gIGljb246IFByb3BUeXBlcy5zdHJpbmcsXG4gIHR5cGU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIGxvYWRpbmc6IFByb3BUeXBlcy5ib29sLFxuICBzaGFwZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgb25DbGljazogUHJvcFR5cGVzLmZ1bmMuaXNSZXF1aXJlZCxcbiAgbGFiZWw6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgbWV0YTogUHJvcFR5cGVzLm9uZU9mVHlwZShbUHJvcFR5cGVzLm51bWJlciwgUHJvcFR5cGVzLnN0cmluZ10pLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgQXBwQnV0dG9uO1xuIl19
+// # sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9lbGVtZW50cy9CdXR0b24vaW5kZXguanN4Il0sIm5hbWVzIjpbIkFwcEJ1dHRvbiIsImRpc2FibGVkIiwidXJsIiwiaWNvbiIsInNoYXBlIiwibG9hZGluZyIsInR5cGUiLCJvbkNsaWNrIiwibGFiZWwiLCJtZXRhIiwiZGVmYXVsdFByb3BzIiwicHJvcFR5cGVzIiwiUHJvcFR5cGVzIiwiYm9vbCIsInN0cmluZyIsImZ1bmMiLCJpc1JlcXVpcmVkIiwib25lT2ZUeXBlIiwibnVtYmVyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7Ozs7OztBQUdBLElBQU1BLFNBQVMsR0FBRyxTQUFaQSxTQUFZO0FBQUEsTUFDaEJDLFFBRGdCLFFBQ2hCQSxRQURnQjtBQUFBLE1BRWhCQyxHQUZnQixRQUVoQkEsR0FGZ0I7QUFBQSxNQUdoQkMsSUFIZ0IsUUFHaEJBLElBSGdCO0FBQUEsTUFJaEJDLEtBSmdCLFFBSWhCQSxLQUpnQjtBQUFBLE1BS2hCQyxPQUxnQixRQUtoQkEsT0FMZ0I7QUFBQSxNQU1oQkMsSUFOZ0IsUUFNaEJBLElBTmdCO0FBQUEsTUFPaEJDLE9BUGdCLFFBT2hCQSxPQVBnQjtBQUFBLE1BUWhCQyxLQVJnQixRQVFoQkEsS0FSZ0I7QUFBQSxNQVNoQkMsSUFUZ0IsUUFTaEJBLElBVGdCO0FBQUEsU0FXaEI7QUFDRSxJQUFBLFFBQVEsRUFBRVIsUUFEWjtBQUVFLElBQUEsR0FBRyxFQUFFQyxHQUZQO0FBR0UsSUFBQSxJQUFJLEVBQUVDLElBSFI7QUFJRSxJQUFBLE9BQU8sRUFBRUUsT0FKWDtBQUtFLElBQUEsS0FBSyxFQUFFRCxLQUxUO0FBTUUsSUFBQSxJQUFJLEVBQUVFLElBTlI7QUFPRSxJQUFBLE9BQU8sRUFBRUMsT0FQWDtBQVFFLGlCQUFXRTtBQVJiLEtBVUdELEtBVkgsQ0FYZ0I7QUFBQSxDQUFsQjs7QUF3QkFSLFNBQVMsQ0FBQ1UsWUFBVixHQUF5QjtBQUN2QlQsRUFBQUEsUUFBUSxFQUFFLEtBRGE7QUFFdkJDLEVBQUFBLEdBQUcsRUFBRSxJQUZrQjtBQUd2QkMsRUFBQUEsSUFBSSxFQUFFLElBSGlCO0FBSXZCRSxFQUFBQSxPQUFPLEVBQUUsS0FKYztBQUt2QkQsRUFBQUEsS0FBSyxFQUFFLElBTGdCO0FBTXZCRSxFQUFBQSxJQUFJLEVBQUUsU0FOaUI7QUFPdkJHLEVBQUFBLElBQUksRUFBRTtBQVBpQixDQUF6QjtBQVNBVCxTQUFTLENBQUNXLFNBQVYsR0FBc0I7QUFDcEJWLEVBQUFBLFFBQVEsRUFBRVcsbUJBQVVDLElBREE7QUFFcEJYLEVBQUFBLEdBQUcsRUFBRVUsbUJBQVVFLE1BRks7QUFHcEJYLEVBQUFBLElBQUksRUFBRVMsbUJBQVVFLE1BSEk7QUFJcEJSLEVBQUFBLElBQUksRUFBRU0sbUJBQVVFLE1BSkk7QUFLcEJULEVBQUFBLE9BQU8sRUFBRU8sbUJBQVVDLElBTEM7QUFNcEJULEVBQUFBLEtBQUssRUFBRVEsbUJBQVVFLE1BTkc7QUFPcEJQLEVBQUFBLE9BQU8sRUFBRUssbUJBQVVHLElBQVYsQ0FBZUMsVUFQSjtBQVFwQlIsRUFBQUEsS0FBSyxFQUFFSSxtQkFBVUUsTUFBVixDQUFpQkUsVUFSSjtBQVNwQlAsRUFBQUEsSUFBSSxFQUFFRyxtQkFBVUssU0FBVixDQUFvQixDQUFDTCxtQkFBVU0sTUFBWCxFQUFtQk4sbUJBQVVFLE1BQTdCLENBQXBCO0FBVGMsQ0FBdEI7ZUFZZWQsUzs7Ozs7Ozs7Ozs7OzBCQTdDVEEsUyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0IHsgQnV0dG9uIH0gZnJvbSAnYW50ZCc7XG5cbmNvbnN0IEFwcEJ1dHRvbiA9ICh7XG4gIGRpc2FibGVkLFxuICB1cmwsXG4gIGljb24sXG4gIHNoYXBlLFxuICBsb2FkaW5nLFxuICB0eXBlLFxuICBvbkNsaWNrLFxuICBsYWJlbCxcbiAgbWV0YSxcbn0pID0+IChcbiAgPEJ1dHRvblxuICAgIGRpc2FibGVkPXtkaXNhYmxlZH1cbiAgICB1cmw9e3VybH1cbiAgICBpY29uPXtpY29ufVxuICAgIGxvYWRpbmc9e2xvYWRpbmd9XG4gICAgc2hhcGU9e3NoYXBlfVxuICAgIHR5cGU9e3R5cGV9XG4gICAgb25DbGljaz17b25DbGlja31cbiAgICBkYXRhLW1ldGE9e21ldGF9XG4gID5cbiAgICB7bGFiZWx9XG4gIDwvQnV0dG9uPlxuKTtcbkFwcEJ1dHRvbi5kZWZhdWx0UHJvcHMgPSB7XG4gIGRpc2FibGVkOiBmYWxzZSxcbiAgdXJsOiBudWxsLFxuICBpY29uOiBudWxsLFxuICBsb2FkaW5nOiBmYWxzZSxcbiAgc2hhcGU6IG51bGwsXG4gIHR5cGU6ICdwcmltYXJ5JyxcbiAgbWV0YTogbnVsbCxcbn07XG5BcHBCdXR0b24ucHJvcFR5cGVzID0ge1xuICBkaXNhYmxlZDogUHJvcFR5cGVzLmJvb2wsXG4gIHVybDogUHJvcFR5cGVzLnN0cmluZyxcbiAgaWNvbjogUHJvcFR5cGVzLnN0cmluZyxcbiAgdHlwZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgbG9hZGluZzogUHJvcFR5cGVzLmJvb2wsXG4gIHNoYXBlOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBvbkNsaWNrOiBQcm9wVHlwZXMuZnVuYy5pc1JlcXVpcmVkLFxuICBsYWJlbDogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICBtZXRhOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtQcm9wVHlwZXMubnVtYmVyLCBQcm9wVHlwZXMuc3RyaW5nXSksXG59O1xuXG5leHBvcnQgZGVmYXVsdCBBcHBCdXR0b247XG4iXX0=

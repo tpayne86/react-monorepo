@@ -1,6 +1,5 @@
-
 export default function logger({ getState }) {
-  return next => (action) => {
+  return (next) => (action) => {
     console.group(`Action : ${action.type}`); //eslint-disable-line
     console.info('%c Previous State : ', 'color: #3f51b5', getState()); // eslint-disable-line no-console
     console.info('%c Action Dispatched : ', 'color: #009688', action); // eslint-disable-line no-console

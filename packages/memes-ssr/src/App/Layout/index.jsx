@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Layout, Menu,
-} from 'antd';
+import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
@@ -11,7 +9,7 @@ const { Header, Content, Footer } = Layout;
 class AppLayout extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -20,44 +18,34 @@ class AppLayout extends React.Component {
     };
   }
 
-toggle = () => {
-  this.setState(prevState => (
-    {
+  toggle = () => {
+    this.setState((prevState) => ({
       collapsed: !prevState.collapsed,
-    }
-  ));
-}
+    }));
+  };
 
-render() {
-  const { children } = this.props;
-  return (
-    <Layout className="applayout layout">
-      <Header>
-        <Link href="/" to="/">
-          <p className="logo">
-            React Memes
-          </p>
-        </Link>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['0']}
-          style={{ lineHeight: '64px' }}
-        />
-      </Header>
-      <Content style={{ padding: '0 50px' }}>
-        <div className="applayout--content">
-          {
-            children || ''
-          }
-        </div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>
-          Hannad Rehman ©2019
-      </Footer>
-    </Layout>
-  );
-}
+  render() {
+    const { children } = this.props;
+    return (
+      <Layout className="applayout layout">
+        <Header>
+          <Link href="/" to="/">
+            <p className="logo">React Memes</p>
+          </Link>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['0']}
+            style={{ lineHeight: '64px' }}
+          />
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <div className="applayout--content">{children || ''}</div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Hannad Rehman ©2019</Footer>
+      </Layout>
+    );
+  }
 }
 
 export default AppLayout;

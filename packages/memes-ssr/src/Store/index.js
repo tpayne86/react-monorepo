@@ -7,7 +7,6 @@ import reducer from './combinedReducer';
 import logger from './logger';
 import rootSaga from '../App/sagas';
 
-
 const sagaMiddleWare = createSagaMiddleware();
 const history = createHashHistory();
 const middleWares = [sagaMiddleWare, routerMiddleware(history)];
@@ -17,10 +16,7 @@ if (isDev) {
 }
 
 export default function configureStore() {
-  const store = createStore(
-    reducer(history),
-    applyMiddleware(...middleWares),
-  );
+  const store = createStore(reducer(history), applyMiddleware(...middleWares));
   sagaMiddleWare.run(rootSaga);
   /* global module:true */
   /* global process:true */
@@ -36,6 +32,4 @@ export default function configureStore() {
   return store;
 }
 
-export {
-  configureStore, history,
-};
+export { configureStore, history };

@@ -13,9 +13,7 @@ const renderAction = (label, onClick, id) => (
 );
 
 const renderListItems = (item, actionLabel, onClick) => (
-  <List.Item
-    actions={[renderAction(actionLabel, onClick, item.id)]}
-  >
+  <List.Item actions={[renderAction(actionLabel, onClick, item.id)]}>
     <List.Item.Meta
       title={item.value}
       description={item.meta ? item.meta : null}
@@ -23,24 +21,28 @@ const renderListItems = (item, actionLabel, onClick) => (
   </List.Item>
 );
 
-
 const SimpleListWithAction = ({
-  className, dataSource, actionLabel, onClick,
+  className,
+  dataSource,
+  actionLabel,
+  onClick,
 }) => (
   <List
     className={className}
     itemLayout="horizontal"
     dataSource={dataSource}
-    renderItem={item => renderListItems(item, actionLabel, onClick)}
+    renderItem={(item) => renderListItems(item, actionLabel, onClick)}
   />
 );
 
 SimpleListWithAction.propTypes = {
   className: PropTypes.string,
-  dataSource: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  })).isRequired,
+  dataSource: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }),
+  ).isRequired,
   actionLabel: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };

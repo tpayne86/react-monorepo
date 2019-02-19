@@ -5,7 +5,6 @@ import { createHashHistory } from 'history'; // eslint-disable-line
 import { isDev } from '@healthifyme/constants/lib/app/app.constants';
 import logger from './logger';
 
-
 const sagaMiddleWare = createSagaMiddleware();
 const history = createHashHistory();
 const middleWares = [sagaMiddleWare, routerMiddleware(history)];
@@ -14,15 +13,11 @@ if (isDev) {
   middleWares.push(logger);
 }
 
-
 const initStore = (reducer, rootSaga) => {
   if (!reducer || !rootSaga) {
     throw new Error('Please Provide valid arguments');
   }
-  const store = createStore(
-    reducer(history),
-    applyMiddleware(...middleWares),
-  );
+  const store = createStore(reducer(history), applyMiddleware(...middleWares));
 
   sagaMiddleWare.run(rootSaga);
   /* global module:true */
@@ -39,6 +34,4 @@ const initStore = (reducer, rootSaga) => {
   return store;
 };
 
-export {
-  initStore, history,
-};
+export { initStore, history };

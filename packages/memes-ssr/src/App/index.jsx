@@ -7,20 +7,20 @@ import { history } from '../Store';
 import Layout from './Layout';
 import Routes from './Router';
 
-import { globalFetchUserProfile, globalFetchUserProfileExtras } from './actions';
+import {
+  globalFetchUserProfile,
+  globalFetchUserProfileExtras,
+} from './actions';
 
 import '../Styles/global.scss';
 import '@healthifyme/styles';
-
 
 class App extends React.Component {
   static propTypes = {
     profile: PropTypes.object.isRequired,
     globalFetchUserProfileAction: PropTypes.func.isRequired,
     globalFetchUserProfileExtrasAction: PropTypes.func.isRequired,
-
   };
-
 
   componentDidMount() {
     const {
@@ -43,16 +43,21 @@ class App extends React.Component {
   }
 }
 
-
 function mapStateToProps(store) {
   return {
     profile: store.user.profile,
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    globalFetchUserProfileAction: globalFetchUserProfile,
-    globalFetchUserProfileExtrasAction: globalFetchUserProfileExtras,
-  }, dispatch);
+  return bindActionCreators(
+    {
+      globalFetchUserProfileAction: globalFetchUserProfile,
+      globalFetchUserProfileExtrasAction: globalFetchUserProfileExtras,
+    },
+    dispatch,
+  );
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);

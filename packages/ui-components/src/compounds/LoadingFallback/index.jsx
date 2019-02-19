@@ -4,15 +4,13 @@ import Spinner from '../../elements/Spinner';
 
 const LoadingFallback = ({ loading, children, size }) => (
   <React.Fragment>
-    {
-      loading === true
-        ? (
-          <div className="flex flex--center padding padding--lg">
-            <Spinner visible={loading} size={size} />
-          </div>
-        )
-        : children
-    }
+    {loading === true ? (
+      <div className="flex flex--center padding padding--lg">
+        <Spinner visible={loading} size={size} />
+      </div>
+    ) : (
+      children
+    )}
   </React.Fragment>
 );
 

@@ -1,5 +1,6 @@
 export const TEXTBOX_DEBOUNCE_TIME = 300;
-export const DUMMY_IMAGE_PLACEHOLDER = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRui0qU3H754Sulya39NTG7GZ9w48OtvoHXZnK63igQTUiEgDR2tw';
+export const DUMMY_IMAGE_PLACEHOLDER =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRui0qU3H754Sulya39NTG7GZ9w48OtvoHXZnK63igQTUiEgDR2tw';
 export const ALERT_TYPES = {
   DANGER: 'DANGER',
   WARNING: 'WARNING',

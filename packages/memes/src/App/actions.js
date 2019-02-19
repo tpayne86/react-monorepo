@@ -1,4 +1,3 @@
-
 import globalActions from './actionNames';
 
 export const globalFetchUserProfile = () => ({
@@ -7,11 +6,11 @@ export const globalFetchUserProfile = () => ({
 export const globalFetchUserProfileLoading = () => ({
   type: globalActions.FETCH_USER_PROFILE_LOADING,
 });
-export const globalFetchUserProfileSuccess = payload => ({
+export const globalFetchUserProfileSuccess = (payload) => ({
   type: globalActions.FETCH_USER_PROFILE_SUCCESS,
   payload,
 });
-export const globalFetchUserProfileFailure = payload => ({
+export const globalFetchUserProfileFailure = (payload) => ({
   type: globalActions.FETCH_USER_PROFILE_FAILURE,
   payload,
 });
@@ -19,11 +18,11 @@ export const globalFetchUserProfileFailure = payload => ({
 export const globalFetchUserProfileExtras = () => ({
   type: globalActions.FETCH_USER_EXTRA_PROFILE,
 });
-export const globalFetchUserProfileExtrasSuccess = payload => ({
+export const globalFetchUserProfileExtrasSuccess = (payload) => ({
   type: globalActions.FETCH_USER_EXTRA_PROFILE_SUCCESS,
   payload,
 });
-export const globalFetchUserProfileExtrasFailure = payload => ({
+export const globalFetchUserProfileExtrasFailure = (payload) => ({
   type: globalActions.FETCH_USER_EXTRA_PROFILE_FAILURE,
   payload,
 });

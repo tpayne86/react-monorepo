@@ -13,5 +13,6 @@ const reduxStore = initStore(rootReducer, rootSaga);
 ReactDOM.render(
   <Provider store={reduxStore}>
     <App />
-  </Provider>, document.getElementById('root'),
+  </Provider>,
+  document.getElementById('root'),
 );

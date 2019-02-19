@@ -1,7 +1,10 @@
 /* global process:true */
 import axios from 'axios';
 import {
-  USER_ONE_NAME, USER_ONE_PAS, STAGE_ACCESS, PROXY_TO,
+  USER_ONE_NAME,
+  USER_ONE_PAS,
+  STAGE_ACCESS,
+  PROXY_TO,
 } from '@healthifyme/constants/lib/app/app.constants';
 import { APP_LOGIN } from '@healthifyme/constants/lib/api/api.endpoints';
 
@@ -23,7 +26,9 @@ export const getCsrfToken = () => {
 export const getNewApiUrl = (url) => {
   // proxy origin will only be defined when developing and pointing to stage
   // it should be undefined when deploying
-  if (!PROXY_TO) { return url; }
+  if (!PROXY_TO) {
+    return url;
+  }
   let auth;
   let newUrl = url;
   if (PROXY_TO === 'staging') {
@@ -47,10 +52,13 @@ export const getApiHeaders = () => ({
 });
 // will allow login only when we are proxying to stage and is on Dev url
 if (process.env.NODE_ENV === 'development') {
-  window.attemptLogin = () => axios.post(APP_LOGIN, {
-    username: USER_ONE_NAME, password: USER_ONE_PAS,
-  })
-    .then(() => {
+  window.attemptLogin = () =>
+    axios
+      .post(APP_LOGIN, {
+        username: USER_ONE_NAME,
+        password: USER_ONE_PAS,
+      })
+      .then(() => {
         console.log('login');// eslint-disable-line
-    });
+      });
 }

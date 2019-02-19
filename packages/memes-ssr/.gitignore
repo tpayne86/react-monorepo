@@ -38,6 +38,7 @@ jspm_packages
 
 # Dist
 dist
+lib
 
 # Test shapShots
 __snapshots__
@@ -51,6 +52,7 @@ coverage
 .eslintcache
 /coverage
 /dist
+/lib
 /local
 /reports
 /node_modules

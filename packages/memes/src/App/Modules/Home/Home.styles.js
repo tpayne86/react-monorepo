@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position:relative
+  position: relative;
 `;
 export const Mains = styled.div`
   width: 80%;

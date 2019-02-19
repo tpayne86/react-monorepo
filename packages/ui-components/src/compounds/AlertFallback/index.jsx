@@ -3,24 +3,28 @@ import PropTypes from 'prop-types';
 import Alert from '../../elements/Alert';
 
 const AlertFallback = ({
-  hasAlert, children, type, alertTitle, alertDescription, closable, onClose,
+  hasAlert,
+  children,
+  type,
+  alertTitle,
+  alertDescription,
+  closable,
+  onClose,
 }) => (
   <React.Fragment>
-    {
-      hasAlert === true
-        ? (
-          <div className="flex flex--center padding padding--lg">
-            <Alert
-              message={alertTitle}
-              description={alertDescription}
-              type={type}
-              closable={closable}
-              onClose={onClose}
-            />
-          </div>
-        )
-        : children
-    }
+    {hasAlert === true ? (
+      <div className="flex flex--center padding padding--lg">
+        <Alert
+          message={alertTitle}
+          description={alertDescription}
+          type={type}
+          closable={closable}
+          onClose={onClose}
+        />
+      </div>
+    ) : (
+      children
+    )}
   </React.Fragment>
 );
 

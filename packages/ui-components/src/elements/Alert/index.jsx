@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Alert } from 'antd';
 
-const AppAlert = ({
-  message, description, type, closable, onClose,
-}) => (
+const AppAlert = ({ message, description, type, closable, onClose }) => (
   <div>
     <Alert
       message={message}
@@ -31,6 +29,5 @@ AppAlert.defaultProps = {
   type: 'error',
   description: '',
 };
-
 
 export default AppAlert;

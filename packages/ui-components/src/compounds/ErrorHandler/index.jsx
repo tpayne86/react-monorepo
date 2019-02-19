@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DEV_ORIGIN } from '@healthifyme/constants';
 import {
-  Wrapper, Image, StackTrace, ErrorTrace, Paragraph, Pre,
+  Wrapper,
+  Image,
+  StackTrace,
+  ErrorTrace,
+  Paragraph,
+  Pre,
 } from './style';
 
 class ErrorHandler extends React.Component {
@@ -38,38 +43,24 @@ class ErrorHandler extends React.Component {
             alt="err"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Error.svg/497px-Error.svg.png"
           />
-          <h1>
-              Some Error Occured
-          </h1>
+          <h1>Some Error Occured</h1>
           {origin === DEV_ORIGIN && (
             <StackTrace>
               <ErrorTrace>
-                <p>
-                  Exception Trace
-                </p>
-                <pre>
-                  {error.stack}
-                </pre>
+                <p>Exception Trace</p>
+                <pre>{error.stack}</pre>
               </ErrorTrace>
               <br />
               <ErrorTrace>
-                <Paragraph>
-                  Exception Details
-                </Paragraph>
-                <Pre>
-                  {info.componentStack}
-                </Pre>
+                <Paragraph>Exception Details</Paragraph>
+                <Pre>{info.componentStack}</Pre>
               </ErrorTrace>
             </StackTrace>
           )}
         </Wrapper>
       );
     }
-    return (
-      <section className="e-h error-checked">
-        {children}
-      </section>
-    );
+    return <section className="e-h error-checked">{children}</section>;
   }
 }
 

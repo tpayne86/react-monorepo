@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'antd';
 
-const GridCol = ({
-  size,
-  children,
-  xs, sm, md, lg, xl,
-}) => (
+const GridCol = ({ size, children, xs, sm, md, lg, xl }) => (
   <Col
     span={size}
     xs={xs || size}

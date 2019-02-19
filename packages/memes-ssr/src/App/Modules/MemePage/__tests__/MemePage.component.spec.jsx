@@ -3,7 +3,11 @@ import { configure, shallow } from 'enzyme'; //eslint-disable-line
 import * as redux from 'redux';
 import Adapter from 'enzyme-adapter-react-16'; //eslint-disable-line
 import * as arrayUtils from '@healthifyme/utilities/lib/arrays';
-import { MemePage, mapDispatchToProps, mapStateToProps } from '../MemePage.component';
+import {
+  MemePage,
+  mapDispatchToProps,
+  mapStateToProps,
+} from '../MemePage.component';
 import * as componentsUtils from '../MemePage.utility';
 
 configure({ adapter: new Adapter() });
@@ -86,8 +90,14 @@ describe('unit test cases for MemePage.component.jsx ', () => {
     it('should call this method from the child component', () => {
       const mock = jest.fn();
       wrapper.instance().closePopup = mock;
-      wrapper.find('SimpleModal').props().onOk();
-      wrapper.find('SimpleModal').props().onCancel();
+      wrapper
+        .find('SimpleModal')
+        .props()
+        .onOk();
+      wrapper
+        .find('SimpleModal')
+        .props()
+        .onCancel();
       expect(mock).toHaveBeenCalled();
       expect(mock).toHaveBeenCalledTimes(1); // should be 2 but 1
     });
@@ -111,20 +121,24 @@ describe('unit test cases for MemePage.component.jsx ', () => {
     it('should call setState with appropriate arguments', () => {
       const ev = {
         target: {
-          getAttribute: jest.fn().mockImplementationOnce().mockReturnValue(1),
+          getAttribute: jest
+            .fn()
+            .mockImplementationOnce()
+            .mockReturnValue(1),
         },
       };
-      const matrix = [
-        [{ id: '1', name: 'abc' }, { id: '2', name: 'abc' }],
-      ];
+      const matrix = [[{ id: '1', name: 'abc' }, { id: '2', name: 'abc' }]];
       const spy = jest.mock();
 
-      spy.spyOn(arrayUtils, 'transformArrayToArrayOfArraysRamdomly').mockReturnValueOnce(matrix);
+      spy
+        .spyOn(arrayUtils, 'transformArrayToArrayOfArraysRamdomly')
+        .mockReturnValueOnce(matrix);
 
       const utilSpy = jest.mock();
 
       utilSpy.spyOn(componentsUtils, 'findMemeInMatrix').mockReturnValue({
-        id: '1', name: 'abc',
+        id: '1',
+        name: 'abc',
       });
 
       wrapper.instance().handleMemeClick(ev);
@@ -133,12 +147,18 @@ describe('unit test cases for MemePage.component.jsx ', () => {
       expect(ev.target.getAttribute).toHaveBeenCalledWith('data-identifier');
       expect(ev.target.getAttribute).toHaveReturnedWith(1);
 
-      expect(arrayUtils.transformArrayToArrayOfArraysRamdomly)
-        .toHaveBeenCalled();
-      expect(arrayUtils.transformArrayToArrayOfArraysRamdomly)
-        .toHaveBeenCalledTimes(2); // because 1 in render
-      expect(arrayUtils.transformArrayToArrayOfArraysRamdomly)
-        .toHaveBeenCalledWith([{ id: '1', name: 'abc' }, { id: '2', name: 'abc' }], 5);
+      expect(
+        arrayUtils.transformArrayToArrayOfArraysRamdomly,
+      ).toHaveBeenCalled();
+      expect(
+        arrayUtils.transformArrayToArrayOfArraysRamdomly,
+      ).toHaveBeenCalledTimes(2); // because 1 in render
+      expect(
+        arrayUtils.transformArrayToArrayOfArraysRamdomly,
+      ).toHaveBeenCalledWith(
+        [{ id: '1', name: 'abc' }, { id: '2', name: 'abc' }],
+        5,
+      );
 
       expect(componentsUtils.findMemeInMatrix).toBeCalled();
       expect(componentsUtils.findMemeInMatrix).toHaveBeenCalledTimes(1);
@@ -147,7 +167,8 @@ describe('unit test cases for MemePage.component.jsx ', () => {
       expect(setState).toHaveBeenCalled();
       expect(setState).toHaveBeenCalledWith({
         selectedMeme: {
-          id: '1', name: 'abc',
+          id: '1',
+          name: 'abc',
         },
         visible: true,
       });
@@ -174,7 +195,10 @@ describe('unit test cases for MemePage.component.jsx ', () => {
     it('should call setState with appropriate arguments', () => {
       const ev = {
         target: {
-          getAttribute: jest.fn().mockImplementationOnce().mockReturnValue(false),
+          getAttribute: jest
+            .fn()
+            .mockImplementationOnce()
+            .mockReturnValue(false),
         },
       };
       wrapper.instance().handleMemeClick(ev);

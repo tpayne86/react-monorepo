@@ -13,5 +13,6 @@ const reduxStore = configureStore();
 ReactDOM.hydrate(
   <Provider store={reduxStore}>
     <App />
-  </Provider>, document.getElementById('root'),
+  </Provider>,
+  document.getElementById('root'),
 );

@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { Spin } from 'antd';
 
 const Spinner = ({ visible, size }) => (
-  <React.Fragment>
-    {
-      visible
-      && <Spin size={size} />
-    }
-  </React.Fragment>
+  <React.Fragment>{visible && <Spin size={size} />}</React.Fragment>
 );
 
 Spinner.propTypes = {

@@ -16,19 +16,13 @@ describe('unit test cases for MemePage.utility.js', () => {
       expect(findMemeInMatrix([1])).toBe(null);
     });
     it('should return object with same id', () => {
-      const matrix = [
-        [{ id: 1 }, { id: 2 }],
-        [{ id: 3 }, { id: 4 }],
-      ];
+      const matrix = [[{ id: 1 }, { id: 2 }], [{ id: 3 }, { id: 4 }]];
       const id = 4;
       const expected = { id: 4 };
       expect(findMemeInMatrix(matrix, id)).toEqual(expected);
     });
     it('should return object null if id dosent match', () => {
-      const matrix = [
-        [{ id: 1 }, { id: 2 }],
-        [{ id: 3 }, { id: 4 }],
-      ];
+      const matrix = [[{ id: 1 }, { id: 2 }], [{ id: 3 }, { id: 4 }]];
       const id = 5;
       const expected = null;
       expect(findMemeInMatrix(matrix, id)).toBe(expected);
