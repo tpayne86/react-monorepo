@@ -5,7 +5,13 @@ import { Card } from 'antd';
 const { Meta } = Card;
 
 const CardWithImage = ({
-  imgUrl, title, description, imgAlt, loading, onClick, identifier,
+  imgUrl,
+  title,
+  description,
+  imgAlt,
+  loading,
+  onClick,
+  identifier,
 }) => (
   <Card
     hoverable
@@ -13,10 +19,7 @@ const CardWithImage = ({
     loading={loading}
     onClick={onClick}
   >
-    <Meta
-      title={title}
-      description={description}
-    />
+    <Meta title={title} description={description} />
   </Card>
 );
 
@@ -27,7 +30,8 @@ CardWithImage.propTypes = {
   imgAlt: PropTypes.string,
   loading: PropTypes.bool,
   onClick: PropTypes.func,
-  identifier: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  identifier: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
 };
 CardWithImage.defaultProps = {
   imgAlt: 'image',

@@ -1,11 +1,22 @@
 {
   "env": {
-    "browser": false,
+    "browser": true,
     "node": true,
     "jest": true
   },
-  "plugins": [],
-  "extends": ["airbnb-base"],
-  "globals": {},
-  "parser": "babel-eslint"
+"plugins": ["prettier"],
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "globals": {
+    "module": true,
+    "process":true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/namespace": 0,
+    "react/jsx-one-expression-per-line":0
+  }
 }

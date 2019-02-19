@@ -21,33 +21,48 @@ const userReducer = (state = defaultState, actions) => {
     case globalActionNames.FETCH_USER_PROFILE_LOADING:
       return simpleApiStoreStates(state, 'profile', { loading: true });
     case globalActionNames.FETCH_USER_PROFILE_SUCCESS:
-      return simpleApiStoreStates(state, 'profile', { loading: false, data: actions.payload, error: null });
+      return simpleApiStoreStates(state, 'profile', {
+        loading: false,
+        data: actions.payload,
+        error: null,
+      });
     case globalActionNames.FETCH_USER_PROFILE_FAILURE:
-      return simpleApiStoreStates(state, 'profile', { loading: false, data: null, error: actions.payload });
+      return simpleApiStoreStates(state, 'profile', {
+        loading: false,
+        data: null,
+        error: actions.payload,
+      });
     case globalActionNames.FETCH_USER_EXTRA_PROFILE_LOADING:
       return simpleApiStoreStates(state, 'extraProfile', { loading: true });
     case globalActionNames.FETCH_USER_EXTRA_PROFILE_SUCCESS:
-      return simpleApiStoreStates(state, 'extraProfile', { loading: false, data: actions.payload, error: null });
+      return simpleApiStoreStates(state, 'extraProfile', {
+        loading: false,
+        data: actions.payload,
+        error: null,
+      });
     case globalActionNames.FETCH_USER_EXTRA_PROFILE_FAILURE:
-      return simpleApiStoreStates(state, 'extraProfile', { loading: false, data: null, error: actions.payload });
+      return simpleApiStoreStates(state, 'extraProfile', {
+        loading: false,
+        data: null,
+        error: actions.payload,
+      });
     default:
       return state;
   }
 };
-const defState = {
-};
+const defState = {};
 const appReducer = (state = defState, actions) => {
   switch (actions.type) {
     default:
       return state;
   }
 };
-const reducer = history => combineReducers({
-  user: userReducer,
-  modules: modulesReducer,
-  app: appReducer,
-  router: connectRouter(history),
-
-});
+const reducer = (history) =>
+  combineReducers({
+    user: userReducer,
+    modules: modulesReducer,
+    app: appReducer,
+    router: connectRouter(history),
+  });
 export { userReducer, appReducer };
 export default reducer;

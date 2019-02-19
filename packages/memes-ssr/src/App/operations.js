@@ -1,9 +1,6 @@
 import { put } from 'redux-saga/effects';
 
-import {
-  userProfile,
-  userProfileExtras,
-} from '../Services/http/http.requests';
+import { userProfile, userProfileExtras } from '../Services/http/http.requests';
 
 import {
   globalFetchUserProfileLoading,
@@ -12,7 +9,6 @@ import {
   globalFetchUserProfileExtrasLoading,
   globalFetchUserProfileExtrasSuccess,
   globalFetchUserProfileExtrasFailure,
-
 } from './actions';
 
 export function* fetchUserProfileSaga() {

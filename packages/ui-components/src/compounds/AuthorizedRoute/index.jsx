@@ -18,9 +18,8 @@ const getRoute = (component, path, exact, roles, user) => {
   }
 };
 
-const AuthorizedRoute = ({
-  component, path, exact, roles, user,
-}) => getRoute(component, path, exact, roles, user);
+const AuthorizedRoute = ({ component, path, exact, roles, user }) =>
+  getRoute(component, path, exact, roles, user);
 
 AuthorizedRoute.propTypes = {
   component: PropTypes.func.isRequired,

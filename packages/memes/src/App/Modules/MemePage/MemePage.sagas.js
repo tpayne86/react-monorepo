@@ -7,9 +7,7 @@ function* watchMemes() {
 }
 
 function* memeSage() {
-  yield all([
-    fork(watchMemes),
-  ]);
+  yield all([fork(watchMemes)]);
 }
 
 export default memeSage;

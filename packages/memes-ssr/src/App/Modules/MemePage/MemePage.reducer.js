@@ -13,11 +13,23 @@ const memePageReducer = (state = defaultState, actions) => {
     case memePageActionNames.FETCH_MEMES_LOADING:
       return simpleApiStoreStates(state, 'pupularMemes', { loading: true });
     case memePageActionNames.FETCH_MEMES_SUCCESS:
-      return simpleApiStoreStates(state, 'pupularMemes', { loading: false, data: actions.payload, error: null });
+      return simpleApiStoreStates(state, 'pupularMemes', {
+        loading: false,
+        data: actions.payload,
+        error: null,
+      });
     case memePageActionNames.FETCH_MEMES_FAILURE:
-      return simpleApiStoreStates(state, 'pupularMemes', { loading: false, data: [], error: actions.payload });
+      return simpleApiStoreStates(state, 'pupularMemes', {
+        loading: false,
+        data: [],
+        error: actions.payload,
+      });
     case memePageActionNames.FETCH_MEMES_CLEAR:
-      return simpleApiStoreStates(state, 'pupularMemes', { loading: false, data: [], error: null });
+      return simpleApiStoreStates(state, 'pupularMemes', {
+        loading: false,
+        data: [],
+        error: null,
+      });
     default:
       return state;
   }

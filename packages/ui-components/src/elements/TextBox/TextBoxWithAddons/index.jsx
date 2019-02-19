@@ -42,12 +42,20 @@ class TextBoxWithAddons extends React.PureComponent {
       value: tempVal,
     });
     onTextChange(tempVal);
-  }
+  };
 
   render() {
     const {
-      addonAfter, addonBefore, prefixIcon, suffixIcon, defaultValue, id, type, placeholder,
-      size, className,
+      addonAfter,
+      addonBefore,
+      prefixIcon,
+      suffixIcon,
+      defaultValue,
+      id,
+      type,
+      placeholder,
+      size,
+      className,
     } = this.props;
     const { value } = this.state;
     return (

@@ -1,6 +1,10 @@
 import { put } from 'redux-saga/effects';
 import { memes } from '../../../Services/http/http.requests';
-import { memePageFetchMemesLoading, memePageFetchMemesSuccess, memePageFetcgMemeFailure } from './MemePage.actions';
+import {
+  memePageFetchMemesLoading,
+  memePageFetchMemesSuccess,
+  memePageFetcgMemeFailure,
+} from './MemePage.actions';
 
 export default function* fetchMemesOperation() {
   try {

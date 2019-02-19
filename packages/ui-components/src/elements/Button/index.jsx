@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import { Button } from 'antd';
 
 const AppButton = ({
-  disabled, url,
-  icon, shape,
-  loading, type,
-  onClick, label,
+  disabled,
+  url,
+  icon,
+  shape,
+  loading,
+  type,
+  onClick,
+  label,
   meta,
 }) => (
   <Button
@@ -20,7 +24,6 @@ const AppButton = ({
     data-meta={meta}
   >
     {label}
-
   </Button>
 );
 AppButton.defaultProps = {

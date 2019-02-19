@@ -37,16 +37,22 @@ describe('Unit test cases for App/actions.js', () => {
     });
     it('should return globalFetchUserProfileExtrasLoading action', () => {
       const actionCreator = globalFetchUserProfileExtrasLoading();
-      expect(actionCreator.type).toBe('GLOBAL/FETCH_USER_EXTRA_PROFILE_LOADING');
+      expect(actionCreator.type).toBe(
+        'GLOBAL/FETCH_USER_EXTRA_PROFILE_LOADING',
+      );
     });
     it('should return globalFetchUserProfileExtrasSuccess action', () => {
       const actionCreator = globalFetchUserProfileExtrasSuccess({ data: true });
-      expect(actionCreator.type).toBe('GLOBAL/FETCH_USER_EXTRA_PROFILE_SUCCESS');
+      expect(actionCreator.type).toBe(
+        'GLOBAL/FETCH_USER_EXTRA_PROFILE_SUCCESS',
+      );
       expect(actionCreator.payload.data).toBe(true);
     });
     it('should return globalFetchUserProfileExtrasFailure action', () => {
       const actionCreator = globalFetchUserProfileExtrasFailure({ data: true });
-      expect(actionCreator.type).toBe('GLOBAL/FETCH_USER_EXTRA_PROFILE_FAILURE');
+      expect(actionCreator.type).toBe(
+        'GLOBAL/FETCH_USER_EXTRA_PROFILE_FAILURE',
+      );
       expect(actionCreator.payload.data).toBe(true);
     });
   });

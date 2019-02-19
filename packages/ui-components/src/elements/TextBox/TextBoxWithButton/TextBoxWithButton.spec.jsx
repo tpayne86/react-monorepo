@@ -25,7 +25,9 @@ describe('Unit Test cases for TextBoxWithButton.component.jsx', () => {
       expect(typeof componentProps.onAction).toBe('function');
     });
     it('should simulate change in text box', () => {
-      wrapper.find('Search').simulate('change', { target: { value: 'hey text' } });
+      wrapper
+        .find('Search')
+        .simulate('change', { target: { value: 'hey text' } });
       const componentState = wrapper.instance().state;
       expect(componentState.value).toBe('hey text');
     });

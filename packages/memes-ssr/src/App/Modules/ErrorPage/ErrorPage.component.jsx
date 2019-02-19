@@ -7,18 +7,20 @@ import { ROUTE_ERROR } from '../../../Constants/app/app.constants';
 import './ErrorPage.styles.scss';
 
 const ErrorPage = ({ match }) => {
-  const { params: { type } } = match;
+  const {
+    params: { type },
+  } = match;
   return (
     <div className="errorpage errorpage__wrapper">
       <section className="errorpage__section">
-        <img className="errorpage__baseimage" src={errorImag} alt={type || ROUTE_ERROR.NOT_FOUND} />
+        <img
+          className="errorpage__baseimage"
+          src={errorImag}
+          alt={type || ROUTE_ERROR.NOT_FOUND}
+        />
       </section>
       <section className="errorpage__section">
-        <h1>
-          ERROR :
-          {' '}
-          {type || ROUTE_ERROR.NOT_FOUND}
-        </h1>
+        <h1>ERROR :{type || ROUTE_ERROR.NOT_FOUND}</h1>
       </section>
     </div>
   );

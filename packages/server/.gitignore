@@ -38,6 +38,7 @@ jspm_packages
 
 # Dist
 dist
+lib
 
 # Test shapShots
 __snapshots__

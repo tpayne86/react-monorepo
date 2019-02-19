@@ -8,7 +8,9 @@ export const Wrapper = styled.div`
   ${justifyAround}
 `;
 
-export const Image = styled.img`width: 100px;`;
+export const Image = styled.img`
+  width: 100px;
+`;
 
 export const StackTrace = styled.div`
   position: fixed;

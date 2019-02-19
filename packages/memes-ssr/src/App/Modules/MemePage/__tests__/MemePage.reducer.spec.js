@@ -1,7 +1,6 @@
 import * as functionUtils from '@healthifyme/utilities/lib/generics';
 import memePageReducer from '../MemePage.reducer';
 
-
 describe('unit test cases for MemePageReducer.js', () => {
   describe('unit test cases for memePageReducer', () => {
     let defaultState = {};
@@ -30,7 +29,8 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates
+        .spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: true,
@@ -70,7 +70,8 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates
+        .spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,
@@ -111,7 +112,8 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates
+        .spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,
@@ -152,7 +154,8 @@ describe('unit test cases for MemePageReducer.js', () => {
     });
     it('should update default state to loading', () => {
       const mockSimpleApiStoreStates = jest.mock();
-      mockSimpleApiStoreStates.spyOn(functionUtils, 'simpleApiStoreStates')
+      mockSimpleApiStoreStates
+        .spyOn(functionUtils, 'simpleApiStoreStates')
         .mockReturnValue({
           pupularMemes: {
             loading: false,

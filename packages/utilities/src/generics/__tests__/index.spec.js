@@ -1,10 +1,9 @@
-
 import { simpleApiStoreStates } from '..';
 
 describe('Unit test cases for Services/utility/objects.js', () => {
   describe('Unit test cases for simpleApiStoreStates', () => {
-    let defaultState = { };
-    let properties1 = { };
+    let defaultState = {};
+    let properties1 = {};
     beforeEach(() => {
       defaultState = {
         testProp: {
@@ -19,7 +18,11 @@ describe('Unit test cases for Services/utility/objects.js', () => {
     });
     it('should return a valid loading state', () => {
       expect(defaultState.testProp.loading).toBe(false);
-      const result = simpleApiStoreStates(defaultState, 'testProp', properties1);
+      const result = simpleApiStoreStates(
+        defaultState,
+        'testProp',
+        properties1,
+      );
       const expected = {
         testProp: {
           loading: true,
@@ -30,7 +33,11 @@ describe('Unit test cases for Services/utility/objects.js', () => {
     });
     it('should handle wrong props', () => {
       expect(defaultState.testProp).toBeDefined();
-      const result = simpleApiStoreStates(defaultState, 'someProps', properties1);
+      const result = simpleApiStoreStates(
+        defaultState,
+        'someProps',
+        properties1,
+      );
       const expected = {
         testProp: {
           loading: false,

@@ -20,9 +20,9 @@ class AppTextArea extends React.PureComponent {
     maxRows: 6,
   };
 
-  state ={
+  state = {
     value: '',
-  }
+  };
 
   handleChange = (ev) => {
     const { onTextChange } = this.props;
@@ -31,13 +31,10 @@ class AppTextArea extends React.PureComponent {
       value: tempVal,
     });
     onTextChange(tempVal);
-  }
+  };
 
   render() {
-    const {
-      minRows, maxRows, id, placeholder,
-      size, className,
-    } = this.props;
+    const { minRows, maxRows, id, placeholder, size, className } = this.props;
     const { value } = this.state;
     return (
       <Input.TextArea
