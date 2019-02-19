@@ -5,7 +5,7 @@ import { static as expressStatic } from 'express';
 import path from 'path';
 
 const appConfig = (app) => {
-  app.use('/', expressStatic(path.resolve(__dirname, '../public')));
+  app.use('/static', expressStatic(path.resolve(__dirname, '../public')));
   app.use(morgan('common'));
   app.use(compression());
   app.use(helmet());
