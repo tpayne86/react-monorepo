@@ -39,6 +39,7 @@ jspm_packages
 # Dist
 dist
 lib
+.env
 
 # Test shapShots
 __snapshots__/
@@ -63,3 +64,4 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspaceg
 coverage/
+*.env

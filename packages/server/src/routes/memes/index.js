@@ -6,7 +6,6 @@ const router = Router();
 const publicPath = getStaticPath('/');
 
 router.get('/', (req, res) => {
-  console.log('/memes');
-  res.sendFile(`${publicPath}/index.html`);
+  res.sendFile(`${publicPath}/static/memes/index.html`);
 });
 export default router;

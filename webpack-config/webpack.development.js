@@ -8,7 +8,7 @@ const devServer = require('./webpack.devserver');
 const { webpackDevEnvironmentVariableForBrowser } = require('./webpack.env');
 
 // only dev config
-module.exports = env => ({
+module.exports = (env) => ({
   module: appModule(env).module,
   plugins: [
     webpackDevEnvironmentVariableForBrowser(),

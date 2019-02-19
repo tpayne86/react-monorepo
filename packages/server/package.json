@@ -23,7 +23,6 @@
     "nodemon": "1.18.9"
   },
   "dependencies": {
-    "@healthifyme/memes-ssr": "^4.0.3",
     "compression": "^1.7.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.3",

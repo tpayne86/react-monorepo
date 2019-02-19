@@ -7,7 +7,11 @@ module.exports = (env) => {
     devtool: isProd ? false : 'source-maps',
     entry: [`./${env.appConfig.folderSrc}/src/index.jsx`],
     output: {
-      path: path.resolve(__dirname, '../', `dist/public/${env.appConfig.folderName}`),
+      path: path.resolve(
+        __dirname,
+        '../',
+        `dist/public/static/${env.appConfig.folderName}`,
+      ),
       filename: isProd ? 'js/[name].[chunkHash].js' : 'js/[name].js',
       publicPath: isProd ? env.appConfig.publicPath : '',
       pathinfo: false,
@@ -15,10 +19,7 @@ module.exports = (env) => {
     resolve: {
       extensions: ['*', '.js', '.jsx', '.json', '.css', '.less', '.scss'],
       symlinks: false,
-      modules: [
-        'node_modules',
-        `./${env.appConfig.folderSrc}`,
-      ],
+      modules: ['node_modules', `./${env.appConfig.folderSrc}`],
       alias: {
         ROOT: path.resolve(__dirname, '../'),
       },

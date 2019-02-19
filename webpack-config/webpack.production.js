@@ -9,7 +9,7 @@ const path = require('path');
 const appModule = require('./webpack.loaders');
 const { webpackProdEnvironmentVariableForBrowser } = require('./webpack.env');
 
-module.exports = env => ({
+module.exports = (env) => ({
   module: appModule(env).module,
   plugins: [
     webpackProdEnvironmentVariableForBrowser(),

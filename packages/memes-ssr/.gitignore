@@ -62,3 +62,4 @@ Thumbs.db
 .vscode
 *.sublime-project
 *.sublime-workspaceg
+*.env

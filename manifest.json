@@ -8,13 +8,6 @@
       "appHTMLTitle": "Meme dashboard monorepo",
       "folderName": "memes",
       "folderSrc": "packages/memes"
-    },
-    "@healthifyme/memes-ssr": {
-      "appBase": "/memes-ssr/",
-      "publicPath": "/static/memes-ssr/",
-      "appHTMLTitle": "Meme server side",
-      "folderName": "memes-ssr",
-      "folderSrc": "packages/memes-ssr"
     }
   }
 }
