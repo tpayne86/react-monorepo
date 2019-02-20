@@ -290,6 +290,7 @@ read documentation [here](https://webpack.js.org/)
 
 add following variables
 
+```
 NODE_ENV=development|production
 DEVSERVER_PORT=9000|any
 PROXY_ORIGIN=development|staging|dev|etc
@@ -301,3 +302,4 @@ AWS_ACCESS_KEY_ID=aws key. used for cloudfront cdn
 AWS_SECRET_ACCESS_KEY=aws acces key.  used for cloudfront cdn
 CLOUD_FRONT_BASE=cloudfront base url
 S3_UPLOAD=0|1
+```
