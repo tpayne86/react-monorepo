@@ -87,7 +87,7 @@ const createPackageFiles = async (packageOptions) => {
     await copyTemplate(source, dest);
     return dest;
   } catch (e) {
-    console.log(e);
+    console.log(e); // eslint-disable-line
     throw e;
   }
 };
