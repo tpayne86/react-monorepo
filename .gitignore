@@ -10,7 +10,6 @@ bower_components/
 coverage/
 dist/
 lib/
-**/lib/
 local/
 reports/
 Thumbs.db
