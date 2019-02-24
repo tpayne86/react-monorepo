@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/constants",
+  "name": "@nikaah/constants",
   "version": "4.0.3",
   "description": "core constants for through out the application",
   "main": "lib/",

@@ -1,0 +1,2 @@
+export const JWT_ACCESS_TOKEN_EXPIRY = 60 * 120;
+export const JWT_REFRESH_TOKE_EXPIRY = 60 * 360;

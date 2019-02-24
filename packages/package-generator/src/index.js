@@ -1,3 +1,3 @@
-const { createPackage } = require('./lib');
+const { createPackage } = require('./libs');
 
 createPackage();

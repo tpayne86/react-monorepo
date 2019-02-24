@@ -2,12 +2,19 @@
   "name": "healthifyme-web-application",
   "author": "hannad rehman",
   "applications": {
-    "@healthifyme/memes": {
-      "appBase": "/memes/",
-      "publicPath": "/static/memes/",
-      "appHTMLTitle": "Meme dashboard monorepo",
-      "folderName": "memes",
-      "folderSrc": "packages/memes"
+    "@nikaah/main-fe": {
+      "appBase": "/",
+      "publicPath": "/static/nikah/",
+      "appHTMLTitle": "Nikah",
+      "folderName": "main-fe",
+      "folderSrc": "packages/main-fe"
+    },
+    "@nikaah/memes-ssr": {
+      "appBase": "/memes-ssr/",
+      "publicPath": "/static/memes-ssr/",
+      "appHTMLTitle": "Meme server side",
+      "folderName": "memes-ssr",
+      "folderSrc": "packages/memes-ssr"
     }
   }
 }

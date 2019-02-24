@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DEV_ORIGIN } from '@healthifyme/constants';
+import { DEV_ORIGIN } from '@nikaah/constants';
 import {
   Wrapper,
   Image,

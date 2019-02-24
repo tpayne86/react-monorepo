@@ -5,10 +5,10 @@ import {
   STAGE_ACCESS,
   PROXY_TO,
   isDev,
-} from '@healthifyme/constants/lib/app/app.constants';
+} from '@nikaah/constants/lib/app/app.constants';
 
-import { APP_LOGIN } from '@healthifyme/constants/lib/api/api.endpoints';
-
+import { APP_LOGIN } from '@nikaah/constants/lib/api/api.endpoints';
+import { get } from '@nikaah/utilities/lib/storage/local-storage';
 /**
  * @returns {Cookie} csrf
  * @description function return csrf Cookie
@@ -44,7 +44,7 @@ export const getNewApiUrl = (url) => {
   return newUrl;
 };
 
-export const interceptedConfig = (config) => {
+export const interceptedConfig = async (config) => {
   try {
     const copyConfig = { ...config };
     copyConfig.url = getNewApiUrl(copyConfig.url);
@@ -52,6 +52,9 @@ export const interceptedConfig = (config) => {
       ...copyConfig.headers.common,
       'X-CSRFToken': getCsrfToken(),
     };
+    const accessToken = await get('access_token');
+    copyConfig.headers.authorization = accessToken;
+    // add refresh token logic here later
     return copyConfig;
   } catch (e) {
     return config;

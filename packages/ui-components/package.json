@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/ui-components",
+  "name": "@nikaah/ui-components",
   "version": "4.0.3",
   "description": "a repository for react common components. which will be elements like button,modal,paginations etc and modals like table,slider,layaout etc",
   "main": "lib/index.js",
@@ -14,8 +14,8 @@
     "env:prod": "export NODE_ENV=production"
   },
   "dependencies": {
-    "@healthifyme/constants": "^4.0.3",
-    "@healthifyme/styles": "*"
+    "@nikaah/constants": "^4.0.3",
+    "@nikaah/styles": "*"
   },
   "peerDependencies": {
     "antd": "^3.9.0",

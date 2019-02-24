@@ -2,7 +2,7 @@ import api from '../api';
 import staticRouter from '../routes';
 
 const routes = (app) => {
-  app.use('/apiv2', api);
+  app.use('/api', api);
   app.use('', staticRouter);
 };
 

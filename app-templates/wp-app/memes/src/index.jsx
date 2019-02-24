@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { initStore } from '@healthifyme/utilities/lib/redux';
+import { initStore } from '@nikaah/utilities/lib/redux';
 import App from './App.hot';
 import rootReducer from './App/reducer';
 import rootSaga from './App/sagas';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CardWithImage from '@healthifyme/ui-components/lib/elements/Card/CardWithImage/';
+import CardWithImage from '@nikaah/ui-components/lib/elements/Card/CardWithImage/';
 
 import {
   Wrapper, Flex, FlexCol, Item,

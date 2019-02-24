@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { ncp } = require('ncp');
 const path = require('path');
+const chalk = require('chalk');
 
 ncp.limit = 16;
 
@@ -87,7 +88,6 @@ const createPackageFiles = async (packageOptions) => {
     await copyTemplate(source, dest);
     return dest;
   } catch (e) {
-    console.log(e); // eslint-disable-line
     throw e;
   }
 };
@@ -96,7 +96,7 @@ const renameTemplate = async (folder, name, desc) => {
   try {
     let packageJson = await readFile(`${folder}/package.json`);
     packageJson = JSON.parse(packageJson);
-    packageJson.name = `@healthifyme/${name}`;
+    packageJson.name = `@nikaah/${name}`;
     packageJson.description = desc;
 
     await writeFile(
@@ -104,10 +104,12 @@ const renameTemplate = async (folder, name, desc) => {
       JSON.stringify(packageJson, null, 2),
     );
     console.log( // eslint-disable-line
-      'Congratulations. package has been created. Please update dev dependencies before starting work ',
+      chalk.red.bold(
+        'Congratulations. package has been created. Please update dev dependencies before starting work ',
+      ),
     );
   } catch (e) {
-    console.error(e);
+    console.error(e); // eslint-disable-line
     throw e;
   }
 };

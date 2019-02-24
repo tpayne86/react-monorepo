@@ -1,0 +1,38 @@
+import React from 'react';
+import { Switch, withRouter, Redirect, Route } from 'react-router-dom';
+import Async from 'react-asynchronous-component';
+import ErrorHandler from '@nikaah/ui-components/lib/compounds/ErrorHandler/';
+import { ROUTE_ERROR } from '../../Constants/app/app.constants';
+import { Wrapper } from './styles';
+
+const AsyncHome = (props) => (
+  <Async
+    componentProps={props}
+    load={import('../Modules/Home/Home.component' /* webpackChunkName: "home" */)}
+  />
+);
+const AsyncErrorPage = (props) => (
+  <Async
+    componentProps={props}
+    load={import('../Modules/ErrorPage/ErrorPage.component' /* webpackChunkName: "errorpage" */)}
+  />
+);
+const AsyncLoginPage = () => (
+  <Async
+    load={import('../Modules/LoginPage/LoginPage.component' /* webpackChunkName: "loginpage" */)}
+  />
+);
+
+const Routes = () => (
+  <Wrapper>
+    <ErrorHandler>
+      <Switch>
+        <Route exact path="/" component={AsyncHome} />
+        <Route exact path="/error/:type" component={AsyncErrorPage} />
+        <Route exact path="/login" component={AsyncLoginPage} />
+        <Redirect to={`/error/${ROUTE_ERROR.NOT_FOUND}`} />
+      </Switch>
+    </ErrorHandler>
+  </Wrapper>
+);
+export default withRouter(Routes);

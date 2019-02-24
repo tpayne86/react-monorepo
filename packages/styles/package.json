@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/styles",
+  "name": "@nikaah/styles",
   "version": "3.0.1",
   "description": "core styled components and global styles",
   "main": "lib/",

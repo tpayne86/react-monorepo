@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "@nikaah/main-fe",
+  "version": "4.0.3",
+  "description": "meme dashboard implements yarn workspaces and lerna project",
+  "main": "src/index.jsx",
+  "author": "hannad rehman",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@nikaah/constants": "^4.0.3",
+    "@nikaah/styles": "^3.0.1",
+    "@nikaah/ui-components": "^4.0.3",
+    "@nikaah/utilities": "^4.0.3"
+  }
+}

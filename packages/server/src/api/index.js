@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
-import memeRouter from './meme';
+import userRouter from './user';
+import authRouter from './auth';
 
 const router = Router();
 
-router.use('/', memeRouter);
+router.use('/user', userRouter);
+router.use('/auth', authRouter);
 
 export default router;

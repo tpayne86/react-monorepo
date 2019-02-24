@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { flex, flexCenter, justifyAround } from '@healthifyme/styles/lib/flex';
-import { margin, marginRemove } from '@healthifyme/styles/lib/box';
+import { flex, flexCenter, justifyAround } from '@nikaah/styles/lib/flex';
+import { margin, marginRemove } from '@nikaah/styles/lib/box';
 
 export const Wrapper = styled.div`
   ${flex};

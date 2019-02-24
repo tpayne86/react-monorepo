@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import LoadingFallback from '@healthifyme/ui-components/lib/compounds/LoadingFallback/';
-import AlertFallback from '@healthifyme/ui-components/lib/compounds/AlertFallback/';
-import SimpleModal from '@healthifyme/ui-components/lib/elements/Modal/SimpleModal/';
-import { transformArrayToArrayOfArraysRamdomly } from '@healthifyme/utilities/lib/arrays';
+import LoadingFallback from '@nikaah/ui-components/lib/compounds/LoadingFallback/';
+import AlertFallback from '@nikaah/ui-components/lib/compounds/AlertFallback/';
+import SimpleModal from '@nikaah/ui-components/lib/elements/Modal/SimpleModal/';
+import { transformArrayToArrayOfArraysRamdomly } from '@nikaah/utilities/lib/arrays';
 import { memePageFetchMemes } from './MemePage.actions';
 import MemeGrid from './Components/MemeGrid/MemeGrid.component';
 

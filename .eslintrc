@@ -21,6 +21,7 @@
     "import/no-extraneous-dependencies": 0,
     "prettier/prettier": ["error"],
     "import/namespace": 0,
-    "react/jsx-one-expression-per-line":0
+    "react/jsx-one-expression-per-line":0,
+    "arrow-parens": 0
   }
 }

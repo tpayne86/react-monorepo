@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/package-generator",
+  "name": "@nikaah/package-generator",
   "version": "1.0.0",
   "description": "automatic file generator and packages",
   "main": "src/index.js",

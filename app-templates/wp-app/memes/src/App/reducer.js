@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { simpleApiStoreStates } from '@healthifyme/utilities/lib/generics';
+import { simpleApiStoreStates } from '@nikaah/utilities/lib/generics';
 import { connectRouter } from 'connected-react-router';
 import globalActionNames from './actionNames';
 import modulesReducer from './Modules/Modules.reducer';

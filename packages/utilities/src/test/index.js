@@ -1,7 +1,6 @@
 export const homeUtil = {
   someAsyncOperation(params) {
     // Does some async stuff
-    console.log('original');
     return params;
   },
   fnWhichIwantToTest(params) {

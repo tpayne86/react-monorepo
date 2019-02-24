@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
-import Button from '@healthifyme/ui-components/lib/elements/Button';
+import Button from '@nikaah/ui-components/lib/elements/Button';
 import { Wrapper, Mains } from './Home.styles';
 
 class Home extends React.Component {

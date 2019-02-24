@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux'; // eslint-disable-line
 import createSagaMiddleware from 'redux-saga'; // eslint-disable-line
 import { routerMiddleware } from 'connected-react-router'; // eslint-disable-line
 import { createHashHistory } from 'history'; // eslint-disable-line
-import { isDev } from '@healthifyme/constants/lib/app/app.constants';
+import { isDev } from '@nikaah/constants/lib/app/app.constants';
 import logger from './logger';
 
 const sagaMiddleWare = createSagaMiddleware();

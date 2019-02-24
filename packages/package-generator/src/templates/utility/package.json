@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/utilities",
+  "name": "@nikaah/utilities",
   "version": "1.0.0",
   "description": "test desc",
   "main": "lib/index.js",

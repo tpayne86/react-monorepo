@@ -1,4 +1,4 @@
-import { httpGet, httpPost } from '@healthifyme/utilities/lib/http/';
+import { httpGet, httpPost } from '@nikaah/utilities/lib/http/';
 import {
   AUTOCOMPLETE_USERS,
   USER_PROFILE,

@@ -1,4 +1,4 @@
-import { simpleApiStoreStates } from '@healthifyme/utilities/lib/generics';
+import { simpleApiStoreStates } from '@nikaah/utilities/lib/generics';
 import memePageActionNames from './MemePage.actionNames';
 
 const defaultState = {

@@ -1,4 +1,4 @@
-import * as functionUtils from '@healthifyme/utilities/lib/generics';
+import * as functionUtils from '@nikaah/utilities/lib/generics';
 import memePageReducer from '../MemePage.reducer';
 
 

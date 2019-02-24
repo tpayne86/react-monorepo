@@ -5,7 +5,6 @@ const router = Router();
 const publicPath = getStaticPath('/');
 
 router.get('/', (req, res) => {
-  console.log('root');
   res.sendFile(`${publicPath}/index.html`);
 });
 

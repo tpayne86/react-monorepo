@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import {
   flex, flexWrap, justifyBetween, flexCol,
-} from '@healthifyme/styles/lib/flex';
+} from '@nikaah/styles/lib/flex';
 
-import { margin } from '@healthifyme/styles/lib/box';
+import { margin } from '@nikaah/styles/lib/box';
 
 export const Wrapper = styled.div`
   position: relative

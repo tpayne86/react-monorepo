@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-import { ROUTE_ERROR } from '@healthifyme/constants';
+import { ROUTE_ERROR } from '@nikaah/constants';
 
 const getRoute = (component, path, exact, roles, user) => {
   try {

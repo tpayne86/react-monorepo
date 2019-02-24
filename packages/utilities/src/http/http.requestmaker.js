@@ -8,11 +8,14 @@ import { interceptedConfig } from './http.authorization';
  * @returns {Promise}
  */
 
-export const httpGet = (url) =>
+export const httpGet = (url, headers) =>
   new Promise((resolve, reject) => {
     axios({
       url,
       method: 'GET',
+      headers: {
+        ...headers,
+      },
     })
       .then((res) => {
         resolve(res.data);
@@ -74,7 +77,6 @@ export const httpPost = (url, data) =>
 
 const interceptor = axios.interceptors.request.use(
   (config) => {
-    console.log(config);
     return interceptedConfig(config);
   },
   (error) => {

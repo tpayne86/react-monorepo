@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, shallow } from 'enzyme'; //eslint-disable-line
 import * as redux from 'redux';
 import Adapter from 'enzyme-adapter-react-16'; //eslint-disable-line
-import * as arrayUtils from '@healthifyme/utilities/lib/arrays';
+import * as arrayUtils from '@nikaah/utilities/lib/arrays';
 import { MemePage, mapDispatchToProps, mapStateToProps } from '../MemePage.component';
 import * as componentsUtils from '../MemePage.utility';
 

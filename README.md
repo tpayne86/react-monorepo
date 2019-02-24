@@ -161,7 +161,7 @@ should follow.
 ```
 {
   "private": true,
-  "name": "@healthifyme/name",
+  "name": "@nikaah/name",
   "version": "1.0.0",
   "description": "description of the package",
   "main": "dist/index.js",

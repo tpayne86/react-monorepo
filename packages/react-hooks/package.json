@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@healthifyme/react-hooks",
+  "name": "@nikaah/react-hooks",
   "version": "1.0.0",
   "description": "global hooks for react application",
   "main": "lib/index.js",
