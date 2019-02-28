@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "@healthifyme/server",
+      "script": "./index.js",
+      "watch": false,
+      "instances": "max",
+      "autorestart": true,
+      "exec_mode": "cluster_mode",
+      "error_file": "/usr/server/logs/errors.log",
+      "out_file": "/usr/server/logs/logs.log",
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

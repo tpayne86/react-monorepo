@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { ncp } = require('ncp');
 const path = require('path');
+const chalk = require('chalk');
 
 ncp.limit = 16;
 
@@ -104,7 +105,9 @@ const renameTemplate = async (folder, name, desc) => {
       JSON.stringify(packageJson, null, 2),
     );
     console.log( // eslint-disable-line
-      'Congratulations. package has been created. Please update dev dependencies before starting work ',
+      chalk.red.bold(
+        'Congratulations. package has been created. Please update dev dependencies before starting work ',
+      ),
     );
   } catch (e) {
     console.error(e);
