@@ -6,6 +6,7 @@ const packageJson = require('./package.json');
 packageJson.scripts = {
   start: ' node ./index',
   startcluster: 'node ./index.cluster',
+  'build-image': 'docker build -t healthifyme/node-web .',
 };
 const dist = '../../dist';
 delete packageJson.devDependencies;
