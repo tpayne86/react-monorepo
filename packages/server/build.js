@@ -1,10 +1,11 @@
 const fs = require('fs');
+const fse = require('fs-extra'); // eslint-disable-line
 
 const packageJson = require('./package.json');
 
 packageJson.scripts = {
-  start: 'node ./index.js',
-  'start:cluster': 'node ./cluster.js',
+  start: ' node ./index',
+  startcluster: 'node ./index.cluster',
 };
 const dist = '../../dist';
 delete packageJson.devDependencies;
@@ -13,7 +14,11 @@ try {
     `${dist}/package.json`,
     JSON.stringify(packageJson, null, 2),
   );
-  console.log('build complete'); // eslint-disable-line
+  fse.copy('./docker', dist, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 } catch (e) {
   throw e;
 }

@@ -1,0 +1,16 @@
+FROM keymetrics/pm2:latest-alpine
+
+WORKDIR /usr/server/app
+
+COPY package*.json ./
+RUN pm2 install pm2-server-monit
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 5000
+
+RUN node -v
+RUN npm -v
+
+CMD [ "pm2-runtime", "start", "process.json" ]

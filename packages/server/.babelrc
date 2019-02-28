@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["@babel/preset-env", { "modules": false, "useBuiltIns": "usage" }],
+    "@babel/preset-env"
   ],
   "plugins": [
     "@babel/plugin-transform-modules-commonjs"
@@ -12,13 +12,5 @@
         "@babel/plugin-transform-modules-commonjs",
       ]
     },
-    "development": {
-      "presets": [
-        ["@babel/preset-env", { "modules": false, "useBuiltIns": "usage" }],
-      ],
-      "plugins": [
-        "@babel/plugin-transform-modules-commonjs"
-      ]
-    }
   }
 }

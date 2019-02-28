@@ -1,6 +1,5 @@
 import express from 'express';
 import config from './config';
-import proxy from './proxy';
 import routes from './routes';
 import { NODE_ENV, PORTAL_PORT } from '../config';
 import { serverListener } from '../utility/listener';
@@ -11,7 +10,6 @@ const app = () => {
   }
   const expressApp = express();
   config(expressApp);
-  proxy(expressApp);
   routes(expressApp);
   if (PORTAL_PORT) {
     expressApp.listen(PORTAL_PORT, serverListener);
