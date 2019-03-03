@@ -10,7 +10,7 @@ import 'antd/dist/antd.min.css';
 
 // import 'antd/dist/antd.less';
 // prod
-const reduxStore = initStore(rootReducer, rootSaga);
+const reduxStore = initStore(rootReducer, rootSaga, 'memes');
 ReactDOM.render(
   <Provider store={reduxStore}>
     <App />
