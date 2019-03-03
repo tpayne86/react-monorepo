@@ -73,13 +73,8 @@ export const httpPost = (url, data) =>
   });
 
 const interceptor = axios.interceptors.request.use(
-  (config) => {
-    console.log(config);
-    return interceptedConfig(config);
-  },
-  (error) => {
-    return Promise.reject(error);
-  },
+  (config) => interceptedConfig(config),
+  (error) => Promise.reject(error),
 );
 
 export default interceptor;

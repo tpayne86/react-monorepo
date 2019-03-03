@@ -1,4 +1,3 @@
-
 logs/
 pids/
 lib-cov/
@@ -14,8 +13,6 @@ local/
 reports/
 Thumbs.db
 __snapshots__/
-packages/deploy/
-deploy/
 
 *.log
 npm-debug.log*
