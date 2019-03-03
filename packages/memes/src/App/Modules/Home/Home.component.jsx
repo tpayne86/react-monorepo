@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Button from '@healthifyme/ui-components/lib/elements/Button';
+import Spinner from '@healthifyme/ui-components/lib/elements/Spinner';
 import { Wrapper, Mains } from './Home.styles';
 
 class Home extends React.Component {
@@ -22,10 +23,11 @@ class Home extends React.Component {
       <Wrapper>
         <Button
           onClick={() => {}}
-          label="button for this text"
+          label="button for this text now hmr"
           meta="this is a text button"
         />
         <Mains className="margin margin--auto margin-top--xxlg flex flex--col flex--center">
+          <h1>Do you want to see a very bad grid of original Memes ?</h1>
           <h1>Do you want to see a very bad grid of original Memes ?</h1>
           <img
             src="https://i.kym-cdn.com/photos/images/original/000/210/119/9b3.png"
@@ -38,6 +40,7 @@ class Home extends React.Component {
           </h1>
 
           <Button onClick={() => {}} label="hannad rehman" meta="_ref.meta" />
+          <Spinner visible />
         </Mains>
       </Wrapper>
     );

@@ -1,0 +1,13 @@
+{
+  "name": "healthifyme-web-application",
+  "author": "hannad rehman",
+  "applications": {
+    "@healthifyme/memes": {
+      "appBase": "/memes/",
+      "publicPath": "/static/memes/",
+      "appHTMLTitle": "Meme dashboard monorepo",
+      "folderName": "memes",
+      "folderSrc": "packages/memes"
+    }
+  }
+}

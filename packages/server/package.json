@@ -15,8 +15,8 @@
     "start:no-lint": "nodemon --exec babel-node ./src/index.js",
     "build": "yarn clean && yarn transpile && node ./build",
     "lint": "esw ./src/",
-    "clean": "rm -rf ../../dist",
-    "transpile": "babel src --out-dir ../../dist --copy-files --ignore spec.js"
+    "clean": "rm -rf ../deploy",
+    "transpile": "babel src --out-dir ../deploy --copy-files --ignore spec.js"
   },
   "devDependencies": {
     "eslint": "^5.11.0",

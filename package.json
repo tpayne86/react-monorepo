@@ -33,13 +33,12 @@
     "wp:start": "yarn wp:dev",
     "wp:dev": "yarn dev-server --mode=development",
     "wp:analyze-speed": "yarn wp:dev --env.addons=speedmeasure",
-    "wp:build": "webpack --optimize-minimize --mode=production",
+    "wp:build": "webpack --optimize-minimize --mode=production --config ./packages/webpack-build/src/",
     "wp:build:analyze-bundle": "yarn wp:build  --env.addons=bundleanalyzer",
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --config ./packages/webpack-build/src/",
     "wp:profile": "webpack --progress -c --profile --json  > stats.json",
-    "lint:fix": "eslint  \"packages/**/*.{js,jsx}\" --fix --ignore-path .gitignore",
-    "webpack-defaults": "webpack-defaults"
+    "lint:fix": "eslint  \"packages/**/*.{js,jsx}\" --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",

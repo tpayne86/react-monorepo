@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "@healthifyme/webpack-build",
+  "version": "1.0.0",
+  "description": "build configuration for all react based project. later this package can build all types of web applications like angular vue etc. for now we are focussing on only react based apps",
+  "main": "lib/index.js",
+  "scripts": {
+    "start:app": "webpack-dev-server --mode=development",
+    "build:app": "yarn clean && yarn env:prod && yarn transpile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "webpack",
+    "utilities",
+    "services",
+    "javascript"
+  ],
+  "author": "hannad <hannad63@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  },
+  "peerDependencies": {}
+}

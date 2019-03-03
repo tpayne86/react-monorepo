@@ -6,9 +6,10 @@ import App from './App.hot';
 import rootReducer from './App/reducer';
 import rootSaga from './App/sagas';
 
-import 'antd/dist/antd.min.css'; // dev
-// import 'antd/dist/antd.less'; // prod
+import 'antd/dist/antd.min.css';
 
+// import 'antd/dist/antd.less';
+// prod
 const reduxStore = initStore(rootReducer, rootSaga);
 ReactDOM.render(
   <Provider store={reduxStore}>
