@@ -13,7 +13,7 @@ if (isDev) {
   middleWares.push(logger);
 }
 
-const initStore = (reducer, rootSaga) => {
+const initStore = (reducer, rootSaga, appName) => {
   if (!reducer || !rootSaga) {
     throw new Error('Please Provide valid arguments');
   }
@@ -21,11 +21,10 @@ const initStore = (reducer, rootSaga) => {
 
   sagaMiddleWare.run(rootSaga);
   /* global module:true */
-  /* global process:true */
   if (isDev) {
     if (module.hot) {
-      module.hot.accept(reducer, () => {
-              const nextReducer = require(reducer).default; // eslint-disable-line
+      module.hot.accept(`../../${appName}/src/App/reducer`, () => {
+              const nextReducer = require(`../../${appName}/src/App/reducer`).default; // eslint-disable-line
         store.replaceReducer(nextReducer);
       });
     }
