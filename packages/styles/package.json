@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@healthifyme/styles",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "core styled components and global styles",
   "main": "lib/",
   "scripts": {
