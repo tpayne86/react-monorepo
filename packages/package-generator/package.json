@@ -1,14 +1,12 @@
 {
   "private": true,
   "name": "@healthifyme/package-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "automatic file generator and packages",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
   },
-  "devDependencies": {},
-  "peerDependencies": {},
   "keywords": [
     "javascript",
     "healthifyme",
