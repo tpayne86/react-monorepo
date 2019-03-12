@@ -1,4 +1,7 @@
-- name: healthifyme-fe-steps
+- name: unit-tests
   service: healthifyme
   command: yarn app:test
+
+- name: build
+  service: healthifyme
   command: yarn app:build
