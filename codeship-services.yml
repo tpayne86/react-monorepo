@@ -2,5 +2,4 @@ healthifyme:
   build:
     image: node:11
     dockerfile: Dockerfile
-  environment:
-    # NODE_ENV: production
+  encrypted_env_file: packages/webpack-build/.env.encrypted
