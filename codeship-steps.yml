@@ -1,10 +1,7 @@
-- type: serial
-  name: healthifyme-web-frontend
-  steps:
-  - name: unit-tests
-    service: healthifyme
-    command: yarn app:test
+- name: unit-tests
+  service: healthifyme
+  command: yarn app:test
 
-  - name: build
-    service: healthifyme
-    command: yarn app:build
+- name: app-build
+  service: healthifyme
+  command: yarn app:build
