@@ -3,8 +3,8 @@
   steps:
   - name: unit-tests
     service: healthifyme
-    command: yarn app:test
+    command: export NODE_ENV=test&&yarn app:test
 
   - name: app-build
     service: healthifyme
-    command: yarn app:build
+    command: export NODE_ENV=production&&yarn app:build
