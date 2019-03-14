@@ -2,3 +2,5 @@ healthifyme:
   build:
     image: node:11
     dockerfile: Dockerfile
+  environment:
+    NODE_ENV:production
