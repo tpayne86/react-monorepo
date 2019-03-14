@@ -3,7 +3,7 @@ import DotEnv from 'dotenv';
 DotEnv.config();
 
 const {
-  env: { NODE_ENV, PORTAL_PORT },
+  env: { NODE_ENV = 'production', PORTAL_PORT },
 } = process;
 
 // eslint-disable-next-line

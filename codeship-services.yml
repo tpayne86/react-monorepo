@@ -3,4 +3,4 @@ healthifyme:
     image: node:11
     dockerfile: Dockerfile
   environment:
-    NODE_ENV: production
+    # NODE_ENV: production

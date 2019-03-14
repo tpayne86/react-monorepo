@@ -3,7 +3,7 @@ const {
   API_KEY,
   PROXY_USER,
   PROXY_USER_META,
-  NODE_ENV,
+  NODE_ENV = 'production',
   PROXY_ORIGIN,
 } = process.env;
 export const STAGE_ACCESS = window.atob(API_KEY || '');
