@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const S3Plugin = require('webpack-s3-plugin');
@@ -91,7 +91,7 @@ module.exports = (env) => {
       },
       runtimeChunk: true,
       minimizer: [
-        new UglifyJsWebpackPlugin({
+        new TerserPlugin({
           cache: true,
           parallel: true,
           sourceMap: true,
