@@ -25,7 +25,7 @@
     "build:server": "yarn build:package @healthifyme/server",
     "build:commons": "yarn build:all-packages --ignore @healthifyme/server",
     "build": "yarn execute build",
-    "test": "jest",
+    "test": "export NODE_ENV=test&&jest",
     "test:watch": "yarn test --watchAll",
     "exec": "lerna exec",
     "execute": "lerna run",
