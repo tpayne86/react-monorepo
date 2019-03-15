@@ -1,14 +1,22 @@
 - type: serial
   name: healthifyme-web-frontend
   steps:
-  - name: app-lint
+  - name: app:build-common-modules
+    service: healthifyme
+    command: yarn yarn build:commons
+
+  - name: app:lint
     service: healthifyme
     command: yarn app:lint
 
-  - name: unit-tests
+  - name: app:test
     service: healthifyme
     command: yarn app:test
 
-  - name: app-build
+  - name: app:build-server
     service: healthifyme
-    command: yarn app:build
+    command: yarn build:server
+
+  - name: app:build-clients
+    service: healthifyme
+    command: yarn wp:build --env.app=*
