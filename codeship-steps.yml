@@ -3,7 +3,7 @@
   steps:
   - name: app:build-common-modules
     service: healthifyme
-    command: yarn yarn build:commons
+    command: yarn build:commons
 
   - name: app:lint
     service: healthifyme
