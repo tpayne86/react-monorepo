@@ -1,6 +1,10 @@
 - type: serial
   name: healthifyme-web-frontend
   steps:
+  - name: app-lint
+    service: healthifyme
+    command: yarn app:lint
+
   - name: unit-tests
     service: healthifyme
     command: yarn app:test

@@ -12,6 +12,7 @@
     "app:list": "lerna ls --all",
     "app:changes": "lerna changed",
     "app:diff": "lerna diff",
+    "app:lint":"yarn lint",
     "app:test": "yarn build:commons && yarn test",
     "app:build": "yarn build:commons && yarn build:server &&  yarn wp:build --env.app=*",
     "app:start-server": "yarn execute start --scope=@healthifyme/server",
@@ -39,7 +40,8 @@
     "wp:build:analyze-buddy": "yarn wp:build --env.addons=bundlebuddy",
     "dev-server": "webpack-dev-server --config ./packages/webpack-build/src/",
     "wp:profile": "webpack --progress -c --profile --json  > stats.json",
-    "lint:fix": "eslint  \"packages/**/*.{js,jsx}\" --fix --ignore-path .gitignore",
+    "lint":"eslint  \"packages/**/*.{js,jsx}\" --ignore-path .gitignore",
+    "lint:fix": "yarn lint --fix",
     "webpack-defaults": "webpack-defaults"
   },
   "dependencies": {
