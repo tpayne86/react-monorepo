@@ -4,6 +4,8 @@
 **/tests/**
 src/Assets/**
 build-config/**/*.js
+**/lib/**
 
 /node_modules
 /dist
+/lib
