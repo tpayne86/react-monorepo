@@ -5,9 +5,9 @@
     service: healthifyme
     command: yarn build:commons
 
-  - name: app:lint
-    service: healthifyme
-    command: yarn app:lint
+  # - name: app:lint
+  #   service: healthifyme
+  #   command: yarn app:lint
 
   - name: app:test
     service: healthifyme
