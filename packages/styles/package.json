@@ -3,7 +3,7 @@
   "name": "@healthifyme/styles",
   "version": "3.0.2",
   "description": "core styled components and global styles",
-  "main": "lib/",
+  "main": "lib/index.js",
   "scripts": {
     "watch": "yarn clean && yarn transpile --source-maps inline --watch",
     "build": "yarn clean && yarn transpile",
