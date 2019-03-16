@@ -9,7 +9,7 @@
     service: app
     command: yarn app:build
 
-- type: push
-  name: image-push
-  service: deploy
-  image_name: healthifyme-prod-server
+# - type: push
+#   name: image-push
+#   service: deploy
+#   image_name: healthifyme-prod-server
