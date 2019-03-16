@@ -1,5 +1,11 @@
-healthifyme:
+app:
   build:
-    image: node:11
+    image: builder
     dockerfile: Dockerfile
   encrypted_env_file: packages/webpack-build/.hashme
+
+# deploy:
+#   image: server
+#   dockerfile: Dockerfile
+#   context: packages/deploy
+

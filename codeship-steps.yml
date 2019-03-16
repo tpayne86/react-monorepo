@@ -1,12 +1,15 @@
 - type: serial
-  name: healthifyme-web-frontend
+  name: web-build
   steps:
-
   - name: app:test
-    service: healthifyme
+    service: app
     command: yarn app:test
 
   - name: app:build
-    service: healthifyme
+    service: app
     command: yarn app:build
 
+# - type: push
+#   name: image-push
+#   service: deploy
+#   image_name: healthifyme-prod-server
