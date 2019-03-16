@@ -2,10 +2,10 @@ app:
   build:
     image: builder
     dockerfile: Dockerfile
-    encrypted_env_file: packages/webpack-build/.hashme
+  encrypted_env_file: packages/webpack-build/.hashme
 
-deploy:
-  image: server
-  dockerfile: Dockerfile
-  context: packages/deploy
+# deploy:
+#   image: server
+#   dockerfile: Dockerfile
+#   context: packages/deploy
 

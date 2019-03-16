@@ -10,6 +10,6 @@
     command: yarn app:build
 
 - type: push
-  name: prod-image
+  name: image-push
   service: deploy
   image_name: healthifyme-prod-server
