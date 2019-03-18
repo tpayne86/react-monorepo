@@ -9,3 +9,4 @@ build-config/**/*.js
 /node_modules
 /dist
 /lib
+*/package.json

@@ -2,14 +2,13 @@
   "private": true,
   "name": "@healthifyme/utilities",
   "version": "4.0.4",
-  "description": "all utility functions, services that can be shared accross the project should be kept here.",
+  "description": "all utility functions, services that can be shared across the project should be kept here.",
   "main": "lib/index.js",
   "scripts": {
     "watch": "yarn clean && yarn transpile --source-maps inline --watch",
-    "build": "yarn clean && yarn env:prod && yarn transpile",
+    "build": "yarn clean && cross-env NODE_ENV=production yarn transpile",
     "clean": "rm -rf ./lib",
-    "transpile": "babel src --out-dir lib --copy-files --ignore spec.js,spec.jsx",
-    "env:prod": "export NODE_ENV=production"
+    "transpile": "babel src --out-dir lib --copy-files --ignore spec.js,spec.jsx"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,8 @@
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
-    "eslint": "^5.14.1"
+    "eslint": "^5.14.1",
+    "cross-env": "^5.2.0"
   },
   "peerDependencies": {
     "axios": "^0.18.0"
