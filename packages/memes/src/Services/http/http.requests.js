@@ -1,20 +1,20 @@
 import { httpGet, httpPost } from '@healthifyme/utilities/lib/http/';
 import {
-  AUTOCOMPLETE_USERS,
-  USER_PROFILE,
-  USER_PROFILE_EXTRAS,
   ALL_COACHES,
+  ALL_LANGUAGES,
+  APP_LOGIN,
+  AUTOCOMPLETE_USERS,
   AVAILABLE_COACHES,
+  BOOK_AUTOMATIC_CONSULTATION,
+  BOOK_SLOT,
+  BOOK_SLOT_PREFERRED_TIME,
+  BOOKING_SOURCES,
   EXPERT_INFO,
   EXPERT_SLOTS,
-  BOOKING_SOURCES,
-  BOOK_SLOT,
-  BOOK_SLOT_PREFERED_TIME,
-  ALL_LANGUAGES,
-  BOOK_AUTOMATIC_CONSULTATION,
-  APP_LOGIN,
   MEMES,
-} from '../../Constants/api/api.endpoints';
+  USER_PROFILE,
+  USER_PROFILE_EXTRAS,
+}                            from '../../Constants/api/api.endpoints';
 
 export const login = (user) => httpPost(APP_LOGIN, user);
 export const autocompleteUser = (name) =>
@@ -30,7 +30,7 @@ export const bookingSources = () => httpGet(BOOKING_SOURCES);
 export const bookslot = (request, withSlot) =>
   withSlot === true
     ? httpPost(BOOK_SLOT, request)
-    : httpPost(BOOK_SLOT_PREFERED_TIME, request);
+    : httpPost(BOOK_SLOT_PREFERRED_TIME, request);
 export const languagues = () => httpGet(ALL_LANGUAGES);
 export const automaticConsultation = (request) =>
   httpPost(BOOK_AUTOMATIC_CONSULTATION, request);

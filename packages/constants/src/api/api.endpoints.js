@@ -12,4 +12,4 @@ export const BOOK_SLOT_PREFERED_TIME =
   '/api/v1/event/consultation-call/create/';
 export const ALL_LANGUAGES = '/api/v2/language/choices';
 export const BOOK_AUTOMATIC_CONSULTATION = '/api/v2/expert_connect/assign_cc/';
-export const MEMES = '/apiv2/memes';
+export const MEMES = '/api/v2/memes';

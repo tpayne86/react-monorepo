@@ -8,8 +8,8 @@ export const EXPERT_INFO = '/api/v1/expert_connect/experts/bio/';
 export const EXPERT_SLOTS = '/api/v2/booking/slots/all';
 export const BOOKING_SOURCES = '/api/v1/booking/sources/';
 export const BOOK_SLOT = '/api/v1/booking/slots/book_for_client/';
-export const BOOK_SLOT_PREFERED_TIME =
+export const BOOK_SLOT_PREFERRED_TIME =
   '/api/v1/event/consultation-call/create/';
 export const ALL_LANGUAGES = '/api/v2/language/choices';
 export const BOOK_AUTOMATIC_CONSULTATION = '/api/v2/expert_connect/assign_cc/';
-export const MEMES = '/apiv2/memes';
+export const MEMES = '/api/v2/memes';

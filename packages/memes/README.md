@@ -10,7 +10,7 @@ a complete react project with :
 4. jest and enzyme test framework
 5. babel and eslint config to support es2017
 6. react hot module replacement
-7. code spliting
+7. code splitting
 8. code organisation based on "Feature first approach"
 9. webpack.
 
@@ -32,7 +32,7 @@ build with react,redux,sagas, and build by webpack.
 
 ### start
 
-after bootstraping the project in the root 
+after bootstrapping the project in the root 
 `yarn wp:start --env.app=@healthifyme/appname`
 this will run the applications in `watch` mode. meaning any file change will be reacted and updated`
 in the browser. (Hot module replacement)
@@ -43,7 +43,8 @@ to build for deployment/production.
 
 - hit `yarn wp:build --env.app=@healthifyme/appname`
 
-doing this will initate webpack build, and transpile the file to dist folder in root `dist/public/appname` folder in the application root which will contain a full stack build
+doing this will initiate webpack build, and transpile the file to dist folder
+ in root `dist/public/appname` folder in the application root which will contain a full stack build
 `nodejs` application ready to deploy with its own `package.json`.
  install node modules and run the app.
 
@@ -63,7 +64,7 @@ tests can be run in 2 modes.
 
 in the root of the project.
 - `yarn test packages/foldername --watchAll` runs the tests in watch mode. it provides some cli options which you can play with
-- `yarn test packages/foldername` runs tests without watch mode. these are simplte run to completion tests.
+- `yarn test packages/foldername` runs tests without watch mode. these are simple run to completion tests.
 
 **important**
 to run the built application it needs following environment variables
@@ -222,14 +223,17 @@ ComponentName
 # Redux
 
 redux is the most important part of the application because it handles the data.
-we are only storing bussiness data in the redux store. which means data that is extenal or which has bussiness implication.
+we are only storing business data in the redux store. which means data that 
+is external or which has business implication.
 data with respect to UI and UI state or elements need not to be stored in the redux store as it can be handled by the component itself.
-its a common misconception that we store every piece of data in the redux store. thats really not necessary. of you want to store the
-`open` state of a accordion in the redux store then its wrong. the component using the accirdion should have that state
+its a common misconception that we store every piece of data in the redux store. that's really not necessary. of you want to store the
+`open` state of a accordion in the redux store then its wrong. the component 
+using the accordion should have that state
 
 ## Redux hierarchy
 
-we have organished redux store as per our project structure. it makes it easy to maintain the store when u know what part of the application
+we have organized redux store as per our project structure. it makes it easy 
+to maintain the store when u know what part of the application
 requires what part of the store, there is no misconception or confusion when using the store in components.
 
 also it should be noted that not each and every component needs not to be connected to the redux store. we should only connect top level components to the store
@@ -258,17 +262,20 @@ Store
   ├    ├──Error
 ```
 
-maintaining the same hierarchy in redux store has many benifits. one of them is code organizastion.
+maintaining the same hierarchy in redux store has many benefits. one of them 
+is code organization.
 each sub application has a `reducer`,`sagas` which are default exported and combined and given to the store.
 
-## Handeling side effects with sagas
+## Handling side effects with sagas
 
 front end application is all about handling side effects. for us the most important side effects are the api calls.
 apis give us external data and our react components should be able to handle them without making it complicated.
 
-the best practice is to have react components onlt handle the view. no additional logic. that even includes making api calls.
+the best practice is to have react components only handle the view. no 
+additional logic. that even includes making api calls.
 react component should not be concerned about how the data is fetched from external source. it should only consider the data passed to it
-as a props. thats why we are handling external data outside the component echosystem. and passing objects to the components as props.
+as a props. that's why we are handling external data outside the component 
+echo system. and passing objects to the components as props.
 
 ### why sagas ?
 
@@ -285,22 +292,23 @@ Every Api calls in most of the cases will have 3 states.
 2. Success
 3. Failure
 
-at one instant of time there will be only one of these three states . and we can show accordiing Ux as per the state. ex
+at one instant of time there will be only one of these three states . and we can show according Ux as per the state. ex
 
 1. Loading state => show a loader/loading screen
 2. Success state => show the actual data
 3. Failure state => show error fallback/alert/toas etc.
 
-storing all three states in store has good benifits. there will be no useless logic with respect to maintaing these states
+storing all three states in store has good benefits. there will be no useless
+ logic with respect to maintaining these states
 
-it can be passed as props to the component, and thus component will re-render automatically when state changes, and our fallbacks will render
+it can be passed as props to the component, and thus component will re-render automatically when state changes, and our fallback will render
 automatically.
 
 there is less code in the component. component will focus on view layer only.
 
 so we data point which needs to be stored in the redux store, must have these three states. ex.
 
-`home reducer` stores `homeTiles` from an api. so our redcuer will have
+`home reducer` stores `homeTiles` from an api. so our reducer will have
 
 ```
  var home = {
